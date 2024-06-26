@@ -57,6 +57,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitTest\CRD_AuditoriaBitacoraUnitTest.cs" />
+    <Compile Include="UnitTest\CRD_BitacoraHistoricoUnitTest.cs" />
+    <Compile Include="UnitTest\CRD_BitacoraUnitTest.cs" />
     <Compile Include="UnitTest\CRD_CajasUnitTest.cs" />
     <Compile Include="UnitTest\CRD_AnalistasUnitTest.cs" />
   </ItemGroup>

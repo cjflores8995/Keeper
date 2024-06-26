@@ -10,16 +10,16 @@ namespace CRD.Test.MSTest.UnitTest
     [TestClass]
     public class CRD_CajasUnitTest
     {
-        CRD_AnalistasServicio _service = new CRD_AnalistasServicio();
+        CRD_CajasServicio _service = new CRD_CajasServicio();
 
         [TestMethod]
         public void AddTest()
         {
-            CRD_Analistas entry = new CRD_Analistas();
+            CRD_Cajas entry = new CRD_Cajas();
 
-            entry.IdEstadoTipoProceso = 1;
-            entry.UsuarioLN = "Usuario test 1";
-            entry.Nombre = "Nombre Apellido";
+            entry.NombreCaja = "Caja Principal";
+            entry.Descripcion = "Caja principal de la tienda";
+            entry.EstatusCaja = true;
             entry.Activo = true;
 
             _service.Add(entry);
@@ -28,9 +28,9 @@ namespace CRD.Test.MSTest.UnitTest
         [TestMethod]
         public void UpdateTest()
         {
-            var entry = _service.GetById(2);
+            var entry = _service.GetById(1);
 
-            entry.Nombre = "Nombre modificado";
+            entry.NombreCaja = "Nombre modificado";
 
             _service.Update(entry);
         }
@@ -41,20 +41,20 @@ namespace CRD.Test.MSTest.UnitTest
             var getAll = _service.GetAll();
 
             foreach(var item in getAll)
-                Console.WriteLine($"ID: {item.IdAnalista}, Usuario: {item.UsuarioLN}, Nombre: {item.Nombre}");
+                Console.WriteLine($"{item.NombreCaja}, {item.Descripcion}, {item.EstatusCaja}");
         }
 
         [TestMethod]
         public void GetByIdTest()
         {
-            var entry = _service.GetById(2);
-            Console.WriteLine($"ID: {entry.IdAnalista}, Usuario: {entry.UsuarioLN}, Nombre: {entry.Nombre}");
+            var item = _service.GetById(1);
+            Console.WriteLine($"{item.NombreCaja}, {item.Descripcion}, {item.EstatusCaja}");
         }
 
         [TestMethod]
         public void DeleteTest()
         {
-            var entry = _service.GetById(2);
+            var entry = _service.GetById(1);
             entry.Activo = false;
             _service.Update(entry);
         }
