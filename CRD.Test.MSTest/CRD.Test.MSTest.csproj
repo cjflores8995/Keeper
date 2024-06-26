@@ -60,6 +60,16 @@
     <Compile Include="UnitTest\CRD_AuditoriaBitacoraUnitTest.cs" />
     <Compile Include="UnitTest\CRD_BitacoraHistoricoUnitTest.cs" />
     <Compile Include="UnitTest\CRD_BitacoraUnitTest.cs" />
+    <Compile Include="UnitTest\CRD_ValijasUnitTest.cs" />
+    <Compile Include="UnitTest\CRD_TipoDocumentosUnitTest.cs" />
+    <Compile Include="UnitTest\CRD_TipoDocumentoPagosUnitTest.cs" />
+    <Compile Include="UnitTest\CRD_ProveedoresUnitTest.cs" />
+    <Compile Include="UnitTest\CRD_PaquetesUnitTest.cs" />
+    <Compile Include="UnitTest\CRD_OrdenesUnitTest.cs" />
+    <Compile Include="UnitTest\CRD_IvaUnitTest.cs" />
+    <Compile Include="UnitTest\CRD_EstadoTipoProcesosUnitTest.cs" />
+    <Compile Include="UnitTest\CRD_EmpresasUnitTest.cs" />
+    <Compile Include="UnitTest\CRD_DepartamentoUnitTest.cs" />
     <Compile Include="UnitTest\CRD_CiudadUnitTest.cs" />
     <Compile Include="UnitTest\CRD_CajasUnitTest.cs" />
     <Compile Include="UnitTest\CRD_AnalistasUnitTest.cs" />
