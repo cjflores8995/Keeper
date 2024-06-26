@@ -19,12 +19,12 @@ namespace CRD.Test.MSTest.UnitTest
 
             entry.IdTipoDocumento = 2;
             entry.IdEstadoTipoProceso = 3;
-            entry.IdUsuario = "user123";
-            entry.IdTipoDocumentoPago = 4;
-            entry.IdOrden = "ORD123456";
-            entry.CodProveedor = "PROV789";
-            entry.CodigoEmpresa = "EMP123";
-            entry.IdPaquete = 5;
+            entry.IdUsuario = "user1";
+            entry.IdTipoDocumentoPago = 1;
+            entry.IdOrden = "1";
+            entry.CodProveedor = "P001";
+            entry.CodigoEmpresa = "EMP001";
+            entry.IdPaquete = 1;
             entry.NumeroDocumentoPago = "DOC456";
             entry.EstadoBienesRecibidos = true;
             entry.FechaEmisionDocumento = new DateTime(2024, 6, 25);
@@ -41,9 +41,9 @@ namespace CRD.Test.MSTest.UnitTest
         [TestMethod]
         public void UpdateTest()
         {
-            var entry = _service.GetById(1);
+            var entry = _service.GetById(24);
 
-            entry.IdUsuario = "user234";
+            entry.IdUsuario = "user2";
 
             _service.Update(entry);
         }
@@ -60,7 +60,7 @@ namespace CRD.Test.MSTest.UnitTest
         [TestMethod]
         public void GetByIdTest()
         {
-            var item = _service.GetById(1);
+            var item = _service.GetById(24);
             Console.WriteLine($"{item.IdOrden}, {item.CodProveedor}, {item.CodigoEmpresa}");
         }
 

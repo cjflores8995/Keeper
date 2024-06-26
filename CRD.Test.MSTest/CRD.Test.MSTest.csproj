@@ -60,6 +60,7 @@
     <Compile Include="UnitTest\CRD_AuditoriaBitacoraUnitTest.cs" />
     <Compile Include="UnitTest\CRD_BitacoraHistoricoUnitTest.cs" />
     <Compile Include="UnitTest\CRD_BitacoraUnitTest.cs" />
+    <Compile Include="UnitTest\CRD_CiudadUnitTest.cs" />
     <Compile Include="UnitTest\CRD_CajasUnitTest.cs" />
     <Compile Include="UnitTest\CRD_AnalistasUnitTest.cs" />
   </ItemGroup>
