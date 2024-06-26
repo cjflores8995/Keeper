@@ -10,15 +10,15 @@ using System.Threading.Tasks;
 
 namespace CRD.APP.Aplicacion.ClaseServicio
 {
-    public class CRD_PaquetesServicio
+    public class CRD_ProveedoresServicio
     {
-        readonly ICRD_PaquetesRepositorio _repo;
-        public CRD_PaquetesServicio()
+        readonly ICRD_ProveedoresRepositorio _repo;
+        public CRD_ProveedoresServicio()
         {
-            _repo = new CRD_PaquetesRepositorioImpl();
+            _repo = new CRD_ProveedoresRepositorioImpl();
         }
 
-        public void Add(CRD_Paquetes entry)
+        public void Add(CRD_Proveedores entry)
         {
             try
             {
@@ -31,7 +31,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
 
         }
 
-        public void Update(CRD_Paquetes entry)
+        public void Update(CRD_Proveedores entry)
         {
             try
             {
@@ -44,7 +44,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
 
         }
 
-        public IEnumerable<CRD_Paquetes> GetAll()
+        public IEnumerable<CRD_Proveedores> GetAll()
         {
             try
             {
@@ -56,7 +56,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
             }
         }
 
-        public CRD_Paquetes GetById(int id)
+        public CRD_Proveedores GetById(int id)
         {
             try
             {

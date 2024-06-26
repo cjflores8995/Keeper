@@ -48,9 +48,11 @@
     <Compile Include="ClaseServicio\CRD_DepartamentoServicio.cs" />
     <Compile Include="ClaseServicio\CRD_CiudadServicio.cs" />
     <Compile Include="ClaseServicio\CRD_CajasServicio.cs" />
+    <Compile Include="ClaseServicio\CRD_ProveedoresServicio.cs" />
     <Compile Include="ClaseServicio\CRD_PaquetesServicio.cs" />
     <Compile Include="ClaseServicio\CRD_OrdenesServicio.cs" />
     <Compile Include="ClaseServicio\CRD_IvaServicio.cs" />
+    <Compile Include="ClaseServicio\CRD_ValijasServicio.cs" />
     <Compile Include="ClaseServicio\CRD_TipoDocumentosServicio.cs" />
     <Compile Include="ClaseServicio\CRD_TipoDocumentoPagosServicio.cs" />
     <Compile Include="ClaseServicio\CRD_EstadoTipoProcesosServicio.cs" />
