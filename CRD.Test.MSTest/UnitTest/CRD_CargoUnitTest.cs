@@ -8,17 +8,17 @@ using System;
 namespace CRD.Test.MSTest.UnitTest
 {
     [TestClass]
-    public class CRD_TipoDocumentoPagosUnitTest
+    public class CRD_CargoUnitTest
     {
-        CRD_TipoDocumentoPagosServicio _service = new CRD_TipoDocumentoPagosServicio();
+        CRD_CargoServicio _service = new CRD_CargoServicio();
 
         [TestMethod]
         public void AddTest()
         {
-            CRD_TipoDocumentoPagos entry = new CRD_TipoDocumentoPagos();
+            CRD_Cargo entry = new CRD_Cargo();
 
-            entry.Nombre = "nombre";
-            entry.Descripcion = "descripcion";
+            entry.NombreCargo = "cargo 1";
+            entry.Descripcion = "descripcion cargo";
             entry.Activo = true;
 
             _service.Add(entry);
@@ -29,7 +29,7 @@ namespace CRD.Test.MSTest.UnitTest
         {
             var entry = _service.GetById(1);
 
-            entry.Descripcion = "nuevo valor";
+            entry.NombreCargo = "Nombre modificado";
 
             _service.Modify(entry);
         }
@@ -40,14 +40,14 @@ namespace CRD.Test.MSTest.UnitTest
             var getAll = _service.GetAll();
 
             foreach(var item in getAll)
-                Console.WriteLine($"{item.Nombre}, {item.Descripcion}");
+                Console.WriteLine($"{item.NombreCargo}, {item.Descripcion}");
         }
 
         [TestMethod]
         public void GetByIdTest()
         {
             var item = _service.GetById(1);
-            Console.WriteLine($"{item.Nombre}, {item.Descripcion}");
+            Console.WriteLine($"{item.NombreCargo}, {item.Descripcion}");
         }
 
         [TestMethod]
@@ -59,15 +59,12 @@ namespace CRD.Test.MSTest.UnitTest
         }
 
         [TestMethod]
-        public void TestMethod1()
+        public void ObtenerCargoPorNomreTest()
         {
-            var tipoDocumentoPago = _service.buscarPorNombre("Pergamino");
-            Console.WriteLine(
-                tipoDocumentoPago.IdTipoDocumentoPago + "-" +
-                tipoDocumentoPago.Nombre + "-" +
-                tipoDocumentoPago.Descripcion + "-" +
-                tipoDocumentoPago.Activo);
+            var entry = _service.ObtenerCargoPorNomre("Gerente");
         }
+
+        
 
     }
 }

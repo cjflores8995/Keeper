@@ -9,6 +9,7 @@ namespace CRD.Dominio.Modelo.Abstracciones
 {
     public interface ICRD_EmpresasRepositorio : IBaseRepositorio<CRD_Empresas>
     {
-
+        CRD_Empresas buscarPorCodigoEmpresa(string codemp);
+        CRD_Empresas buscarPorNombre(string nom);
     }
 }

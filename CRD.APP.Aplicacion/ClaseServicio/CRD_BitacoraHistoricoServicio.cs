@@ -31,7 +31,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
 
         }
 
-        public void Update(CRD_BitacoraHistorico entry)
+        public void Modify(CRD_BitacoraHistorico entry)
         {
             try
             {
@@ -77,6 +77,53 @@ namespace CRD.APP.Aplicacion.ClaseServicio
             catch (Exception ex)
             {
                 throw new Exception("Error Servicio: ", ex);
+            }
+        }
+
+        public List<CRD_BitacoraHistorico> buscarPorFactura(string Factura)
+        {
+            try
+            {
+                return _repo.buscarPorFactura(Factura);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error Servicio: No se pudo mostrar registro,", ex);
+            }
+        }
+
+        public List<CRD_BitacoraHistorico> buscarPorPartner(string Partner)
+        {
+            try
+            {
+                return _repo.buscarPorPartner(Partner);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error Servicio: No se pudo mostrar registro,", ex);
+            }
+        }
+
+        public List<CRD_BitacoraHistorico> buscarPorRuc(string Ruc)
+        {
+            try
+            {
+                return _repo.buscarPorRuc(Ruc);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error Servicio: No se pudo mostrar registro,", ex);
+            }
+        }
+        public List<CRD_BitacoraHistorico> buscarPorNumeroOrden(string NumeroOrden)
+        {
+            try
+            {
+                return _repo.buscarPorNumeroOrden(NumeroOrden);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error Servicio: No se pudo mostrar registro,", ex);
             }
         }
     }

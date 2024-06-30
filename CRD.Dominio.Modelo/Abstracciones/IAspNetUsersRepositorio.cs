@@ -1,4 +1,5 @@
 ﻿using CRD.Dominio.Modelo.Entidades;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +8,9 @@ using System.Threading.Tasks;
 
 namespace CRD.Dominio.Modelo.Abstracciones
 {
-    public interface ICRD_EstadoTipoProcesosRepositorio : IBaseRepositorio<CRD_EstadoTipoProcesos>
+    public interface IAspNetUsersRepositorio: IBaseRepositorio<AspNetUsers>
     {
-        CRD_EstadoTipoProcesos buscarPorNombre(string nom);
+        AspNetUsers ObtenerUsuarioPorEmail(string email);
+        AspNetUsers ObtenerUsuarioPorId(string id);
     }
 }

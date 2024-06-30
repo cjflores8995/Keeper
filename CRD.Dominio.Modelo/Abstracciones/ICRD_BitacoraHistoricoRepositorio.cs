@@ -9,7 +9,10 @@ namespace CRD.Dominio.Modelo.Abstracciones
 {
     public interface ICRD_BitacoraHistoricoRepositorio : IBaseRepositorio<CRD_BitacoraHistorico>
     {
-
+        List<CRD_BitacoraHistorico> buscarPorFactura(string Factura);
+        List<CRD_BitacoraHistorico> buscarPorPartner(string Partner);
+        List<CRD_BitacoraHistorico> buscarPorRuc(string Ruc);
+        List<CRD_BitacoraHistorico> buscarPorNumeroOrden(string NumeroOrden);
     }
 
 }

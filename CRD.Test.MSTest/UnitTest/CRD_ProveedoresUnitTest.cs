@@ -43,9 +43,95 @@ namespace CRD.Test.MSTest.UnitTest
         {
             var getAll = _service.GetAll();
 
-            foreach(var item in getAll)
+            foreach (var item in getAll)
                 Console.WriteLine($"{item.CodigoCompania}, {item.CodigoSistema}");
         }
 
+        [TestMethod]
+        public void TestMethod1()
+        {
+            var proveedor = _service.buscarPorCodProveedor("P001");
+            Console.WriteLine(
+                proveedor.CodigoCompania + "-" +
+                proveedor.CodigoSistema + "-" +
+                proveedor.CodigoServicio + "-" +
+                proveedor.Proceso + "-" +
+                proveedor.Resultado + "-" +
+                proveedor.Estado + "-" +
+                proveedor.Error + "-" +
+                proveedor.FechaProceso + "-" +
+                proveedor.CodTipoProveedor + "-" +
+                proveedor.RucCedula + "-" +
+                proveedor.RazonSocial + "-" +
+                proveedor.CodProveedor + "-" +
+                proveedor.Estado2 + "-" +
+                proveedor.Ciudad + "-" +
+                proveedor.CodGrupoContable + "-" +
+                proveedor.CodPais + "-" +
+                proveedor.Direccion1
+                );
+        }
+
+        [TestMethod]
+        public void buscarPorRUCTest()
+        {
+
+            var proveedores = _service.buscarPorRUC("0999999999001");
+            foreach (var proveedor in proveedores)
+            {
+                Console.WriteLine(
+                proveedor.CodigoCompania + "-" +
+                proveedor.CodigoSistema + "-" +
+                proveedor.CodigoServicio + "-" +
+                proveedor.Proceso + "-" +
+                proveedor.Resultado + "-" +
+                proveedor.Estado + "-" +
+                proveedor.Error + "-" +
+                proveedor.FechaProceso + "-" +
+                proveedor.CodTipoProveedor + "-" +
+                proveedor.RucCedula + "-" +
+                proveedor.RazonSocial + "-" +
+                proveedor.CodProveedor + "-" +
+                proveedor.Estado2 + "-" +
+                proveedor.Ciudad + "-" +
+                proveedor.CodGrupoContable + "-" +
+                proveedor.CodPais + "-" +
+                proveedor.Direccion1
+                );
+            }
+        }
+
+        [TestClass]
+        public class UnitTest1
+        {
+            CRD_ProveedoresServicio _service = new CRD_ProveedoresServicio();
+            [TestMethod]
+            public void TestMethod1()
+            {
+                var proveedores = _service.buscarPorRazonSocial("Proveedor Ejemplo 1");
+                foreach (var proveedor in proveedores)
+                {
+                    Console.WriteLine(
+                    proveedor.CodigoCompania + "-" +
+                    proveedor.CodigoSistema + "-" +
+                    proveedor.CodigoServicio + "-" +
+                    proveedor.Proceso + "-" +
+                    proveedor.Resultado + "-" +
+                    proveedor.Estado + "-" +
+                    proveedor.Error + "-" +
+                    proveedor.FechaProceso + "-" +
+                    proveedor.CodTipoProveedor + "-" +
+                    proveedor.RucCedula + "-" +
+                    proveedor.RazonSocial + "-" +
+                    proveedor.CodProveedor + "-" +
+                    proveedor.Estado2 + "-" +
+                    proveedor.Ciudad + "-" +
+                    proveedor.CodGrupoContable + "-" +
+                    proveedor.CodPais + "-" +
+                    proveedor.Direccion1
+                    );
+                }
+            }
+        }
     }
 }

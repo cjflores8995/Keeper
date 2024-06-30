@@ -31,7 +31,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
 
         }
 
-        public void Update(CRD_Paquetes entry)
+        public void Modify(CRD_Paquetes entry)
         {
             try
             {

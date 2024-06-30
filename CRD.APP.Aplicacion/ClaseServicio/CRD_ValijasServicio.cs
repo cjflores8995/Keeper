@@ -31,7 +31,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
 
         }
 
-        public void Update(CRD_Valijas entry)
+        public void Modify(CRD_Valijas entry)
         {
             try
             {
@@ -77,6 +77,35 @@ namespace CRD.APP.Aplicacion.ClaseServicio
             catch (Exception ex)
             {
                 throw new Exception("Error Servicio: ", ex);
+            }
+        }
+
+        public CRD_Valijas buscarPorOrigen(string ori)
+        {
+            try
+            {
+
+                {
+                    return _repo.buscarPorOrigen(ori);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error: No se pudo insertar registro,", ex);
+            }
+        }
+        public CRD_Valijas buscarPorRemitente(string rem)
+        {
+            try
+            {
+
+                {
+                    return _repo.buscarPorRemitente(rem);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error: No se pudo insertar registro,", ex);
             }
         }
     }

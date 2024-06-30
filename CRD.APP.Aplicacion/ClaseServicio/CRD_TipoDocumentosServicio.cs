@@ -31,7 +31,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
 
         }
 
-        public void Update(CRD_TipoDocumentos entry)
+        public void Modify(CRD_TipoDocumentos entry)
         {
             try
             {
@@ -77,6 +77,18 @@ namespace CRD.APP.Aplicacion.ClaseServicio
             catch (Exception ex)
             {
                 throw new Exception("Error Servicio: ", ex);
+            }
+        }
+
+        public CRD_TipoDocumentos buscarPorNombre(string nombre)
+        {
+            try
+            {
+                return _repo.buscarPorNombre(nombre);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("No se puedo encontrar el registro", ex);
             }
         }
     }

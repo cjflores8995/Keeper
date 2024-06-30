@@ -32,7 +32,7 @@ namespace CRD.Test.MSTest.UnitTest
 
             entry.NombreCaja = "Nombre modificado";
 
-            _service.Update(entry);
+            _service.Modify(entry);
         }
 
         [TestMethod]
@@ -56,8 +56,16 @@ namespace CRD.Test.MSTest.UnitTest
         {
             var entry = _service.GetById(1);
             entry.Activo = false;
-            _service.Update(entry);
+            _service.Modify(entry);
         }
+
+        [TestMethod]
+        public void ObtenerCajasPorNomreTest()
+        {
+            var entry = _service.ObtenerCajasPorNomre("Nombre modificado");
+        }
+
+        
 
     }
 }

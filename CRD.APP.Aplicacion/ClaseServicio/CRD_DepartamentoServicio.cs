@@ -31,7 +31,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
 
         }
 
-        public void Update(CRD_Departamento entry)
+        public void Modify(CRD_Departamento entry)
         {
             try
             {
@@ -77,6 +77,18 @@ namespace CRD.APP.Aplicacion.ClaseServicio
             catch (Exception ex)
             {
                 throw new Exception("Error Servicio: ", ex);
+            }
+        }
+
+        public CRD_Departamento buscarPorNombreDepartamento(string nomdep)
+        {
+            try
+            {
+                return _repo.buscarPorNombreDepartamento(nomdep);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error: No se pudo insertar registro,", ex);
             }
         }
     }

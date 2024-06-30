@@ -34,5 +34,18 @@ namespace CRD.Test.MSTest.UnitTest
             foreach(var item in getAll)
                 Console.WriteLine($"{item.Nombre}, {item.Descripcion}, {item.Activo}");
         }
+
+        [TestMethod]
+        public void BusNomTest()
+        {
+            var busNom = _service.buscarPorNombre("Empresa Ejemplo 1");
+            Console.WriteLine(busNom.CodigoEmpresa + "--" + busNom.Nombre);
+        }
+        [TestMethod]
+        public void BusCodTest()
+        {
+            var busCod = _service.buscarPorCodigoEmpresa("EMP002");
+            Console.WriteLine(busCod.CodigoEmpresa + "--" + busCod.Nombre);
+        }
     }
 }

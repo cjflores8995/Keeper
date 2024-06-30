@@ -31,7 +31,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
 
         }
 
-        public void Update(CRD_Ordenes entry)
+        public void Modify(CRD_Ordenes entry)
         {
             try
             {
@@ -79,5 +79,18 @@ namespace CRD.APP.Aplicacion.ClaseServicio
                 throw new Exception("Error Servicio: ", ex);
             }
         }
+
+        public List<CRD_Ordenes> buscarPorNumeroOrden(string numeroOrden)
+        {
+            try
+            {
+                return _repo.buscarPorNumeroOrden(numeroOrden);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error Servicio: No se pudo mostrar registro,", ex);
+            }
+        }
+
     }
 }

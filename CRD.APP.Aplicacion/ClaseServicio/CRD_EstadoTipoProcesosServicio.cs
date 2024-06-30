@@ -31,7 +31,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
 
         }
 
-        public void Update(CRD_EstadoTipoProcesos entry)
+        public void Modify(CRD_EstadoTipoProcesos entry)
         {
             try
             {
@@ -79,5 +79,18 @@ namespace CRD.APP.Aplicacion.ClaseServicio
                 throw new Exception("Error Servicio: ", ex);
             }
         }
+
+        public CRD_EstadoTipoProcesos buscarPorNombre(string nom)
+        {
+            try
+            {
+                return _repo.buscarPorNombre(nom);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error: Error no pasa,", ex);
+            }
+        }
+
     }
 }

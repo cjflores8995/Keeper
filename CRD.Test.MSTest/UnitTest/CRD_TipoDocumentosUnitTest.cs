@@ -31,7 +31,7 @@ namespace CRD.Test.MSTest.UnitTest
 
             entry.Descripcion = "nuevo valor";
 
-            _service.Update(entry);
+            _service.Modify(entry);
         }
 
         [TestMethod]
@@ -55,7 +55,18 @@ namespace CRD.Test.MSTest.UnitTest
         {
             var entry = _service.GetById(1);
             entry.Activo = false;
-            _service.Update(entry);
+            _service.Modify(entry);
+        }
+
+        [TestMethod]
+        public void TestMethod1()
+        {
+            var tipoDocumento = _service.buscarPorNombre("documento");
+            Console.WriteLine(
+                tipoDocumento.IdTipoDocumento + "-" +
+                tipoDocumento.Nombre + "-" +
+                tipoDocumento.Descripcion + "-" +
+                tipoDocumento.Activo);
         }
 
     }

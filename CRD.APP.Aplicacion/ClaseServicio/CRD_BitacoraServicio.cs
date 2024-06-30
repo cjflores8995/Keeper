@@ -31,7 +31,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
 
         }
 
-        public void Update(CRD_Bitacora entry)
+        public void Modify(CRD_Bitacora entry)
         {
             try
             {
@@ -77,6 +77,18 @@ namespace CRD.APP.Aplicacion.ClaseServicio
             catch (Exception ex)
             {
                 throw new Exception("Error Servicio: ", ex);
+            }
+        }
+
+        public List<CRD_Bitacora> buscarPorFactura(string Factura)
+        {
+            try
+            {
+                return _repo.buscarPorFactura(Factura);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error Servicio: No se pudo mostrar registro,", ex);
             }
         }
     }

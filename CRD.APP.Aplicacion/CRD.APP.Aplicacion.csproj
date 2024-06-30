@@ -41,10 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClaseServicio\AspNetUsersServicio.cs" />
     <Compile Include="ClaseServicio\CRD_BitacoraServicio.cs" />
     <Compile Include="ClaseServicio\CRD_BitacoraHistoricoServicio.cs" />
     <Compile Include="ClaseServicio\CRD_AuditoriaBitacoraServicio.cs" />
     <Compile Include="ClaseServicio\CRD_AnalistasServicio.cs" />
+    <Compile Include="ClaseServicio\CRD_CargoServicio.cs" />
     <Compile Include="ClaseServicio\CRD_DepartamentoServicio.cs" />
     <Compile Include="ClaseServicio\CRD_CiudadServicio.cs" />
     <Compile Include="ClaseServicio\CRD_CajasServicio.cs" />

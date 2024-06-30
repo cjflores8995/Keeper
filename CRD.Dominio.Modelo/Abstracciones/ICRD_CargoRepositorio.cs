@@ -2,13 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CRD.Dominio.Modelo.Abstracciones
 {
-    public interface ICRD_EstadoTipoProcesosRepositorio : IBaseRepositorio<CRD_EstadoTipoProcesos>
+
+    public interface ICRD_CargoRepositorio : IBaseRepositorio<CRD_Cargo>
     {
-        CRD_EstadoTipoProcesos buscarPorNombre(string nom);
+        CRD_Cargo ObtenerCargoPorNomre(string nombre);
     }
 }

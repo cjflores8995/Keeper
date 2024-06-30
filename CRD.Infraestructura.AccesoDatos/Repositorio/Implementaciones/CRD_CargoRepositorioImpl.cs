@@ -1,5 +1,6 @@
 ﻿using CRD.Dominio.Modelo.Abstracciones;
 using CRD.Dominio.Modelo.Entidades;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,18 +9,18 @@ using System.Threading.Tasks;
 
 namespace CRD.Infraestructura.AccesoDatos.Repositorio.Implementaciones
 {
-    public class CRD_CajasRepositorioImpl : BaseRepositorioImpl<CRD_Cajas>, ICRD_CajasRepositorio
+    public class CRD_CargoRepositorioImpl : BaseRepositorioImpl<CRD_Cargo>, ICRD_CargoRepositorio
     {
-        public List<CRD_Cajas> ObtenerCajasPorNomre(string nombreCaja)
+        public CRD_Cargo ObtenerCargoPorNomre(string nombre)
         {
             try
             {
                 using (var db = new SRGI_4Entities())
                 {
 
-                    var result = (from obj in db.CRD_Cajas
-                                  where obj.NombreCaja == nombreCaja
-                                  select obj).ToList();
+                    var result = (from obj in db.CRD_Cargo
+                                  where obj.NombreCargo == nombre
+                                  select obj).FirstOrDefault();
 
                     return result;
                 }

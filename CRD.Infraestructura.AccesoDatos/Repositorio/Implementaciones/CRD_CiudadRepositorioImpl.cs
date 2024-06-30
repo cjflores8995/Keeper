@@ -10,5 +10,24 @@ namespace CRD.Infraestructura.AccesoDatos.Repositorio.Implementaciones
 {
     public class CRD_CiudadRepositorioImpl : BaseRepositorioImpl<CRD_Ciudad>, ICRD_CiudadRepositorio
     {
+        public CRD_Ciudad ObtenerCiudadPorNomre(string nombre)
+        {
+            try
+            {
+                using (var db = new SRGI_4Entities())
+                {
+
+                    var result = (from obj in db.CRD_Ciudad
+                                  where obj.NombreCiudad == nombre
+                                  select obj).FirstOrDefault();
+
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("No se puede devolver el resultado", ex);
+            }
+        }
     }
 }

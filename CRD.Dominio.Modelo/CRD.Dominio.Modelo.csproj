@@ -54,6 +54,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstracciones\IAspNetUsersRepositorio.cs" />
+    <Compile Include="Abstracciones\ICRD_CargoRepositorio.cs" />
     <Compile Include="Abstracciones\ICRD_CajasRepositorio.cs" />
     <Compile Include="Abstracciones\ICRD_AnalistasRepositorio.cs" />
     <Compile Include="Abstracciones\IBaseRepositorio.cs" />

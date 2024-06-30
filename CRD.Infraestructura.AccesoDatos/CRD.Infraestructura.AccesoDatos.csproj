@@ -57,12 +57,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorio\Implementaciones\AspNetUsersRepositorioImpl.cs" />
     <Compile Include="Repositorio\Implementaciones\BaseRepositorioImpl.cs" />
     <Compile Include="Repositorio\Implementaciones\CRD_CajasRepositorioImpl.cs" />
     <Compile Include="Repositorio\Implementaciones\CRD_AnalistasRepositorioImpl.cs" />
     <Compile Include="Repositorio\Implementaciones\CRD_AuditoriaBitacoraRepositorioImpl.cs" />
     <Compile Include="Repositorio\Implementaciones\CRD_BitacoraHistoricoRepositorioImpl.cs" />
     <Compile Include="Repositorio\Implementaciones\CRD_BitacoraRepositorioImpl.cs" />
+    <Compile Include="Repositorio\Implementaciones\CRD_CargoRepositorioImpl.cs" />
     <Compile Include="Repositorio\Implementaciones\CRD_CiudadRepositorioImpl.cs" />
     <Compile Include="Repositorio\Implementaciones\CRD_DepartamentoRepositorioImpl.cs" />
     <Compile Include="Repositorio\Implementaciones\CRD_EmpresasRepositorioImpl.cs" />

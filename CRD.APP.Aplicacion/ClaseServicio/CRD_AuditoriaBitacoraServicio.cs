@@ -31,7 +31,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
 
         }
 
-        public void Update(CRD_AuditoriaBitacora entry)
+        public void Modify(CRD_AuditoriaBitacora entry)
         {
             try
             {
@@ -74,6 +74,45 @@ namespace CRD.APP.Aplicacion.ClaseServicio
             {
                 _repo.Delete(id);
             }
+            catch (Exception ex)
+            {
+                throw new Exception("Error Servicio: ", ex);
+            }
+        }
+
+
+        public List<CRD_AuditoriaBitacora> ObtenerAuditoriaBitacoraPorNombreUsuario(string nombre)
+        {
+            try
+            {
+                return _repo.ObtenerAuditoriaBitacoraPorNombreUsuario(nombre);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error Servicio: ", ex);
+            }
+        }
+
+
+        public List<CRD_AuditoriaBitacora> ObtenerAuditoriaBitacoraPorRangoFechas(DateTime fechaInicio, DateTime fechaFin)
+        {
+            try
+            {
+                return _repo.ObtenerAuditoriaBitacoraPorRangoFechas(fechaInicio, fechaFin);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error Servicio: ", ex);
+            }
+        }
+
+
+        public List<CRD_AuditoriaBitacora> ObtenerAuditoriaBitacoraPorRangoFechasRegistroHistorico(string registroHistorico)
+        {
+            try
+            {
+                return _repo.ObtenerAuditoriaBitacoraPorRangoFechasRegistroHistorico(registroHistorico);
+    }
             catch (Exception ex)
             {
                 throw new Exception("Error Servicio: ", ex);

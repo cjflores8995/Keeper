@@ -31,7 +31,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
 
         }
 
-        public void Update(CRD_Iva entry)
+        public void Modify(CRD_Iva entry)
         {
             try
             {

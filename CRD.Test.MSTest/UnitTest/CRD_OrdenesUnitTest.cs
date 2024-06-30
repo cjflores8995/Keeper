@@ -224,5 +224,105 @@ namespace CRD.Test.MSTest.UnitTest
             foreach(var item in getAll)
                 Console.WriteLine($"{item.ID}, {item.Tipo_Orden}");
         }
+
+        [TestMethod]
+        public void TestMethod1()
+        {
+            var datosBase = _service.buscarPorNumeroOrden("ORD001");
+
+            foreach (var datos in datosBase)
+            {
+                Console.WriteLine(
+                datos.ID + "-" +
+                datos.Tipo_Orden + "-" +
+                datos.CodigoCompania + "-" +
+                datos.CodigoSistema + "-" +
+                datos.Proceso + "-" +
+                datos.Resultado + "-" +
+                datos.Estado + "-" +
+                datos.Error + "-" +
+                datos.FechaProceso + "-" +
+                datos.Id1 + "-" +
+                datos.NumeroOrden + "-" +
+                datos.CodTipoOrden + "-" +
+                datos.Referencia + "-" +
+                datos.Facturado + "-" +
+                datos.Liberado + "-" +
+                datos.Divisa + "-" +
+                datos.TipoCambio + "-" +
+                datos.Proveedor + "-" +
+                datos.DescProveedor + "-" +
+                datos.CodOrganizacion + "-" +
+                datos.DesCompania + "-" +
+                datos.CodOrganizacionComp + "-" +
+                datos.DesOrganizacionComp + "-" +
+                datos.ImporteBruto + "-" +
+                datos.Subtotal + "-" +
+                datos.Iva + "-" +
+                datos.ImporteNetoFacturado + "-" +
+                datos.NetoEntregado + "-" +
+                datos.IdentPropietario + "-" +
+                datos.CodPropietario + "-" +
+                datos.NombrePropietario + "-" +
+                datos.IdentComprador + "-" +
+                datos.CodComprador + "-" +
+                datos.NombreComprador + "-" +
+                datos.FechaOrden + "-" +
+                datos.FechaPlanificadaRecepcion + "-" +
+                datos.FechaRealRecepcion + "-" +
+                datos.EstadoRecupDatos + "-" +
+                datos.Texto1 + "-" +
+                datos.Texto2 + "-" +
+                datos.Texto3 + "-" +
+                datos.Texto4 + "-" +
+                datos.Texto5 + "-" +
+                datos.Texto6 + "-" +
+                datos.Texto7 + "-" +
+                datos.Texto8 + "-" +
+                datos.Texto9 + "-" +
+                datos.Texto10 + "-" +
+                datos.Numerico1 + "-" +
+                datos.Numerico2 + "-" +
+                datos.Numerico3 + "-" +
+                datos.Numerico4 + "-" +
+                datos.Numerico5 + "-" +
+                datos.Fecha1 + "-" +
+                datos.Fecha2 + "-" +
+                datos.Fecha3 + "-" +
+                datos.Fecha4 + "-" +
+                datos.Fecha5 + "-" +
+                datos.PersonaReferencia + "-" +
+                datos.CodProveedorPrincipal + "-" +
+                datos.NombreProveedorPrincipal + "-" +
+                datos.BienesFacturadosRecib + "-" +
+                datos.Id2 + "-" +
+                datos.IdOrden + "-" +
+                datos.NumeroOrden3 + "-" +
+                datos.Posicion + "-" +
+                datos.Facturado4 + "-" +
+                datos.Liberado5 + "-" +
+                datos.CantidadPedida + "-" +
+                datos.UnidadCompra + "-" +
+                datos.Precio + "-" +
+                datos.Importe + "-" +
+                datos.UnidadPrecio + "-" +
+                datos.ImporteBruto6 + "-" +
+                datos.Iva7 + "-" +
+                datos.CodFiscal + "-" +
+                datos.PorcentajeIva + "-" +
+                datos.ImporteNetoFacturado8 + "-" +
+                datos.CantidadFacturada + "-" +
+                datos.CantidadNetaEntregada + "-" +
+                datos.EntregaMercaderiaReq + "-" +
+                datos.CodProducto + "-" +
+                datos.NombreProducto + "-" +
+                datos.Unspsc + "-" +
+                datos.FechaPlanificadaRecepcion9 + "-" +
+                datos.FechaRealRecepcion10 + "-" +
+                datos.Comentario + "-" +
+                datos.Texto111
+                );
+            }
+        }
     }
 }

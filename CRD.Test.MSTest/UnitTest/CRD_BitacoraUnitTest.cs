@@ -45,7 +45,7 @@ namespace CRD.Test.MSTest.UnitTest
 
             entry.IdUsuario = "user2";
 
-            _service.Update(entry);
+            _service.Modify(entry);
         }
 
         [TestMethod]
@@ -62,6 +62,45 @@ namespace CRD.Test.MSTest.UnitTest
         {
             var item = _service.GetById(24);
             Console.WriteLine($"{item.IdOrden}, {item.CodProveedor}, {item.CodigoEmpresa}");
+        }
+
+        [TestMethod]
+        public void PruebaBusquedaFactura()
+        {
+            var Base_Bitacora = _service.buscarPorFactura("001001000000001");
+
+            foreach (var bitacora in Base_Bitacora)
+            {
+                Console.WriteLine(
+                bitacora.IdBitacora + "-" +
+                bitacora.IdTipoDocumento + "-" +
+                bitacora.IdEstadoTipoProceso + "-" +
+                bitacora.IdUsuario + "-" +
+                bitacora.IdTipoDocumentoPago + "-" +
+                bitacora.IdOrden + "-" +
+                bitacora.CodProveedor + "-" +
+                bitacora.CodigoEmpresa + "-" +
+                bitacora.IdPaquete + "-" +
+                bitacora.NumeroDocumentoPago + "-" +
+                bitacora.EstadoBienesRecibidos + "-" +
+                bitacora.FechaEmisionDocumento + "-" +
+                bitacora.FechaRecepcionDocumento + "-" +
+                bitacora.IvaDocumento + "-" +
+                bitacora.IdAnalista + "-" +
+                bitacora.Observaciones + "-" +
+                bitacora.ValorTotal + "-" +
+                bitacora.TipoOrden + "-" +
+                bitacora.AspNetUsers + "-" +
+                bitacora.CRD_Empresas + "-" +
+                bitacora.CRD_Ordenes + "-" +
+                bitacora.CRD_Paquetes + "-" +
+                bitacora.CRD_Proveedores + "-" +
+                bitacora.CRD_TipoDocumentos + "-" +
+                bitacora.CRD_TipoDocumentoPagos + "-" +
+                bitacora.CRD_EstadoTipoProcesos + "-" +
+                bitacora.CRD_Valijas
+                );
+            }
         }
 
     }

@@ -61,13 +61,13 @@ namespace CRD.Test.MSTest.UnitTest
         }
 
         [TestMethod]
-        public void UpdateTest()
+        public void ModityTest()
         {
             var entry = _service.GetById(1);
 
             entry.Motivo_Rechazo = "Nombre modificado";
 
-            _service.Update(entry);
+            _service.Modify(entry);
         }
 
         [TestMethod]
@@ -86,5 +86,200 @@ namespace CRD.Test.MSTest.UnitTest
             Console.WriteLine($"{item.Bienes_Recibidos}, {item.Ciudad}, {item.Origen_Documento}");
         }
 
+        [TestMethod]
+        public void PruebaBusquedaFactura()
+        {
+            var Base_BitacoraHistorico = _service.buscarPorFactura("001001000000001");
+
+            foreach (var bitacorahistorico in Base_BitacoraHistorico)
+            {
+                Console.WriteLine(
+                bitacorahistorico.ID + "-" +
+                bitacorahistorico.Bienes_Recibidos + "-" +
+                bitacorahistorico.Ciudad + "-" +
+                bitacorahistorico.Origen_Documento + "-" +
+                bitacorahistorico.Empresa + "-" +
+                bitacorahistorico.Estado + "-" +
+                bitacorahistorico.Factura + "-" +
+                bitacorahistorico.Fecha_Emision + "-" +
+                bitacorahistorico.Fecha_Recepcion_CRD + "-" +
+                bitacorahistorico.Iva + "-" +
+                bitacorahistorico.Largo_F + "-" +
+                bitacorahistorico.Largo_O + "-" +
+                bitacorahistorico.Responsable + "-" +
+                bitacorahistorico.Motivo_Rechazo + "-" +
+                bitacorahistorico.Nom_Proveedor + "-" +
+                bitacorahistorico.Numero_Orden + "-" +
+                bitacorahistorico.Observaciones + "-" +
+                bitacorahistorico.Operador + "-" +
+                bitacorahistorico.Valija_Origen + "-" +
+                bitacorahistorico.Partner + "-" +
+                bitacorahistorico.ProveedorTipo_Proveedor + "-" +
+                bitacorahistorico.Referencia + "-" +
+                bitacorahistorico.valija_Remitente + "-" +
+                bitacorahistorico.Valija_Obs + "-" +
+                bitacorahistorico.Ruc + "-" +
+                bitacorahistorico.Sistema_Origen + "-" +
+                bitacorahistorico.Status_Documentos + "-" +
+                bitacorahistorico.Valor + "-" +
+                bitacorahistorico.Usuario_edita + "-" +
+                bitacorahistorico.Fecha_edita + "-" +
+                bitacorahistorico.Indices_editados + "-" +
+                bitacorahistorico.TipodeDocumento + "-" +
+                bitacorahistorico.Caja_Paquete + "-" +
+                bitacorahistorico.Cod_Empresa + "-" +
+                bitacorahistorico.Version_Registro + "-" +
+                bitacorahistorico.Adicional_2 + "-" +
+                bitacorahistorico.Adicional_3
+                );
+            }
+        }
+
+        [TestMethod]
+        public void PruebaBusquedaPartner()
+        {
+            var Base_BitacoraHistorico = _service.buscarPorPartner("SE4407");
+
+            foreach (var bitacorahistorico in Base_BitacoraHistorico)
+            {
+                Console.WriteLine(
+                bitacorahistorico.ID + "-" +
+                bitacorahistorico.Bienes_Recibidos + "-" +
+                bitacorahistorico.Ciudad + "-" +
+                bitacorahistorico.Origen_Documento + "-" +
+                bitacorahistorico.Empresa + "-" +
+                bitacorahistorico.Estado + "-" +
+                bitacorahistorico.Factura + "-" +
+                bitacorahistorico.Fecha_Emision + "-" +
+                bitacorahistorico.Fecha_Recepcion_CRD + "-" +
+                bitacorahistorico.Iva + "-" +
+                bitacorahistorico.Largo_F + "-" +
+                bitacorahistorico.Largo_O + "-" +
+                bitacorahistorico.Responsable + "-" +
+                bitacorahistorico.Motivo_Rechazo + "-" +
+                bitacorahistorico.Nom_Proveedor + "-" +
+                bitacorahistorico.Numero_Orden + "-" +
+                bitacorahistorico.Observaciones + "-" +
+                bitacorahistorico.Operador + "-" +
+                bitacorahistorico.Valija_Origen + "-" +
+                bitacorahistorico.Partner + "-" +
+                bitacorahistorico.ProveedorTipo_Proveedor + "-" +
+                bitacorahistorico.Referencia + "-" +
+                bitacorahistorico.valija_Remitente + "-" +
+                bitacorahistorico.Valija_Obs + "-" +
+                bitacorahistorico.Ruc + "-" +
+                bitacorahistorico.Sistema_Origen + "-" +
+                bitacorahistorico.Status_Documentos + "-" +
+                bitacorahistorico.Valor + "-" +
+                bitacorahistorico.Usuario_edita + "-" +
+                bitacorahistorico.Fecha_edita + "-" +
+                bitacorahistorico.Indices_editados + "-" +
+                bitacorahistorico.TipodeDocumento + "-" +
+                bitacorahistorico.Caja_Paquete + "-" +
+                bitacorahistorico.Cod_Empresa + "-" +
+                bitacorahistorico.Version_Registro + "-" +
+                bitacorahistorico.Adicional_2 + "-" +
+                bitacorahistorico.Adicional_3
+                );
+            }
+        }
+
+        [TestMethod]
+        public void PruebaBusquedaRuc()
+        {
+            var Base_BitacoraHistorico = _service.buscarPorRuc("1768188830001");
+
+            foreach (var bitacorahistorico in Base_BitacoraHistorico)
+            {
+                Console.WriteLine(
+                bitacorahistorico.ID + "-" +
+                bitacorahistorico.Bienes_Recibidos + "-" +
+                bitacorahistorico.Ciudad + "-" +
+                bitacorahistorico.Origen_Documento + "-" +
+                bitacorahistorico.Empresa + "-" +
+                bitacorahistorico.Estado + "-" +
+                bitacorahistorico.Factura + "-" +
+                bitacorahistorico.Fecha_Emision + "-" +
+                bitacorahistorico.Fecha_Recepcion_CRD + "-" +
+                bitacorahistorico.Iva + "-" +
+                bitacorahistorico.Largo_F + "-" +
+                bitacorahistorico.Largo_O + "-" +
+                bitacorahistorico.Responsable + "-" +
+                bitacorahistorico.Motivo_Rechazo + "-" +
+                bitacorahistorico.Nom_Proveedor + "-" +
+                bitacorahistorico.Numero_Orden + "-" +
+                bitacorahistorico.Observaciones + "-" +
+                bitacorahistorico.Operador + "-" +
+                bitacorahistorico.Valija_Origen + "-" +
+                bitacorahistorico.Partner + "-" +
+                bitacorahistorico.ProveedorTipo_Proveedor + "-" +
+                bitacorahistorico.Referencia + "-" +
+                bitacorahistorico.valija_Remitente + "-" +
+                bitacorahistorico.Valija_Obs + "-" +
+                bitacorahistorico.Ruc + "-" +
+                bitacorahistorico.Sistema_Origen + "-" +
+                bitacorahistorico.Status_Documentos + "-" +
+                bitacorahistorico.Valor + "-" +
+                bitacorahistorico.Usuario_edita + "-" +
+                bitacorahistorico.Fecha_edita + "-" +
+                bitacorahistorico.Indices_editados + "-" +
+                bitacorahistorico.TipodeDocumento + "-" +
+                bitacorahistorico.Caja_Paquete + "-" +
+                bitacorahistorico.Cod_Empresa + "-" +
+                bitacorahistorico.Version_Registro + "-" +
+                bitacorahistorico.Adicional_2 + "-" +
+                bitacorahistorico.Adicional_3
+                );
+            }
+        }
+
+        [TestMethod]
+        public void PruebaBusquedaNumeroOrden()
+        {
+            var Base_BitacoraHistorico = _service.buscarPorNumeroOrden("OS000351970");
+
+            foreach (var bitacorahistorico in Base_BitacoraHistorico)
+            {
+                Console.WriteLine(
+                bitacorahistorico.ID + "-" +
+                bitacorahistorico.Bienes_Recibidos + "-" +
+                bitacorahistorico.Ciudad + "-" +
+                bitacorahistorico.Origen_Documento + "-" +
+                bitacorahistorico.Empresa + "-" +
+                bitacorahistorico.Estado + "-" +
+                bitacorahistorico.Factura + "-" +
+                bitacorahistorico.Fecha_Emision + "-" +
+                bitacorahistorico.Fecha_Recepcion_CRD + "-" +
+                bitacorahistorico.Iva + "-" +
+                bitacorahistorico.Largo_F + "-" +
+                bitacorahistorico.Largo_O + "-" +
+                bitacorahistorico.Responsable + "-" +
+                bitacorahistorico.Motivo_Rechazo + "-" +
+                bitacorahistorico.Nom_Proveedor + "-" +
+                bitacorahistorico.Numero_Orden + "-" +
+                bitacorahistorico.Observaciones + "-" +
+                bitacorahistorico.Operador + "-" +
+                bitacorahistorico.Valija_Origen + "-" +
+                bitacorahistorico.Partner + "-" +
+                bitacorahistorico.ProveedorTipo_Proveedor + "-" +
+                bitacorahistorico.Referencia + "-" +
+                bitacorahistorico.valija_Remitente + "-" +
+                bitacorahistorico.Valija_Obs + "-" +
+                bitacorahistorico.Ruc + "-" +
+                bitacorahistorico.Sistema_Origen + "-" +
+                bitacorahistorico.Status_Documentos + "-" +
+                bitacorahistorico.Valor + "-" +
+                bitacorahistorico.Usuario_edita + "-" +
+                bitacorahistorico.Fecha_edita + "-" +
+                bitacorahistorico.Indices_editados + "-" +
+                bitacorahistorico.TipodeDocumento + "-" +
+                bitacorahistorico.Caja_Paquete + "-" +
+                bitacorahistorico.Cod_Empresa + "-" +
+                bitacorahistorico.Version_Registro + "-" +
+                bitacorahistorico.Adicional_2 + "-" +
+                bitacorahistorico.Adicional_3
+                );
+            }
+        }
     }
 }

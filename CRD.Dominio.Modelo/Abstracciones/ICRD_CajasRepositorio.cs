@@ -11,6 +11,6 @@ namespace CRD.Dominio.Modelo.Abstracciones
 
     public interface ICRD_CajasRepositorio : IBaseRepositorio<CRD_Cajas>
     {
-
+        List<CRD_Cajas> ObtenerCajasPorNomre(string nombreCaja);
     }
 }

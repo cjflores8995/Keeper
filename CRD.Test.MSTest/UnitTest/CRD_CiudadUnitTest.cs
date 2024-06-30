@@ -31,7 +31,7 @@ namespace CRD.Test.MSTest.UnitTest
 
             entry.NombreCiudad = "Nombre modificado";
 
-            _service.Update(entry);
+            _service.Modify(entry);
         }
 
         [TestMethod]
@@ -55,8 +55,18 @@ namespace CRD.Test.MSTest.UnitTest
         {
             var entry = _service.GetById(4);
             entry.Activo = false;
-            _service.Update(entry);
+            _service.Modify(entry);
         }
+
+        [TestMethod]
+        public void ObtenerCiudadPorNomreTest()
+        {
+            var item = _service.ObtenerCiudadPorNomre("Quito");
+            Console.WriteLine($"{item.NombreCiudad}, {item.Descripcion}, {item.Activo}");
+        }
+
+
+        
 
     }
 }

@@ -26,13 +26,13 @@ namespace CRD.Test.MSTest.UnitTest
         }
 
         [TestMethod]
-        public void UpdateTest()
+        public void ModityTest()
         {
             var entry = _service.GetById(2);
 
             entry.Nombre = "Nombre modificado";
 
-            _service.Update(entry);
+            _service.Modify(entry);
         }
 
         [TestMethod]
@@ -56,8 +56,21 @@ namespace CRD.Test.MSTest.UnitTest
         {
             var entry = _service.GetById(2);
             entry.Activo = false;
-            _service.Update(entry);
+            _service.Modify(entry);
         }
 
+        [TestMethod]
+        public void PruebaBusquedaAnalistaId()
+        {
+            var result = _service.buscarPorIdAnalista(1);
+            Console.WriteLine(result.IdAnalista + "-" + result.Nombre);
+        }
+
+        [TestMethod]
+        public void PruebaBusquedaProcesoId()
+        {
+            var result = _service.buscarPorIdProceso(1);
+                Console.WriteLine(result);
+        }
     }
 }

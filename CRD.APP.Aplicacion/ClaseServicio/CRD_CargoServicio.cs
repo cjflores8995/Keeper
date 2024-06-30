@@ -10,15 +10,15 @@ using System.Threading.Tasks;
 
 namespace CRD.APP.Aplicacion.ClaseServicio
 {
-    public class CRD_CajasServicio: ICRD_CajasRepositorio
+    public class CRD_CargoServicio : ICRD_CargoRepositorio
     {
-        readonly ICRD_CajasRepositorio _repo;
-        public CRD_CajasServicio()
+        readonly ICRD_CargoRepositorio _repo;
+        public CRD_CargoServicio()
         {
-            _repo = new CRD_CajasRepositorioImpl();
+            _repo = new CRD_CargoRepositorioImpl();
         }
 
-        public void Add(CRD_Cajas entry)
+        public void Add(CRD_Cargo entry)
         {
             try
             {
@@ -31,7 +31,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
 
         }
 
-        public void Modify(CRD_Cajas entry)
+        public void Modify(CRD_Cargo entry)
         {
             try
             {
@@ -44,7 +44,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
 
         }
 
-        public IEnumerable<CRD_Cajas> GetAll()
+        public IEnumerable<CRD_Cargo> GetAll()
         {
             try
             {
@@ -56,7 +56,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
             }
         }
 
-        public CRD_Cajas GetById(int id)
+        public CRD_Cargo GetById(int id)
         {
             try
             {
@@ -80,11 +80,11 @@ namespace CRD.APP.Aplicacion.ClaseServicio
             }
         }
 
-        public List<CRD_Cajas> ObtenerCajasPorNomre(string nombreCaja)
+        public CRD_Cargo ObtenerCargoPorNomre(string nombre)
         {
             try
             {
-                return _repo.ObtenerCajasPorNomre(nombreCaja);
+                return _repo.ObtenerCargoPorNomre(nombre);
             }
             catch (Exception ex)
             {

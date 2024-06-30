@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CRD.APP.Aplicacion.ClaseServicio
 {
-    public class CRD_CiudadServicio
+    public class CRD_CiudadServicio : ICRD_CiudadRepositorio
     {
         readonly ICRD_CiudadRepositorio _repo;
         public CRD_CiudadServicio()
@@ -31,7 +31,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
 
         }
 
-        public void Update(CRD_Ciudad entry)
+        public void Modify(CRD_Ciudad entry)
         {
             try
             {
@@ -73,6 +73,18 @@ namespace CRD.APP.Aplicacion.ClaseServicio
             try
             {
                 _repo.Delete(id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error Servicio: ", ex);
+            }
+        }
+
+        public CRD_Ciudad ObtenerCiudadPorNomre(string nombre)
+        {
+            try
+            {
+                return _repo.ObtenerCiudadPorNomre(nombre);
             }
             catch (Exception ex)
             {

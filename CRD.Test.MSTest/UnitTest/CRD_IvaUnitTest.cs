@@ -30,7 +30,7 @@ namespace CRD.Test.MSTest.UnitTest
 
             entry.ValorIva = 15;
 
-            _service.Update(entry);
+            _service.Modify(entry);
         }
 
         [TestMethod]
@@ -54,7 +54,7 @@ namespace CRD.Test.MSTest.UnitTest
         {
             var entry = _service.GetById(1);
             entry.Activo = false;
-            _service.Update(entry);
+            _service.Modify(entry);
         }
 
     }

@@ -9,5 +9,7 @@ namespace CRD.Dominio.Modelo.Abstracciones
 {
     public interface ICRD_ValijasRepositorio : IBaseRepositorio<CRD_Valijas>
     {
+        CRD_Valijas buscarPorOrigen(string ori);
+        CRD_Valijas buscarPorRemitente(string rem);
     }
 }

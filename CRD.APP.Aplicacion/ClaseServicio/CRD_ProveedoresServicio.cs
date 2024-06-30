@@ -31,7 +31,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
 
         }
 
-        public void Update(CRD_Proveedores entry)
+        public void Modify(CRD_Proveedores entry)
         {
             try
             {
@@ -77,6 +77,42 @@ namespace CRD.APP.Aplicacion.ClaseServicio
             catch (Exception ex)
             {
                 throw new Exception("Error Servicio: ", ex);
+            }
+        }
+
+        public CRD_Proveedores buscarPorCodProveedor(String codProveedor)
+        {
+            try
+            {
+                return _repo.buscarPorCodProveedor(codProveedor);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("No se puedo encontrar el registro", ex);
+            }
+        }
+
+        public List<CRD_Proveedores> buscarPorRUC(string rucCedula)
+        {
+            try
+            {
+                return _repo.buscarPorRUC(rucCedula);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error Servicio: No se pudo mostrar registro,", ex);
+            }
+        }
+
+        public List<CRD_Proveedores> buscarPorRazonSocial(string razonSocial)
+        {
+            try
+            {
+                return _repo.buscarPorRazonSocial(razonSocial);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error Servicio: No se pudo mostrar registro,", ex);
             }
         }
     }

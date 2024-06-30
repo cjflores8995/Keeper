@@ -35,7 +35,7 @@ namespace CRD.Test.MSTest.UnitTest
 
             entry.Remitente = "nuevo valor";
 
-            _service.Update(entry);
+            _service.Modify(entry);
         }
 
         [TestMethod]
@@ -59,8 +59,19 @@ namespace CRD.Test.MSTest.UnitTest
         {
             var entry = _service.GetById(1);
             entry.Activo = false;
-            _service.Update(entry);
+            _service.Modify(entry);
         }
 
+        [TestMethod]
+        public void BusOriTest()
+        {
+            var busOri = _service.buscarPorOrigen("Origen1");
+            Console.WriteLine(busOri.IdValija + "--" + busOri.Origen);
+        }
+        public void BusRemTest()
+        {
+            var busRem = _service.buscarPorRemitente("Remitente1");
+            Console.WriteLine(busRem.IdValija + "--" + busRem.Remitente);
+        }
     }
 }

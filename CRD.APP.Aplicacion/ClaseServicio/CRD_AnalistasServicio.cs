@@ -31,7 +31,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
 
         }
 
-        public void Update(CRD_Analistas entry)
+        public void Modify(CRD_Analistas entry)
         {
             try
             {
@@ -77,6 +77,30 @@ namespace CRD.APP.Aplicacion.ClaseServicio
             catch (Exception ex)
             {
                 throw new Exception("Error Servicio: ", ex);
+            }
+        }
+
+        public CRD_Analistas buscarPorIdAnalista(int IdAnalista)
+        {
+            try
+            {
+                return _repo.buscarPorIdAnalista(IdAnalista);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error Servicio: No se pudo los registros,", ex);
+            }
+        }
+
+        public string buscarPorIdProceso(int IdProceso)
+        {
+            try
+            {
+                return _repo.buscarPorIdProceso( IdProceso);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("No se puedo encontrar el registro", ex);
             }
         }
     }

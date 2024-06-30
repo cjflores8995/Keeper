@@ -4,6 +4,7 @@ using CRD.Dominio.Modelo.Entidades;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using System;
+using System.Collections.Generic;
 
 namespace CRD.Test.MSTest.UnitTest
 {
@@ -17,12 +18,12 @@ namespace CRD.Test.MSTest.UnitTest
         {
             CRD_AuditoriaBitacora entry = new CRD_AuditoriaBitacora();
 
-            entry.IdUsuario = "1";  
+            entry.IdUsuario = "user1";  
             entry.NombreTabla = "CRD_Cajas";
             entry.FechaModificacion = DateTime.Now;  
             entry.RegistroHistorico = "Cambio realizado en la descripción de la caja.";
 
-            //_service.Add(entry);
+            _service.Add(entry);
         }
 
         [TestMethod]
@@ -35,11 +36,32 @@ namespace CRD.Test.MSTest.UnitTest
         }
 
         [TestMethod]
-        public void GetByIdTest()
+        public void ObtenerAuditoriaBitacoraPorNombreUsuarioTest()
         {
-            //var item = _service.GetById(1);
-            //Console.WriteLine($"{item.NombreTabla}, {item.FechaModificacion.ToString()}, {item.RegistroHistorico}");
+            var getAll = _service.ObtenerAuditoriaBitacoraPorNombreUsuario("user1");
+
+            foreach (var item in getAll)
+                Console.WriteLine($"{item.NombreTabla}, {item.FechaModificacion.ToString()}, {item.RegistroHistorico}");
         }
 
+        [TestMethod]
+        public void ObtenerAuditoriaBitacoraPorRangoFechasTest()
+        {
+
+
+            var getAll = _service.ObtenerAuditoriaBitacoraPorRangoFechas(DateTime.Now, DateTime.Now);
+
+            foreach (var item in getAll)
+                Console.WriteLine($"{item.NombreTabla}, {item.FechaModificacion.ToString()}, {item.RegistroHistorico}");
+        }
+
+        [TestMethod]
+        public void ObtenerAuditoriaBitacoraPorRangoFechasRegistroHistoricoTest()
+        {
+            var getAll = _service.ObtenerAuditoriaBitacoraPorRangoFechasRegistroHistorico("historico1");
+
+            foreach (var item in getAll)
+                Console.WriteLine($"{item.NombreTabla}, {item.FechaModificacion.ToString()}, {item.RegistroHistorico}");
+        }
     }
 }

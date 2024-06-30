@@ -9,5 +9,6 @@ namespace CRD.Dominio.Modelo.Abstracciones
 {
     public interface ICRD_TipoDocumentosRepositorio : IBaseRepositorio<CRD_TipoDocumentos>
     {
+        CRD_TipoDocumentos buscarPorNombre(string nombre);
     }
 }
