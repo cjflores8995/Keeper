@@ -19,6 +19,7 @@ namespace CRD.Dominio.Modelo.Entidades
         {
             this.CRD_Analistas = new HashSet<CRD_Analistas>();
             this.CRD_Bitacora = new HashSet<CRD_Bitacora>();
+            this.CRD_AnalistasCRD_EstadoTipoProcesos = new HashSet<CRD_AnalistasCRD_EstadoTipoProcesos>();
         }
     
         public int IdEstadoTipoProceso { get; set; }
@@ -30,5 +31,7 @@ namespace CRD.Dominio.Modelo.Entidades
         public virtual ICollection<CRD_Analistas> CRD_Analistas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CRD_Bitacora> CRD_Bitacora { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CRD_AnalistasCRD_EstadoTipoProcesos> CRD_AnalistasCRD_EstadoTipoProcesos { get; set; }
     }
 }

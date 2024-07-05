@@ -73,6 +73,15 @@
           <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Activo" Type="bit" />
         </EntityType>
+        <EntityType Name="CRD_AnalistasCRD_EstadoTipoProcesos">
+          <Key>
+            <PropertyRef Name="IdAnalistaEstadoProceso" />
+          </Key>
+          <Property Name="IdAnalistaEstadoProceso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdCRD_Analistas" Type="int" Nullable="false" />
+          <Property Name="IdCRD_EstadoTipoProcesos" Type="int" Nullable="false" />
+          <Property Name="Activo" Type="bit" />
+        </EntityType>
         <EntityType Name="CRD_AuditoriaBitacora">
           <Key>
             <PropertyRef Name="IdAuditoriaBitacora" />
@@ -500,18 +509,6 @@
           <Property Name="OBSV" Type="varchar" MaxLength="100" />
           <Property Name="Activo" Type="bit" />
         </EntityType>
-        <Association Name="FK_Analistas_TipoProcesos">
-          <End Role="CRD_EstadoTipoProcesos" Type="Self.CRD_EstadoTipoProcesos" Multiplicity="1" />
-          <End Role="CRD_Analistas" Type="Self.CRD_Analistas" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CRD_EstadoTipoProcesos">
-              <PropertyRef Name="IdEstadoTipoProceso" />
-            </Principal>
-            <Dependent Role="CRD_Analistas">
-              <PropertyRef Name="IdEstadoTipoProceso" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_AspNetUserClaims_AspNetUsers_UserId">
           <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -712,6 +709,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_CRD_AnalistasCRD_EstadoTipoProcesos_CRD_Analistas">
+          <End Role="CRD_Analistas" Type="Self.CRD_Analistas" Multiplicity="1" />
+          <End Role="CRD_AnalistasCRD_EstadoTipoProcesos" Type="Self.CRD_AnalistasCRD_EstadoTipoProcesos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CRD_Analistas">
+              <PropertyRef Name="IdAnalista" />
+            </Principal>
+            <Dependent Role="CRD_AnalistasCRD_EstadoTipoProcesos">
+              <PropertyRef Name="IdCRD_Analistas" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CRD_AnalistasCRD_EstadoTipoProcesos_CRD_EstadoTipoProcesos">
+          <End Role="CRD_EstadoTipoProcesos" Type="Self.CRD_EstadoTipoProcesos" Multiplicity="1" />
+          <End Role="CRD_AnalistasCRD_EstadoTipoProcesos" Type="Self.CRD_AnalistasCRD_EstadoTipoProcesos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CRD_EstadoTipoProcesos">
+              <PropertyRef Name="IdEstadoTipoProceso" />
+            </Principal>
+            <Dependent Role="CRD_AnalistasCRD_EstadoTipoProcesos">
+              <PropertyRef Name="IdCRD_EstadoTipoProcesos" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Paquetes_Cajas">
           <End Role="CRD_Cajas" Type="Self.CRD_Cajas" Multiplicity="1" />
           <End Role="CRD_Paquetes" Type="Self.CRD_Paquetes" Multiplicity="*" />
@@ -743,6 +764,7 @@
           <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CRD_Analistas" EntityType="Self.CRD_Analistas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CRD_AnalistasCRD_EstadoTipoProcesos" EntityType="Self.CRD_AnalistasCRD_EstadoTipoProcesos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CRD_AuditoriaBitacora" EntityType="Self.CRD_AuditoriaBitacora" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CRD_Bitacora" EntityType="Self.CRD_Bitacora" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CRD_BitacoraHistorico" EntityType="Self.CRD_BitacoraHistorico" Schema="dbo" store:Type="Tables" />
@@ -759,10 +781,6 @@
           <EntitySet Name="CRD_TipoDocumentoPagos" EntityType="Self.CRD_TipoDocumentoPagos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CRD_TipoDocumentos" EntityType="Self.CRD_TipoDocumentos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CRD_Valijas" EntityType="Self.CRD_Valijas" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_Analistas_TipoProcesos" Association="Self.FK_Analistas_TipoProcesos">
-            <End Role="CRD_EstadoTipoProcesos" EntitySet="CRD_EstadoTipoProcesos" />
-            <End Role="CRD_Analistas" EntitySet="CRD_Analistas" />
-          </AssociationSet>
           <AssociationSet Name="FK_AspNetUserClaims_AspNetUsers_UserId" Association="Self.FK_AspNetUserClaims_AspNetUsers_UserId">
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
             <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
@@ -826,6 +844,14 @@
           <AssociationSet Name="FK_Bitacora_TipoProceso" Association="Self.FK_Bitacora_TipoProceso">
             <End Role="CRD_EstadoTipoProcesos" EntitySet="CRD_EstadoTipoProcesos" />
             <End Role="CRD_Bitacora" EntitySet="CRD_Bitacora" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CRD_AnalistasCRD_EstadoTipoProcesos_CRD_Analistas" Association="Self.FK_CRD_AnalistasCRD_EstadoTipoProcesos_CRD_Analistas">
+            <End Role="CRD_Analistas" EntitySet="CRD_Analistas" />
+            <End Role="CRD_AnalistasCRD_EstadoTipoProcesos" EntitySet="CRD_AnalistasCRD_EstadoTipoProcesos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CRD_AnalistasCRD_EstadoTipoProcesos_CRD_EstadoTipoProcesos" Association="Self.FK_CRD_AnalistasCRD_EstadoTipoProcesos_CRD_EstadoTipoProcesos">
+            <End Role="CRD_EstadoTipoProcesos" EntitySet="CRD_EstadoTipoProcesos" />
+            <End Role="CRD_AnalistasCRD_EstadoTipoProcesos" EntitySet="CRD_AnalistasCRD_EstadoTipoProcesos" />
           </AssociationSet>
           <AssociationSet Name="FK_Paquetes_Cajas" Association="Self.FK_Paquetes_Cajas">
             <End Role="CRD_Cajas" EntitySet="CRD_Cajas" />
@@ -911,6 +937,7 @@
           <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Activo" Type="Boolean" />
           <NavigationProperty Name="CRD_EstadoTipoProcesos" Relationship="Self.FK_Analistas_TipoProcesos" FromRole="CRD_Analistas" ToRole="CRD_EstadoTipoProcesos" />
+          <NavigationProperty Name="CRD_AnalistasCRD_EstadoTipoProcesos" Relationship="SRGI_4Model.FK_CRD_AnalistasCRD_EstadoTipoProcesos_CRD_Analistas" FromRole="CRD_Analistas" ToRole="CRD_AnalistasCRD_EstadoTipoProcesos" />
         </EntityType>
         <EntityType Name="CRD_AuditoriaBitacora">
           <Key>
@@ -1017,6 +1044,7 @@
           <Property Name="Activo" Type="Boolean" />
           <NavigationProperty Name="CRD_Analistas" Relationship="Self.FK_Analistas_TipoProcesos" FromRole="CRD_EstadoTipoProcesos" ToRole="CRD_Analistas" />
           <NavigationProperty Name="CRD_Bitacora" Relationship="Self.FK_Bitacora_TipoProceso" FromRole="CRD_EstadoTipoProcesos" ToRole="CRD_Bitacora" />
+          <NavigationProperty Name="CRD_AnalistasCRD_EstadoTipoProcesos" Relationship="SRGI_4Model.FK_CRD_AnalistasCRD_EstadoTipoProcesos_CRD_EstadoTipoProcesos" FromRole="CRD_EstadoTipoProcesos" ToRole="CRD_AnalistasCRD_EstadoTipoProcesos" />
         </EntityType>
         <EntityType Name="CRD_Iva">
           <Key>
@@ -1625,6 +1653,15 @@
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
           </AssociationSet>
           <EntitySet Name="CRD_BitacoraHistorico" EntityType="SRGI_4Model.CRD_BitacoraHistorico" />
+          <EntitySet Name="CRD_AnalistasCRD_EstadoTipoProcesos" EntityType="SRGI_4Model.CRD_AnalistasCRD_EstadoTipoProcesos" />
+          <AssociationSet Name="FK_CRD_AnalistasCRD_EstadoTipoProcesos_CRD_Analistas" Association="SRGI_4Model.FK_CRD_AnalistasCRD_EstadoTipoProcesos_CRD_Analistas">
+            <End Role="CRD_Analistas" EntitySet="CRD_Analistas" />
+            <End Role="CRD_AnalistasCRD_EstadoTipoProcesos" EntitySet="CRD_AnalistasCRD_EstadoTipoProcesos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CRD_AnalistasCRD_EstadoTipoProcesos_CRD_EstadoTipoProcesos" Association="SRGI_4Model.FK_CRD_AnalistasCRD_EstadoTipoProcesos_CRD_EstadoTipoProcesos">
+            <End Role="CRD_EstadoTipoProcesos" EntitySet="CRD_EstadoTipoProcesos" />
+            <End Role="CRD_AnalistasCRD_EstadoTipoProcesos" EntitySet="CRD_AnalistasCRD_EstadoTipoProcesos" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="CRD_BitacoraHistorico">
           <Key>
@@ -1670,6 +1707,23 @@
           <Property Name="Adicional_2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Adicional_3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="CRD_AnalistasCRD_EstadoTipoProcesos">
+          <Key>
+            <PropertyRef Name="IdAnalistaEstadoProceso" />
+          </Key>
+          <Property Name="IdAnalistaEstadoProceso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Activo" Type="Boolean" />
+          <NavigationProperty Name="CRD_Analistas" Relationship="SRGI_4Model.FK_CRD_AnalistasCRD_EstadoTipoProcesos_CRD_Analistas" FromRole="CRD_AnalistasCRD_EstadoTipoProcesos" ToRole="CRD_Analistas" />
+          <NavigationProperty Name="CRD_EstadoTipoProcesos" Relationship="SRGI_4Model.FK_CRD_AnalistasCRD_EstadoTipoProcesos_CRD_EstadoTipoProcesos" FromRole="CRD_AnalistasCRD_EstadoTipoProcesos" ToRole="CRD_EstadoTipoProcesos" />
+        </EntityType>
+        <Association Name="FK_CRD_AnalistasCRD_EstadoTipoProcesos_CRD_Analistas">
+          <End Type="SRGI_4Model.CRD_Analistas" Role="CRD_Analistas" Multiplicity="1" />
+          <End Type="SRGI_4Model.CRD_AnalistasCRD_EstadoTipoProcesos" Role="CRD_AnalistasCRD_EstadoTipoProcesos" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_CRD_AnalistasCRD_EstadoTipoProcesos_CRD_EstadoTipoProcesos">
+          <End Type="SRGI_4Model.CRD_EstadoTipoProcesos" Role="CRD_EstadoTipoProcesos" Multiplicity="1" />
+          <End Type="SRGI_4Model.CRD_AnalistasCRD_EstadoTipoProcesos" Role="CRD_AnalistasCRD_EstadoTipoProcesos" Multiplicity="*" />
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2190,6 +2244,30 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="CRD_AnalistasCRD_EstadoTipoProcesos">
+            <EntityTypeMapping TypeName="SRGI_4Model.CRD_AnalistasCRD_EstadoTipoProcesos">
+              <MappingFragment StoreEntitySet="CRD_AnalistasCRD_EstadoTipoProcesos">
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="IdAnalistaEstadoProceso" ColumnName="IdAnalistaEstadoProceso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_CRD_AnalistasCRD_EstadoTipoProcesos_CRD_Analistas" TypeName="SRGI_4Model.FK_CRD_AnalistasCRD_EstadoTipoProcesos_CRD_Analistas" StoreEntitySet="CRD_AnalistasCRD_EstadoTipoProcesos">
+            <EndProperty Name="CRD_AnalistasCRD_EstadoTipoProcesos">
+              <ScalarProperty Name="IdAnalistaEstadoProceso" ColumnName="IdAnalistaEstadoProceso" />
+            </EndProperty>
+            <EndProperty Name="CRD_Analistas">
+              <ScalarProperty Name="IdAnalista" ColumnName="IdCRD_Analistas" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_CRD_AnalistasCRD_EstadoTipoProcesos_CRD_EstadoTipoProcesos" TypeName="SRGI_4Model.FK_CRD_AnalistasCRD_EstadoTipoProcesos_CRD_EstadoTipoProcesos" StoreEntitySet="CRD_AnalistasCRD_EstadoTipoProcesos">
+            <EndProperty Name="CRD_AnalistasCRD_EstadoTipoProcesos">
+              <ScalarProperty Name="IdAnalistaEstadoProceso" ColumnName="IdAnalistaEstadoProceso" />
+            </EndProperty>
+            <EndProperty Name="CRD_EstadoTipoProcesos">
+              <ScalarProperty Name="IdEstadoTipoProceso" ColumnName="IdCRD_EstadoTipoProcesos" />
+            </EndProperty>
+          </AssociationSetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

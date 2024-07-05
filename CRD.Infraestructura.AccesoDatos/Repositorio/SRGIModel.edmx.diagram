@@ -44,6 +44,9 @@
         <AssociationConnector Association="SRGI_4Model.FK_Paquetes_Cajas" ManuallyRouted="false" />
         <AssociationConnector Association="SRGI_4Model.AspNetUserRoles" ManuallyRouted="false" />
         <EntityTypeShape EntityType="SRGI_4Model.CRD_BitacoraHistorico" Width="1.5" PointX="8.375" PointY="8.75" />
+        <EntityTypeShape EntityType="SRGI_4Model.CRD_AnalistasCRD_EstadoTipoProcesos" Width="1.5" PointX="8.25" PointY="1" />
+        <AssociationConnector Association="SRGI_4Model.FK_CRD_AnalistasCRD_EstadoTipoProcesos_CRD_Analistas" />
+        <AssociationConnector Association="SRGI_4Model.FK_CRD_AnalistasCRD_EstadoTipoProcesos_CRD_EstadoTipoProcesos" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

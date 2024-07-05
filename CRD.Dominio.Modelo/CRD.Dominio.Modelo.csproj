@@ -88,6 +88,9 @@
     <Compile Include="Entidades\CRD_Analistas.cs">
       <DependentUpon>SRGIModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entidades\CRD_AnalistasCRD_EstadoTipoProcesos.cs">
+      <DependentUpon>SRGIModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entidades\CRD_AuditoriaBitacora.cs">
       <DependentUpon>SRGIModel.tt</DependentUpon>
     </Compile>

@@ -3,6 +3,7 @@
  output extension=".cs"#><#
 
 const string inputFile = @"D:\PISIP\Keeper\CRD.Infraestructura.AccesoDatos\Repositorio\SRGIModel.edmx";
+
 var textTransform = DynamicTextTransformation.Create(this);
 var code = new CodeGenerationTools(this);
 var ef = new MetadataTools(this);

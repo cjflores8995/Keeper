@@ -48,5 +48,6 @@ namespace CRD.Infraestructura.AccesoDatos.Repositorio
         public virtual DbSet<CRD_TipoDocumentos> CRD_TipoDocumentos { get; set; }
         public virtual DbSet<CRD_Valijas> CRD_Valijas { get; set; }
         public virtual DbSet<CRD_BitacoraHistorico> CRD_BitacoraHistorico { get; set; }
+        public virtual DbSet<CRD_AnalistasCRD_EstadoTipoProcesos> CRD_AnalistasCRD_EstadoTipoProcesos { get; set; }
     }
 }

@@ -14,6 +14,12 @@ namespace CRD.Dominio.Modelo.Entidades
     
     public partial class CRD_Analistas
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public CRD_Analistas()
+        {
+            this.CRD_AnalistasCRD_EstadoTipoProcesos = new HashSet<CRD_AnalistasCRD_EstadoTipoProcesos>();
+        }
+    
         public int IdAnalista { get; set; }
         public int IdEstadoTipoProceso { get; set; }
         public string UsuarioLN { get; set; }
@@ -21,5 +27,7 @@ namespace CRD.Dominio.Modelo.Entidades
         public Nullable<bool> Activo { get; set; }
     
         public virtual CRD_EstadoTipoProcesos CRD_EstadoTipoProcesos { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CRD_AnalistasCRD_EstadoTipoProcesos> CRD_AnalistasCRD_EstadoTipoProcesos { get; set; }
     }
 }
