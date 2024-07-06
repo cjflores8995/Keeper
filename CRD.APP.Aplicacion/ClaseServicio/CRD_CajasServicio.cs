@@ -44,11 +44,11 @@ namespace CRD.APP.Aplicacion.ClaseServicio
 
         }
 
-        public IEnumerable<CRD_Cajas> GetAll()
+        public List<CRD_Cajas> ObtenerElementosActivos()
         {
             try
             {
-                return repo.GetAll();
+                return repo.ObtenerElementosActivos();
             }
             catch (Exception ex)
             {
@@ -72,7 +72,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                repo.Delete(id);
+                repo.EliminadoLogico(id);
             }
             catch (Exception ex)
             {

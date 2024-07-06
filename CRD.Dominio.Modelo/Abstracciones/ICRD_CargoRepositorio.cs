@@ -12,7 +12,7 @@ namespace CRD.Dominio.Modelo.Abstracciones
     public interface ICRD_CargoRepositorio : IBaseRepositorio<CRD_Cargo>
     {
         CRD_Cargo ObtenerCargoPorNomre(string nombre);
-        List<CRD_Cargo> ObtenerCargosActivos();
+        List<CRD_Cargo> ObtenerElementosActivos();
 
         bool EliminadoLogico(int id);
     }

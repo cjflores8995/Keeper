@@ -1,5 +1,4 @@
-﻿using CRD.Dominio.Modelo.Entidades;
-using CRD.Infraestructura.CrossCuting.Messages;
+﻿using CRD.Infraestructura.CrossCuting.Messages;
 using CRD.UI.Windows.ControladoresApp;
 using CRD.UI.Windows.VistaModelo;
 
@@ -9,38 +8,32 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CRD.UI.Windows.Formularios
 {
-    public partial class frmCargo : Form
+    public partial class FrmCRD_Cajas : Form
     {
-        private CRD_CargoControlador controlador;
-        private CRD_CargoVistaModelo vistaModelo;
+        private CRD_CajasControlador controlador;
+        private CRD_CajasVistaModelo vistaModelo;
 
-        public frmCargo()
+        public FrmCRD_Cajas()
         {
             InitializeComponent();
-            controlador = new CRD_CargoControlador();
-            vistaModelo = new CRD_CargoVistaModelo();
+            controlador = new CRD_CajasControlador();
+            vistaModelo = new CRD_CajasVistaModelo();
             ListarRegistros();
 
             this.StartPosition = FormStartPosition.CenterParent;
         }
 
-        private void ListarRegistros()
-        {
-            dgvLista.DataSource = controlador.ListarTodo();
-        }
-
         private void InsertUpdate()
         {
-            
 
-            if (string.IsNullOrEmpty(txtIdCargo.Text))
+
+            if (string.IsNullOrEmpty(txtIdCajas.Text))
             {
                 vistaModelo = CrearObjeto();
                 Insertar(vistaModelo);
@@ -49,8 +42,8 @@ namespace CRD.UI.Windows.Formularios
             else
             {
                 var resultado = MessageBox.Show(CustomMessages.ConfirmacionActualizacion, "Actualizar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                
-                if(resultado == DialogResult.Yes)
+
+                if (resultado == DialogResult.Yes)
                 {
                     vistaModelo = CrearObjeto(true);
                     bool result = Actualizar(vistaModelo);
@@ -69,7 +62,33 @@ namespace CRD.UI.Windows.Formularios
             }
         }
 
-        private void Insertar(CRD_CargoVistaModelo vistaModelo)
+
+
+        #region Private Methods
+
+        private void ListarRegistros()
+        {
+            dgvLista.DataSource = controlador.ListarTodo();
+        }
+
+        private CRD_CajasVistaModelo CrearObjeto(bool incluirId = false)
+        {
+            CRD_CajasVistaModelo resultado = new CRD_CajasVistaModelo();
+            resultado.NombreCaja = txtNombre.Text;
+            resultado.Descripcion = txtDescripcion.Text;
+            resultado.EstatusCaja = chkEstadoCajas.Checked;
+            resultado.Activo = chkActivo.Checked;
+
+            if (incluirId)
+            {
+                resultado.IdCaja = int.Parse(txtIdCajas.Text);
+            }
+
+            return resultado;
+
+        }
+
+        private void Insertar(CRD_CajasVistaModelo vistaModelo)
         {
             var resultado = controlador.Insertar(vistaModelo);
             CustomMessages.RespuestaProcesoDb(resultado);
@@ -77,12 +96,27 @@ namespace CRD.UI.Windows.Formularios
 
         }
 
-        private bool Actualizar(CRD_CargoVistaModelo vistaModelo)
+        private bool Actualizar(CRD_CajasVistaModelo vistaModelo)
         {
             var resultado = controlador.Actualizar(vistaModelo);
             CustomMessages.RespuestaProcesoDb(resultado);
             return resultado;
         }
+
+        private bool ValidarCampos()
+        {
+            if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtDescripcion.Text))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+        #endregion Private Methods
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -94,20 +128,6 @@ namespace CRD.UI.Windows.Formularios
             {
                 InsertUpdate();
             }
-
-            
-        }
-
-        private bool ValidarCampos()
-        {
-            if(string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtDescripcion.Text))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
         }
 
         private void dgvLista_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -116,48 +136,33 @@ namespace CRD.UI.Windows.Formularios
             {
                 DataGridViewRow fila = dgvLista.Rows[e.RowIndex];
 
-                txtIdCargo.Text = fila.Cells[0].Value.ToString();
+                txtIdCajas.Text = fila.Cells[0].Value.ToString();
                 txtNombre.Text = fila.Cells[1].Value.ToString();
                 txtDescripcion.Text = fila.Cells[2].Value.ToString();
-                chkActivo.Checked = (bool)fila.Cells[3].Value;
+                chkEstadoCajas.Checked = (bool)fila.Cells[3].Value;
+                chkActivo.Checked = (bool)fila.Cells[4].Value;
 
                 fila.Cells[0].ReadOnly = true;
                 fila.Cells[1].ReadOnly = true;
                 fila.Cells[2].ReadOnly = true;
                 fila.Cells[3].ReadOnly = true;
-
+                fila.Cells[4].ReadOnly = true;
             }
-        }
-
-        private CRD_CargoVistaModelo CrearObjeto(bool incluirId = false)
-        {
-            CRD_CargoVistaModelo resultado = new CRD_CargoVistaModelo();
-            resultado.NombreCargo = txtNombre.Text;
-            resultado.Descripcion = txtDescripcion.Text;
-            resultado.Activo = chkActivo.Checked;
-
-            if (incluirId)
-            {
-                resultado.IdCargo = int.Parse(txtIdCargo.Text);
-            }
-
-            return resultado;
-
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtIdCargo.Text))
+            if (string.IsNullOrEmpty(txtIdCajas.Text))
             {
                 CustomMessages.DebesSeleccionarRegistro();
             }
             else
             {
-                var confirmacion = MessageBox.Show(CustomMessages.ConfirmacionActualizacion, "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                var confirmacion = MessageBox.Show(CustomMessages.ConfirmacionEliminacion, "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (confirmacion == DialogResult.Yes)
                 {
-                    int id = int.Parse(txtIdCargo.Text);
+                    int id = int.Parse(txtIdCajas.Text);
                     var resultado = controlador.Eliminar(id);
                     CustomMessages.RespuestaProcesoDb(resultado);
                     ListarRegistros();

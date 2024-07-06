@@ -59,11 +59,17 @@
     <Compile Include="ControladoresApp\CRD_CiudadControlador.cs" />
     <Compile Include="ControladoresApp\CRD_RolesControlador.cs" />
     <Compile Include="ControladoresApp\CRD_UsuariosControlador.cs" />
-    <Compile Include="Formularios\FrmCRDCargo.cs">
+    <Compile Include="Formularios\FrmCRD_Cajas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmCRDCargo.Designer.cs">
-      <DependentUpon>FrmCRDCargo.cs</DependentUpon>
+    <Compile Include="Formularios\FrmCRD_Cajas.Designer.cs">
+      <DependentUpon>FrmCRD_Cajas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmCRD_Cargo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmCRD_Cargo.Designer.cs">
+      <DependentUpon>FrmCRD_Cargo.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,8 +79,11 @@
     <Compile Include="VistaModelo\CRD_CiudadVistaModelo.cs" />
     <Compile Include="VistaModelo\CRD_RolesVistaModelo.cs" />
     <Compile Include="VistaModelo\CRD_UsuariosVistaModelo.cs" />
-    <EmbeddedResource Include="Formularios\FrmCRDCargo.resx">
-      <DependentUpon>FrmCRDCargo.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\FrmCRD_Cajas.resx">
+      <DependentUpon>FrmCRD_Cajas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmCRD_Cargo.resx">
+      <DependentUpon>FrmCRD_Cargo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

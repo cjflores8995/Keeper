@@ -23,10 +23,7 @@ namespace CRD.UI.Windows.ControladoresApp
         {
             try
             {
-                CRD_Cargo entry = new CRD_Cargo();
-                entry.NombreCargo = obj.NombreCargo;
-                entry.Descripcion = obj.Descripcion;
-                entry.Activo = obj.Activo;
+                CRD_Cargo entry = MapearVistaEnObjeto(obj);
 
                 servicio.Add(entry);
                 return true;
@@ -42,11 +39,7 @@ namespace CRD.UI.Windows.ControladoresApp
         {
             try
             {
-                CRD_Cargo entry = new CRD_Cargo();
-                entry.IdCargo = obj.IdCargo;
-                entry.NombreCargo = obj.NombreCargo;
-                entry.Descripcion = obj.Descripcion;
-                entry.Activo = obj.Activo;
+                CRD_Cargo entry = MapearVistaEnObjeto(obj, agregarId: true);
 
                 servicio.Modify(entry);
                 return true;
@@ -78,7 +71,7 @@ namespace CRD.UI.Windows.ControladoresApp
             {
                 List<CRD_CargoVistaModelo> result = new List<CRD_CargoVistaModelo>();
 
-                var query = servicio.ObtenerCargosActivos();
+                var query = servicio.ObtenerElementosActivos();
 
                 if (query.Any())
                 {
@@ -104,6 +97,22 @@ namespace CRD.UI.Windows.ControladoresApp
 
                 return null;
             }
+        }
+
+        private CRD_Cargo MapearVistaEnObjeto(CRD_CargoVistaModelo vistaModelo, bool agregarId = false)
+        {
+            CRD_Cargo entry = new CRD_Cargo();
+
+            entry.NombreCargo = vistaModelo.NombreCargo;
+            entry.Descripcion = vistaModelo.Descripcion;
+            entry.Activo = vistaModelo.Activo;
+
+            if (agregarId)
+            {
+                entry.IdCargo = vistaModelo.IdCargo;
+            }
+
+            return entry;
         }
     }
 }

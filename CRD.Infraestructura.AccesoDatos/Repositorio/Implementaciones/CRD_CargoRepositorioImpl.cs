@@ -31,7 +31,7 @@ namespace CRD.Infraestructura.AccesoDatos.Repositorio.Implementaciones
             }
         }
 
-        public List<CRD_Cargo> ObtenerCargosActivos()
+        public List<CRD_Cargo> ObtenerElementosActivos()
         {
             try
             {
