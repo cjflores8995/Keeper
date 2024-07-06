@@ -71,6 +71,12 @@
     <Compile Include="Formularios\FrmCRD_Cargo.Designer.cs">
       <DependentUpon>FrmCRD_Cargo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmCRD_Ciudad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmCRD_Ciudad.Designer.cs">
+      <DependentUpon>FrmCRD_Ciudad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VistaModelo\CRD_AuditoriaBitacoraVistaModelo.cs" />
@@ -84,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmCRD_Cargo.resx">
       <DependentUpon>FrmCRD_Cargo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmCRD_Ciudad.resx">
+      <DependentUpon>FrmCRD_Ciudad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

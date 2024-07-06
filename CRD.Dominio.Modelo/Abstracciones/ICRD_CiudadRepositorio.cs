@@ -10,5 +10,8 @@ namespace CRD.Dominio.Modelo.Abstracciones
     public interface ICRD_CiudadRepositorio : IBaseRepositorio<CRD_Ciudad>
     {
         CRD_Ciudad ObtenerCiudadPorNomre(string nombre);
+        List<CRD_Ciudad> ObtenerElementosActivos();
+
+        bool EliminadoLogico(int id);
     }
 }
