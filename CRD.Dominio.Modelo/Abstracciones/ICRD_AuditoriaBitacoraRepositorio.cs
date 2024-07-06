@@ -12,5 +12,6 @@ namespace CRD.Dominio.Modelo.Abstracciones
         List<CRD_AuditoriaBitacora> ObtenerAuditoriaBitacoraPorNombreUsuario(string nombre);
         List<CRD_AuditoriaBitacora> ObtenerAuditoriaBitacoraPorRangoFechas(DateTime fechaInicio, DateTime fechaFin);
         List<CRD_AuditoriaBitacora> ObtenerAuditoriaBitacoraPorRangoFechasRegistroHistorico(string registroHistorico);
+        List<CRD_AuditoriaBitacora> ObtenerElementos();
     }
 }

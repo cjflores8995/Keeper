@@ -48,7 +48,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                return repo.GetAll();
+                return repo.ObtenerElementos();
             }
             catch (Exception ex)
             {

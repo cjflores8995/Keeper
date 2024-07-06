@@ -59,6 +59,12 @@
     <Compile Include="ControladoresApp\CRD_CiudadControlador.cs" />
     <Compile Include="ControladoresApp\CRD_RolesControlador.cs" />
     <Compile Include="ControladoresApp\CRD_UsuariosControlador.cs" />
+    <Compile Include="Formularios\FrmCRD_AuditoriaBitacora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmCRD_AuditoriaBitacora.Designer.cs">
+      <DependentUpon>FrmCRD_AuditoriaBitacora.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmCRD_Cajas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,9 @@
     <Compile Include="VistaModelo\CRD_CiudadVistaModelo.cs" />
     <Compile Include="VistaModelo\CRD_RolesVistaModelo.cs" />
     <Compile Include="VistaModelo\CRD_UsuariosVistaModelo.cs" />
+    <EmbeddedResource Include="Formularios\FrmCRD_AuditoriaBitacora.resx">
+      <DependentUpon>FrmCRD_AuditoriaBitacora.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmCRD_Cajas.resx">
       <DependentUpon>FrmCRD_Cajas.cs</DependentUpon>
     </EmbeddedResource>

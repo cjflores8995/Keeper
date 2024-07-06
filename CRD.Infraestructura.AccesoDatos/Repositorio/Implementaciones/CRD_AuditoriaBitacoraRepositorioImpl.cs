@@ -70,5 +70,23 @@ namespace CRD.Infraestructura.AccesoDatos.Repositorio.Implementaciones
                 throw new Exception("No se puede devolver el resultado", ex);
             }
         }
+
+        public List<CRD_AuditoriaBitacora> ObtenerElementos()
+        {
+            try
+            {
+                using (var db = new SRGI_4Entities())
+                {
+
+                    var result = db.CRD_AuditoriaBitacora.Include(c => c.CRD_Usuarios).ToList();
+
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("No se puede devolver el resultado", ex);
+            }
+        }
     }
 }
