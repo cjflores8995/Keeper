@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CRD.APP.Aplicacion.ClaseServicio
 {
-    public class CRD_CargoServicio : ICRD_CargoRepositorio
+    public class CRD_CargoServicio
     {
         readonly ICRD_CargoRepositorio repo;
         public CRD_CargoServicio()
@@ -44,11 +44,11 @@ namespace CRD.APP.Aplicacion.ClaseServicio
 
         }
 
-        public IEnumerable<CRD_Cargo> GetAll()
+        public IEnumerable<CRD_Cargo> ObtenerCargosActivos()
         {
             try
             {
-                return repo.GetAll();
+                return repo.ObtenerCargosActivos();
             }
             catch (Exception ex)
             {
@@ -72,7 +72,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                repo.Delete(id);
+                repo.EliminadoLogico(id);
             }
             catch (Exception ex)
             {

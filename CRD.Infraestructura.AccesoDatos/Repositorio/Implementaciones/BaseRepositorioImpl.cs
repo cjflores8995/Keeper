@@ -11,7 +11,7 @@ namespace CRD.Infraestructura.AccesoDatos.Repositorio.Implementaciones
 
     public class BaseRepositorioImpl<TEntity> : IDisposable, IBaseRepositorio<TEntity> where TEntity : class
     {
-        public void Add(TEntity entity)//Método agregar
+        public void Add(TEntity entity)
         {
             try
             {

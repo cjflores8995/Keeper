@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CRD.Dominio.Modelo.Abstracciones
 {
-    public interface ICRDRolesRepositorio : IBaseRepositorio<CRD_Roles>
+    public interface ICRD_RolesRepositorio : IBaseRepositorio<CRD_Roles>
     {
 
     }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CRD.Infraestructura.AccesoDatos.Repositorio.Implementaciones
 {
-    public class CRD_UsuariosRepositorioImpl : BaseRepositorioImpl<CRD_Usuarios>, ICRDUsuariosRepositorio
+    public class CRD_UsuariosRepositorioImpl : BaseRepositorioImpl<CRD_Usuarios>, ICRD_UsuariosRepositorio
     {
         public CRD_Usuarios ObtenerUsuarioPorEmail(string email)
         {

@@ -1,9 +1,20 @@
-﻿using CRD.APP.Aplicacion.ClaseServicio;
+﻿using Bogus;
+using Bogus.DataSets;
+
+using CRD.APP.Aplicacion.ClaseServicio;
+using CRD.Dominio.Modelo.Abstracciones;
 using CRD.Dominio.Modelo.Entidades;
+using CRD.Infraestructura.AccesoDatos.Repositorio;
+using CRD.Infraestructura.AccesoDatos.Repositorio.Implementaciones;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+using Moq;
+
 using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
 
 namespace CRD.Test.MSTest.UnitTest
 {
@@ -11,6 +22,7 @@ namespace CRD.Test.MSTest.UnitTest
     public class CRD_IvaUnitTest
     {
         CRD_IvaServicio _service = new CRD_IvaServicio();
+
 
         [TestMethod]
         public void AddTest()
@@ -38,7 +50,7 @@ namespace CRD.Test.MSTest.UnitTest
         {
             var getAll = _service.GetAll();
 
-            foreach(var item in getAll)
+            foreach (var item in getAll)
                 Console.WriteLine($"{item.ValorIva}, {item.Activo}");
         }
 

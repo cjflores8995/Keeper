@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CRD.APP.Aplicacion.ClaseServicio
 {
-    public class CRD_CajasServicio: ICRD_CajasRepositorio
+    public class CRD_CajasServicio
     {
         readonly ICRD_CajasRepositorio repo;
         public CRD_CajasServicio()

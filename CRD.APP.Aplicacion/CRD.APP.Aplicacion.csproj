@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClaseServicio\CRD_RolesServicio.cs" />
     <Compile Include="ClaseServicio\CRD_UsuariosServicio.cs" />
     <Compile Include="ClaseServicio\CRD_BitacoraServicio.cs" />
     <Compile Include="ClaseServicio\CRD_BitacoraHistoricoServicio.cs" />

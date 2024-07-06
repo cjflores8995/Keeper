@@ -55,8 +55,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstracciones\ICRD_UsuarioRolesRepositorio.cs" />
-    <Compile Include="Abstracciones\ICRDRolesRepositorio.cs" />
-    <Compile Include="Abstracciones\ICRDUsuariosRepositorio.cs" />
+    <Compile Include="Abstracciones\ICRD_RolesRepositorio.cs" />
+    <Compile Include="Abstracciones\ICRD_UsuariosRepositorio.cs" />
     <Compile Include="Abstracciones\ICRD_CargoRepositorio.cs" />
     <Compile Include="Abstracciones\ICRD_CajasRepositorio.cs" />
     <Compile Include="Abstracciones\ICRD_AnalistasRepositorio.cs" />

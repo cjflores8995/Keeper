@@ -75,6 +75,7 @@
     <Compile Include="Repositorio\Implementaciones\CRD_ProveedoresRepositorioImpl.cs" />
     <Compile Include="Repositorio\Implementaciones\CRD_TipoDocumentoPagosRepositorioImpl.cs" />
     <Compile Include="Repositorio\Implementaciones\CRD_TipoDocumentosRepositorioImpl.cs" />
+    <Compile Include="Repositorio\Implementaciones\CRD_RolesRepositorioImpl.cs" />
     <Compile Include="Repositorio\Implementaciones\CRD_ValijasRepositorioImpl.cs" />
     <Compile Include="Repositorio\SRGIModel.Context.cs">
       <AutoGen>True</AutoGen>

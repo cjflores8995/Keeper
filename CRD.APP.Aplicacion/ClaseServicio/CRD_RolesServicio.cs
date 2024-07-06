@@ -10,16 +10,16 @@ using System.Threading.Tasks;
 
 namespace CRD.APP.Aplicacion.ClaseServicio
 {
-    public class CRD_UsuariosServicio
+    public class CRD_RolesServicio
     {
-        readonly ICRD_UsuariosRepositorio repo;
+        readonly ICRD_RolesRepositorio repo;
 
-        public CRD_UsuariosServicio()
+        public CRD_RolesServicio()
         {
-            repo = new CRD_UsuariosRepositorioImpl();
+            repo = new CRD_RolesRepositorioImpl();
         }
 
-        public void Add(CRD_Usuarios entity)
+        public void Add(CRD_Roles entity)
         {
             repo.Add(entity);
         }
@@ -29,29 +29,19 @@ namespace CRD.APP.Aplicacion.ClaseServicio
             repo.Delete(id);
         }
 
-        public IEnumerable<CRD_Usuarios> GetAll()
+        public IEnumerable<CRD_Roles> GetAll()
         {
             return repo.GetAll();
         }
 
-        public CRD_Usuarios GetById(int id)
+        public CRD_Roles GetById(int id)
         {
             return repo.GetById(id);
         }
 
-        public void Modify(CRD_Usuarios entity)
+        public void Modify(CRD_Roles entity)
         {
             repo.Modify(entity);
-        }
-
-        public CRD_Usuarios ObtenerUsuarioPorEmail(string email)
-        {
-            return repo.ObtenerUsuarioPorEmail(email);
-        }
-
-        public CRD_Usuarios ObtenerUsuarioPorId(int id)
-        {
-            return repo.ObtenerUsuarioPorId(id);
         }
     }
 }

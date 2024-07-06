@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CRD.Dominio.Modelo.Abstracciones
 {
-    public interface ICRDUsuariosRepositorio: IBaseRepositorio<CRD_Usuarios>
+    public interface ICRD_UsuariosRepositorio: IBaseRepositorio<CRD_Usuarios>
     {
         CRD_Usuarios ObtenerUsuarioPorEmail(string email);
         CRD_Usuarios ObtenerUsuarioPorId(int id);
