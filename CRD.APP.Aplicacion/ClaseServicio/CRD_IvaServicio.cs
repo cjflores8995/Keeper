@@ -12,17 +12,17 @@ namespace CRD.APP.Aplicacion.ClaseServicio
 {
     public class CRD_IvaServicio
     {
-        readonly ICRD_IvaRepositorio _repo;
+        readonly ICRD_IvaRepositorio repo;
         public CRD_IvaServicio()
         {
-            _repo = new CRD_IvaRepositorioImpl();
+            repo = new CRD_IvaRepositorioImpl();
         }
 
         public void Add(CRD_Iva entry)
         {
             try
             {
-                _repo.Add(entry);
+                repo.Add(entry);
             }
             catch (Exception ex)
             {
@@ -35,7 +35,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                _repo.Modify(entry);
+                repo.Modify(entry);
             }
             catch (Exception ex)
             {
@@ -48,7 +48,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                return _repo.GetAll();
+                return repo.GetAll();
             }
             catch (Exception ex)
             {
@@ -60,7 +60,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                return _repo.GetById(id);
+                return repo.GetById(id);
             }
             catch (Exception ex)
             {
@@ -72,7 +72,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                _repo.Delete(id);
+                repo.Delete(id);
             }
             catch (Exception ex)
             {

@@ -12,17 +12,17 @@ namespace CRD.APP.Aplicacion.ClaseServicio
 {
     public class CRD_CajasServicio: ICRD_CajasRepositorio
     {
-        readonly ICRD_CajasRepositorio _repo;
+        readonly ICRD_CajasRepositorio repo;
         public CRD_CajasServicio()
         {
-            _repo = new CRD_CajasRepositorioImpl();
+            repo = new CRD_CajasRepositorioImpl();
         }
 
         public void Add(CRD_Cajas entry)
         {
             try
             {
-                _repo.Add(entry);
+                repo.Add(entry);
             }
             catch (Exception ex)
             {
@@ -35,7 +35,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                _repo.Modify(entry);
+                repo.Modify(entry);
             }
             catch (Exception ex)
             {
@@ -48,7 +48,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                return _repo.GetAll();
+                return repo.GetAll();
             }
             catch (Exception ex)
             {
@@ -60,7 +60,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                return _repo.GetById(id);
+                return repo.GetById(id);
             }
             catch (Exception ex)
             {
@@ -72,7 +72,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                _repo.Delete(id);
+                repo.Delete(id);
             }
             catch (Exception ex)
             {
@@ -84,7 +84,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                return _repo.ObtenerCajasPorNomre(nombreCaja);
+                return repo.ObtenerCajasPorNomre(nombreCaja);
             }
             catch (Exception ex)
             {

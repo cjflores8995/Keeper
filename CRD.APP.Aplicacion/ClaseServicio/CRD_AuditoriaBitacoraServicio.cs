@@ -12,17 +12,17 @@ namespace CRD.APP.Aplicacion.ClaseServicio
     public class CRD_AuditoriaBitacoraServicio
     {
 
-        readonly ICRD_AuditoriaBitacoraRepositorio _repo;
+        readonly ICRD_AuditoriaBitacoraRepositorio repo;
         public CRD_AuditoriaBitacoraServicio()
         {
-            _repo = new CRD_AuditoriaBitacoraRepositorioImpl();
+            repo = new CRD_AuditoriaBitacoraRepositorioImpl();
         }
 
         public void Add(CRD_AuditoriaBitacora entry)
         {
             try
             {
-                _repo.Add(entry);
+                repo.Add(entry);
             }
             catch (Exception ex)
             {
@@ -35,7 +35,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                _repo.Modify(entry);
+                repo.Modify(entry);
             }
             catch (Exception ex)
             {
@@ -48,7 +48,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                return _repo.GetAll();
+                return repo.GetAll();
             }
             catch (Exception ex)
             {
@@ -60,7 +60,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                return _repo.GetById(id);
+                return repo.GetById(id);
             }
             catch (Exception ex)
             {
@@ -72,7 +72,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                _repo.Delete(id);
+                repo.Delete(id);
             }
             catch (Exception ex)
             {
@@ -85,7 +85,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                return _repo.ObtenerAuditoriaBitacoraPorNombreUsuario(nombre);
+                return repo.ObtenerAuditoriaBitacoraPorNombreUsuario(nombre);
             }
             catch (Exception ex)
             {
@@ -98,7 +98,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                return _repo.ObtenerAuditoriaBitacoraPorRangoFechas(fechaInicio, fechaFin);
+                return repo.ObtenerAuditoriaBitacoraPorRangoFechas(fechaInicio, fechaFin);
             }
             catch (Exception ex)
             {
@@ -111,7 +111,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                return _repo.ObtenerAuditoriaBitacoraPorRangoFechasRegistroHistorico(registroHistorico);
+                return repo.ObtenerAuditoriaBitacoraPorRangoFechasRegistroHistorico(registroHistorico);
     }
             catch (Exception ex)
             {

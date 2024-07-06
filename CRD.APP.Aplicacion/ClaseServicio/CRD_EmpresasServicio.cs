@@ -12,17 +12,17 @@ namespace CRD.APP.Aplicacion.ClaseServicio
 {
     public class CRD_EmpresasServicio
     {
-        readonly ICRD_EmpresasRepositorio _repo;
+        readonly ICRD_EmpresasRepositorio repo;
         public CRD_EmpresasServicio()
         {
-            _repo = new CRD_EmpresasRepositorioImpl();
+            repo = new CRD_EmpresasRepositorioImpl();
         }
 
         public void Add(CRD_Empresas entry)
         {
             try
             {
-                _repo.Add(entry);
+                repo.Add(entry);
             }
             catch (Exception ex)
             {
@@ -35,7 +35,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                _repo.Modify(entry);
+                repo.Modify(entry);
             }
             catch (Exception ex)
             {
@@ -48,7 +48,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                return _repo.GetAll();
+                return repo.GetAll();
             }
             catch (Exception ex)
             {
@@ -60,7 +60,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                return _repo.GetById(id);
+                return repo.GetById(id);
             }
             catch (Exception ex)
             {
@@ -72,7 +72,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                _repo.Delete(id);
+                repo.Delete(id);
             }
             catch (Exception ex)
             {
@@ -84,7 +84,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                return _repo.buscarPorNombre(nom);
+                return repo.buscarPorNombre(nom);
             }
             catch (Exception ex)
             {
@@ -96,7 +96,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                return _repo.buscarPorCodigoEmpresa(codemp);
+                return repo.buscarPorCodigoEmpresa(codemp);
             }
             catch (Exception ex)
             {

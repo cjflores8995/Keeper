@@ -12,17 +12,17 @@ namespace CRD.APP.Aplicacion.ClaseServicio
     public class CRD_BitacoraServicio
     {
 
-        readonly ICRD_BitacoraRepositorio _repo;
+        readonly ICRD_BitacoraRepositorio repo;
         public CRD_BitacoraServicio()
         {
-            _repo = new CRD_BitacoraRepositorioImpl();
+            repo = new CRD_BitacoraRepositorioImpl();
         }
 
         public void Add(CRD_Bitacora entry)
         {
             try
             {
-                _repo.Add(entry);
+                repo.Add(entry);
             }
             catch (Exception ex)
             {
@@ -35,7 +35,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                _repo.Modify(entry);
+                repo.Modify(entry);
             }
             catch (Exception ex)
             {
@@ -48,7 +48,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                return _repo.GetAll();
+                return repo.GetAll();
             }
             catch (Exception ex)
             {
@@ -60,7 +60,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                return _repo.GetById(id);
+                return repo.GetById(id);
             }
             catch (Exception ex)
             {
@@ -72,7 +72,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                _repo.Delete(id);
+                repo.Delete(id);
             }
             catch (Exception ex)
             {
@@ -84,7 +84,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                return _repo.buscarPorFactura(Factura);
+                return repo.buscarPorFactura(Factura);
             }
             catch (Exception ex)
             {

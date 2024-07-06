@@ -12,17 +12,17 @@ namespace CRD.APP.Aplicacion.ClaseServicio
     public class CRD_BitacoraHistoricoServicio
     {
 
-        readonly ICRD_BitacoraHistoricoRepositorio _repo;
+        readonly ICRD_BitacoraHistoricoRepositorio repo;
         public CRD_BitacoraHistoricoServicio()
         {
-            _repo = new CRD_BitacoraHistoricoRepositorioImpl();
+            repo = new CRD_BitacoraHistoricoRepositorioImpl();
         }
 
         public void Add(CRD_BitacoraHistorico entry)
         {
             try
             {
-                _repo.Add(entry);
+                repo.Add(entry);
             }
             catch (Exception ex)
             {
@@ -35,7 +35,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                _repo.Modify(entry);
+                repo.Modify(entry);
             }
             catch (Exception ex)
             {
@@ -48,7 +48,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                return _repo.GetAll();
+                return repo.GetAll();
             }
             catch (Exception ex)
             {
@@ -60,7 +60,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                return _repo.GetById(id);
+                return repo.GetById(id);
             }
             catch (Exception ex)
             {
@@ -72,7 +72,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                _repo.Delete(id);
+                repo.Delete(id);
             }
             catch (Exception ex)
             {
@@ -84,7 +84,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                return _repo.buscarPorFactura(Factura);
+                return repo.buscarPorFactura(Factura);
             }
             catch (Exception ex)
             {
@@ -96,7 +96,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                return _repo.buscarPorPartner(Partner);
+                return repo.buscarPorPartner(Partner);
             }
             catch (Exception ex)
             {
@@ -108,7 +108,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                return _repo.buscarPorRuc(Ruc);
+                return repo.buscarPorRuc(Ruc);
             }
             catch (Exception ex)
             {
@@ -119,7 +119,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                return _repo.buscarPorNumeroOrden(NumeroOrden);
+                return repo.buscarPorNumeroOrden(NumeroOrden);
             }
             catch (Exception ex)
             {

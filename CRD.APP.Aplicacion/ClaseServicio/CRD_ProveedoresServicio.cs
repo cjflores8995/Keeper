@@ -12,17 +12,17 @@ namespace CRD.APP.Aplicacion.ClaseServicio
 {
     public class CRD_ProveedoresServicio
     {
-        readonly ICRD_ProveedoresRepositorio _repo;
+        readonly ICRD_ProveedoresRepositorio repo;
         public CRD_ProveedoresServicio()
         {
-            _repo = new CRD_ProveedoresRepositorioImpl();
+            repo = new CRD_ProveedoresRepositorioImpl();
         }
 
         public void Add(CRD_Proveedores entry)
         {
             try
             {
-                _repo.Add(entry);
+                repo.Add(entry);
             }
             catch (Exception ex)
             {
@@ -35,7 +35,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                _repo.Modify(entry);
+                repo.Modify(entry);
             }
             catch (Exception ex)
             {
@@ -48,7 +48,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                return _repo.GetAll();
+                return repo.GetAll();
             }
             catch (Exception ex)
             {
@@ -60,7 +60,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                return _repo.GetById(id);
+                return repo.GetById(id);
             }
             catch (Exception ex)
             {
@@ -72,7 +72,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                _repo.Delete(id);
+                repo.Delete(id);
             }
             catch (Exception ex)
             {
@@ -84,7 +84,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                return _repo.buscarPorCodProveedor(codProveedor);
+                return repo.buscarPorCodProveedor(codProveedor);
             }
             catch (Exception ex)
             {
@@ -96,7 +96,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                return _repo.buscarPorRUC(rucCedula);
+                return repo.buscarPorRUC(rucCedula);
             }
             catch (Exception ex)
             {
@@ -108,7 +108,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                return _repo.buscarPorRazonSocial(razonSocial);
+                return repo.buscarPorRazonSocial(razonSocial);
             }
             catch (Exception ex)
             {

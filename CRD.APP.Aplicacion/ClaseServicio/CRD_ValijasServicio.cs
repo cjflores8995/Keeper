@@ -12,17 +12,17 @@ namespace CRD.APP.Aplicacion.ClaseServicio
 {
     public class CRD_ValijasServicio
     {
-        readonly ICRD_ValijasRepositorio _repo;
+        readonly ICRD_ValijasRepositorio repo;
         public CRD_ValijasServicio()
         {
-            _repo = new CRD_ValijasRepositorioImpl();
+            repo = new CRD_ValijasRepositorioImpl();
         }
 
         public void Add(CRD_Valijas entry)
         {
             try
             {
-                _repo.Add(entry);
+                repo.Add(entry);
             }
             catch (Exception ex)
             {
@@ -35,7 +35,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                _repo.Modify(entry);
+                repo.Modify(entry);
             }
             catch (Exception ex)
             {
@@ -48,7 +48,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                return _repo.GetAll();
+                return repo.GetAll();
             }
             catch (Exception ex)
             {
@@ -60,7 +60,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                return _repo.GetById(id);
+                return repo.GetById(id);
             }
             catch (Exception ex)
             {
@@ -72,7 +72,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                _repo.Delete(id);
+                repo.Delete(id);
             }
             catch (Exception ex)
             {
@@ -86,7 +86,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
             {
 
                 {
-                    return _repo.buscarPorOrigen(ori);
+                    return repo.buscarPorOrigen(ori);
                 }
             }
             catch (Exception ex)
@@ -100,7 +100,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
             {
 
                 {
-                    return _repo.buscarPorRemitente(rem);
+                    return repo.buscarPorRemitente(rem);
                 }
             }
             catch (Exception ex)
