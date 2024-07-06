@@ -48,7 +48,7 @@ namespace CRD.UI.Windows.ControladoresApp
                 entry.Descripcion = obj.Descripcion;
                 entry.Activo = obj.Activo;
 
-                servicio.Add(entry);
+                servicio.Modify(entry);
                 return true;
             }
             catch (Exception ex)

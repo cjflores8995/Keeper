@@ -18,7 +18,7 @@ namespace CRD.Infraestructura.AccesoDatos.Repositorio
     public partial class SRGI_4Entities : DbContext
     {
         public SRGI_4Entities()
-            : base("name=SRGI_4Entities")
+            : base("name=SRGI_5Entities")
         {
         }
     

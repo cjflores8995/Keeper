@@ -33,7 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -52,6 +59,12 @@
     <Compile Include="ControladoresApp\CRD_CiudadControlador.cs" />
     <Compile Include="ControladoresApp\CRD_RolesControlador.cs" />
     <Compile Include="ControladoresApp\CRD_UsuariosControlador.cs" />
+    <Compile Include="Formularios\FrmCRDCargo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmCRDCargo.Designer.cs">
+      <DependentUpon>FrmCRDCargo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VistaModelo\CRD_AuditoriaBitacoraVistaModelo.cs" />
@@ -60,6 +73,9 @@
     <Compile Include="VistaModelo\CRD_CiudadVistaModelo.cs" />
     <Compile Include="VistaModelo\CRD_RolesVistaModelo.cs" />
     <Compile Include="VistaModelo\CRD_UsuariosVistaModelo.cs" />
+    <EmbeddedResource Include="Formularios\FrmCRDCargo.resx">
+      <DependentUpon>FrmCRDCargo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -69,6 +85,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -82,9 +99,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Formularios\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\CRD.APP.AplicacionDTO\CRD.APP.AplicacionDTO.csproj">
       <Project>{8340984b-efca-42f1-acf9-8dfbfe324a03}</Project>
@@ -101,6 +116,10 @@
     <ProjectReference Include="..\CRD.Dominio.Servicio\CRD.Dominio.Servicio.csproj">
       <Project>{5c5c2463-0448-46d0-9e1c-60dae1c0ac58}</Project>
       <Name>CRD.Dominio.Servicio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CRD.Infraestructura.CrossCuting\CRD.Infraestructura.CrossCuting.csproj">
+      <Project>{d70d5a1a-b8a5-4fbc-ad39-f8aa5c8cb302}</Project>
+      <Name>CRD.Infraestructura.CrossCuting</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
