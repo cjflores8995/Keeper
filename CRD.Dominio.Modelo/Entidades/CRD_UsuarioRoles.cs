@@ -12,13 +12,13 @@ namespace CRD.Dominio.Modelo.Entidades
     using System;
     using System.Collections.Generic;
     
-    public partial class CRD_AuditoriaBitacora
+    public partial class CRD_UsuarioRoles
     {
-        public int IdAuditoriaBitacora { get; set; }
-        public string NombreTabla { get; set; }
-        public Nullable<System.DateTime> FechaModificacion { get; set; }
-        public string RegistroHistorico { get; set; }
+        public int IdUsuarioRoles { get; set; }
+        public int UserId { get; set; }
+        public int RoleId { get; set; }
     
+        public virtual CRD_Roles CRD_Roles { get; set; }
         public virtual CRD_Usuarios CRD_Usuarios { get; set; }
     }
 }

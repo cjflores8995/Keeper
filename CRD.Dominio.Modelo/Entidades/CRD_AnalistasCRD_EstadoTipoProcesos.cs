@@ -15,7 +15,7 @@ namespace CRD.Dominio.Modelo.Entidades
     public partial class CRD_AnalistasCRD_EstadoTipoProcesos
     {
         public int IdAnalistaEstadoProceso { get; set; }
-        public Nullable<bool> Activo { get; set; }
+        public bool Activo { get; set; }
     
         public virtual CRD_Analistas CRD_Analistas { get; set; }
         public virtual CRD_EstadoTipoProcesos CRD_EstadoTipoProcesos { get; set; }

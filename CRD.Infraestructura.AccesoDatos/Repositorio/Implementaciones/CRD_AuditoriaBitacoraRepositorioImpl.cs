@@ -19,7 +19,7 @@ namespace CRD.Infraestructura.AccesoDatos.Repositorio.Implementaciones
                 {
 
                     var result = (from obj in db.CRD_AuditoriaBitacora
-                                  where obj.AspNetUsers.UserName.ToLower().Equals(nombre.ToLower())
+                                  where obj.CRD_Usuarios.NombreUsuario.ToLower().Equals(nombre.ToLower())
                                   select obj).ToList();
 
                     return result;

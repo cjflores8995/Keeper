@@ -16,6 +16,6 @@ namespace CRD.Dominio.Modelo.Entidades
     {
         public int IdIva { get; set; }
         public int ValorIva { get; set; }
-        public Nullable<bool> Activo { get; set; }
+        public bool Activo { get; set; }
     }
 }

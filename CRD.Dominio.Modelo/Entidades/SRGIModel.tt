@@ -3,7 +3,6 @@
  output extension=".cs"#><#
 
 const string inputFile = @"D:\PISIP\Keeper\CRD.Infraestructura.AccesoDatos\Repositorio\SRGIModel.edmx";
-
 var textTransform = DynamicTextTransformation.Create(this);
 var code = new CodeGenerationTools(this);
 var ef = new MetadataTools(this);
@@ -23,6 +22,7 @@ foreach (var entity in typeMapper.GetItemsToGenerate<EntityType>(itemCollection)
 {
     fileManager.StartNewFile(entity.Name + ".cs");
     BeginNamespace(code);
+
 #>
 <#=codeStringGenerator.UsingDirectives(inHeader: false)#>
 <#=codeStringGenerator.EntityClassOpening(entity)#>

@@ -24,9 +24,8 @@ namespace CRD.Dominio.Modelo.Entidades
         public int IdEstadoTipoProceso { get; set; }
         public string UsuarioLN { get; set; }
         public string Nombre { get; set; }
-        public Nullable<bool> Activo { get; set; }
+        public bool Activo { get; set; }
     
-        public virtual CRD_EstadoTipoProcesos CRD_EstadoTipoProcesos { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CRD_AnalistasCRD_EstadoTipoProcesos> CRD_AnalistasCRD_EstadoTipoProcesos { get; set; }
     }

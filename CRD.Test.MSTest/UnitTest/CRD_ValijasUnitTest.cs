@@ -17,7 +17,7 @@ namespace CRD.Test.MSTest.UnitTest
         {
             CRD_Valijas entry = new CRD_Valijas();
 
-            entry.IdBitacora = 24;
+            entry.CRD_Bitacora.IdBitacora = 24;
             entry.Fecha = DateTime.Now;
             entry.Origen = "origen 1";
             entry.Remitente = "remitente";

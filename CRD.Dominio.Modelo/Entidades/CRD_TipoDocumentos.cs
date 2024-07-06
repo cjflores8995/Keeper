@@ -23,7 +23,7 @@ namespace CRD.Dominio.Modelo.Entidades
         public int IdTipoDocumento { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
-        public Nullable<bool> Activo { get; set; }
+        public bool Activo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CRD_Bitacora> CRD_Bitacora { get; set; }

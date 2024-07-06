@@ -21,14 +21,6 @@ namespace CRD.Dominio.Modelo.Entidades
         }
     
         public int IdBitacora { get; set; }
-        public int IdTipoDocumento { get; set; }
-        public int IdEstadoTipoProceso { get; set; }
-        public string IdUsuario { get; set; }
-        public int IdTipoDocumentoPago { get; set; }
-        public string IdOrden { get; set; }
-        public string CodProveedor { get; set; }
-        public string CodigoEmpresa { get; set; }
-        public int IdPaquete { get; set; }
         public string NumeroDocumentoPago { get; set; }
         public Nullable<bool> EstadoBienesRecibidos { get; set; }
         public Nullable<System.DateTime> FechaEmisionDocumento { get; set; }
@@ -39,7 +31,7 @@ namespace CRD.Dominio.Modelo.Entidades
         public Nullable<decimal> ValorTotal { get; set; }
         public string TipoOrden { get; set; }
     
-        public virtual AspNetUsers AspNetUsers { get; set; }
+        public virtual CRD_Usuarios CRD_Usuarios { get; set; }
         public virtual CRD_Empresas CRD_Empresas { get; set; }
         public virtual CRD_Ordenes CRD_Ordenes { get; set; }
         public virtual CRD_Paquetes CRD_Paquetes { get; set; }

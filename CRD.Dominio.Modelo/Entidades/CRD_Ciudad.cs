@@ -17,15 +17,15 @@ namespace CRD.Dominio.Modelo.Entidades
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public CRD_Ciudad()
         {
-            this.AspNetUsers = new HashSet<AspNetUsers>();
+            this.CRD_Usuarios = new HashSet<CRD_Usuarios>();
         }
     
         public int IdCiudad { get; set; }
         public string NombreCiudad { get; set; }
         public string Descripcion { get; set; }
-        public Nullable<bool> Activo { get; set; }
+        public bool Activo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AspNetUsers> AspNetUsers { get; set; }
+        public virtual ICollection<CRD_Usuarios> CRD_Usuarios { get; set; }
     }
 }

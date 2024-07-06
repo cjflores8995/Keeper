@@ -54,7 +54,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstracciones\IAspNetUsersRepositorio.cs" />
+    <Compile Include="Abstracciones\ICRD_UsuarioRolesRepositorio.cs" />
+    <Compile Include="Abstracciones\ICRDRolesRepositorio.cs" />
+    <Compile Include="Abstracciones\ICRDUsuariosRepositorio.cs" />
     <Compile Include="Abstracciones\ICRD_CargoRepositorio.cs" />
     <Compile Include="Abstracciones\ICRD_CajasRepositorio.cs" />
     <Compile Include="Abstracciones\ICRD_AnalistasRepositorio.cs" />
@@ -73,18 +75,6 @@
     <Compile Include="Abstracciones\ICRD_TipoDocumentoPagosRepositorio.cs" />
     <Compile Include="Abstracciones\ICRD_TipoDocumentosRepositorio.cs" />
     <Compile Include="Abstracciones\ICRD_ValijasRepositorio.cs" />
-    <Compile Include="Entidades\AspNetRoles.cs">
-      <DependentUpon>SRGIModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entidades\AspNetUserClaims.cs">
-      <DependentUpon>SRGIModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entidades\AspNetUserLogins.cs">
-      <DependentUpon>SRGIModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entidades\AspNetUsers.cs">
-      <DependentUpon>SRGIModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Entidades\CRD_Analistas.cs">
       <DependentUpon>SRGIModel.tt</DependentUpon>
     </Compile>
@@ -130,16 +120,24 @@
     <Compile Include="Entidades\CRD_Proveedores.cs">
       <DependentUpon>SRGIModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entidades\CRD_Roles.cs">
+      <DependentUpon>SRGIModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entidades\CRD_TipoDocumentoPagos.cs">
       <DependentUpon>SRGIModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Entidades\CRD_TipoDocumentos.cs">
       <DependentUpon>SRGIModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entidades\CRD_UsuarioRoles.cs">
+      <DependentUpon>SRGIModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\CRD_Usuarios.cs">
+      <DependentUpon>SRGIModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entidades\CRD_Valijas.cs">
       <DependentUpon>SRGIModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entidades\IdentityModels.cs" />
     <Compile Include="Entidades\SRGIModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

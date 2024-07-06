@@ -10,22 +10,22 @@ namespace CRD.Test.MSTest.UnitTest
     [TestClass]
     public class AspNetUsersUnitTest
     {
-        AspNetUsersServicio _service = new AspNetUsersServicio();
+        CRD_UsuariosServicio _service = new CRD_UsuariosServicio();
 
         [TestMethod]
         public void ObtenerUsuarioPorEmailTest()
         {
             var result = _service.ObtenerUsuarioPorEmail("john.doe@example.com");
 
-            Console.WriteLine($"{result.FirstName}, {result.LastName}");
+            Console.WriteLine($"{result.Nombre}, {result.Apellido}");
 
         }
 
         [TestMethod]
         public void GetByIdTest()
         {
-            var result = _service.ObtenerUsuarioPorId("user1");
-            Console.WriteLine($"{result.FirstName}, {result.LastName}");
+            var result = _service.ObtenerUsuarioPorId(1);
+            Console.WriteLine($"{result.Nombre}, {result.Apellido}");
         }
 
     }

@@ -18,7 +18,7 @@ namespace CRD.Test.MSTest.UnitTest
         {
             CRD_AuditoriaBitacora entry = new CRD_AuditoriaBitacora();
 
-            entry.IdUsuario = "user1";  
+            entry.CRD_Usuarios.Id = 1;  
             entry.NombreTabla = "CRD_Cajas";
             entry.FechaModificacion = DateTime.Now;  
             entry.RegistroHistorico = "Cambio realizado en la descripción de la caja.";

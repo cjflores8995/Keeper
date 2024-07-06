@@ -17,14 +17,14 @@ namespace CRD.Test.MSTest.UnitTest
         {
             CRD_Bitacora entry = new CRD_Bitacora();
 
-            entry.IdTipoDocumento = 2;
-            entry.IdEstadoTipoProceso = 3;
-            entry.IdUsuario = "user1";
-            entry.IdTipoDocumentoPago = 1;
-            entry.IdOrden = "1";
-            entry.CodProveedor = "P001";
-            entry.CodigoEmpresa = "EMP001";
-            entry.IdPaquete = 1;
+            entry.CRD_TipoDocumentos.IdTipoDocumento = 2;
+            entry.CRD_EstadoTipoProcesos.IdEstadoTipoProceso = 3;
+            entry.CRD_Usuarios.Id = 1;
+            entry.CRD_TipoDocumentoPagos.IdTipoDocumentoPago = 1;
+            entry.CRD_Ordenes.ID = "1";
+            entry.CRD_Proveedores.CodProveedor = "P001";
+            entry.CRD_Empresas.CodigoEmpresa = "EMP001";
+            entry.CRD_Paquetes.IdPaquete = 1;
             entry.NumeroDocumentoPago = "DOC456";
             entry.EstadoBienesRecibidos = true;
             entry.FechaEmisionDocumento = new DateTime(2024, 6, 25);
@@ -43,7 +43,7 @@ namespace CRD.Test.MSTest.UnitTest
         {
             var entry = _service.GetById(24);
 
-            entry.IdUsuario = "user2";
+            entry.CRD_Usuarios.Id = 1;
 
             _service.Modify(entry);
         }
@@ -54,14 +54,14 @@ namespace CRD.Test.MSTest.UnitTest
             var getAll = _service.GetAll();
 
             foreach(var item in getAll)
-                Console.WriteLine($"{item.IdOrden}, {item.CodProveedor}, {item.CodigoEmpresa}");
+                Console.WriteLine($"{item.CRD_Ordenes.ID}");
         }
 
         [TestMethod]
         public void GetByIdTest()
         {
             var item = _service.GetById(24);
-            Console.WriteLine($"{item.IdOrden}, {item.CodProveedor}, {item.CodigoEmpresa}");
+            Console.WriteLine($"{item.CRD_Ordenes.ID}, {item.CRD_Proveedores.CodProveedor}");
         }
 
         [TestMethod]
@@ -72,33 +72,7 @@ namespace CRD.Test.MSTest.UnitTest
             foreach (var bitacora in Base_Bitacora)
             {
                 Console.WriteLine(
-                bitacora.IdBitacora + "-" +
-                bitacora.IdTipoDocumento + "-" +
-                bitacora.IdEstadoTipoProceso + "-" +
-                bitacora.IdUsuario + "-" +
-                bitacora.IdTipoDocumentoPago + "-" +
-                bitacora.IdOrden + "-" +
-                bitacora.CodProveedor + "-" +
-                bitacora.CodigoEmpresa + "-" +
-                bitacora.IdPaquete + "-" +
-                bitacora.NumeroDocumentoPago + "-" +
-                bitacora.EstadoBienesRecibidos + "-" +
-                bitacora.FechaEmisionDocumento + "-" +
-                bitacora.FechaRecepcionDocumento + "-" +
-                bitacora.IvaDocumento + "-" +
-                bitacora.IdAnalista + "-" +
-                bitacora.Observaciones + "-" +
-                bitacora.ValorTotal + "-" +
-                bitacora.TipoOrden + "-" +
-                bitacora.AspNetUsers + "-" +
-                bitacora.CRD_Empresas + "-" +
-                bitacora.CRD_Ordenes + "-" +
-                bitacora.CRD_Paquetes + "-" +
-                bitacora.CRD_Proveedores + "-" +
-                bitacora.CRD_TipoDocumentos + "-" +
-                bitacora.CRD_TipoDocumentoPagos + "-" +
-                bitacora.CRD_EstadoTipoProcesos + "-" +
-                bitacora.CRD_Valijas
+                bitacora.IdBitacora
                 );
             }
         }

@@ -12,21 +12,18 @@ namespace CRD.Dominio.Modelo.Entidades
     using System;
     using System.Collections.Generic;
     
-    public partial class CRD_Cajas
+    public partial class CRD_Roles
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public CRD_Cajas()
+        public CRD_Roles()
         {
-            this.CRD_Paquetes = new HashSet<CRD_Paquetes>();
+            this.CRD_UsuarioRoles = new HashSet<CRD_UsuarioRoles>();
         }
     
-        public int IdCaja { get; set; }
-        public string NombreCaja { get; set; }
-        public string Descripcion { get; set; }
-        public Nullable<bool> EstatusCaja { get; set; }
-        public bool Activo { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CRD_Paquetes> CRD_Paquetes { get; set; }
+        public virtual ICollection<CRD_UsuarioRoles> CRD_UsuarioRoles { get; set; }
     }
 }

@@ -17,7 +17,7 @@ namespace CRD.Test.MSTest.UnitTest
         {
             CRD_Paquetes entry = new CRD_Paquetes();
 
-            entry.IdCaja = 1;
+            entry.CRD_Cajas.IdCaja = 1;
             entry.NombrePaquete = "nombre";
             entry.Descripcion = "descripcion";
             entry.EstatusPaquete = true;

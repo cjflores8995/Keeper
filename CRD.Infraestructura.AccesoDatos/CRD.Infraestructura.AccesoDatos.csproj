@@ -57,7 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositorio\Implementaciones\AspNetUsersRepositorioImpl.cs" />
+    <Compile Include="Repositorio\Implementaciones\CRD_UsuariosRepositorioImpl.cs" />
     <Compile Include="Repositorio\Implementaciones\BaseRepositorioImpl.cs" />
     <Compile Include="Repositorio\Implementaciones\CRD_CajasRepositorioImpl.cs" />
     <Compile Include="Repositorio\Implementaciones\CRD_AnalistasRepositorioImpl.cs" />

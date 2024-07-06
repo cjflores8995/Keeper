@@ -27,13 +27,11 @@ namespace CRD.Infraestructura.AccesoDatos.Repositorio
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<AspNetRoles> AspNetRoles { get; set; }
-        public virtual DbSet<AspNetUserClaims> AspNetUserClaims { get; set; }
-        public virtual DbSet<AspNetUserLogins> AspNetUserLogins { get; set; }
-        public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
         public virtual DbSet<CRD_Analistas> CRD_Analistas { get; set; }
+        public virtual DbSet<CRD_AnalistasCRD_EstadoTipoProcesos> CRD_AnalistasCRD_EstadoTipoProcesos { get; set; }
         public virtual DbSet<CRD_AuditoriaBitacora> CRD_AuditoriaBitacora { get; set; }
         public virtual DbSet<CRD_Bitacora> CRD_Bitacora { get; set; }
+        public virtual DbSet<CRD_BitacoraHistorico> CRD_BitacoraHistorico { get; set; }
         public virtual DbSet<CRD_Cajas> CRD_Cajas { get; set; }
         public virtual DbSet<CRD_Cargo> CRD_Cargo { get; set; }
         public virtual DbSet<CRD_Ciudad> CRD_Ciudad { get; set; }
@@ -44,10 +42,11 @@ namespace CRD.Infraestructura.AccesoDatos.Repositorio
         public virtual DbSet<CRD_Ordenes> CRD_Ordenes { get; set; }
         public virtual DbSet<CRD_Paquetes> CRD_Paquetes { get; set; }
         public virtual DbSet<CRD_Proveedores> CRD_Proveedores { get; set; }
+        public virtual DbSet<CRD_Roles> CRD_Roles { get; set; }
         public virtual DbSet<CRD_TipoDocumentoPagos> CRD_TipoDocumentoPagos { get; set; }
         public virtual DbSet<CRD_TipoDocumentos> CRD_TipoDocumentos { get; set; }
+        public virtual DbSet<CRD_UsuarioRoles> CRD_UsuarioRoles { get; set; }
+        public virtual DbSet<CRD_Usuarios> CRD_Usuarios { get; set; }
         public virtual DbSet<CRD_Valijas> CRD_Valijas { get; set; }
-        public virtual DbSet<CRD_BitacoraHistorico> CRD_BitacoraHistorico { get; set; }
-        public virtual DbSet<CRD_AnalistasCRD_EstadoTipoProcesos> CRD_AnalistasCRD_EstadoTipoProcesos { get; set; }
     }
 }
