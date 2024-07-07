@@ -53,5 +53,10 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             return repo.ObtenerUsuarioPorId(id);
         }
+
+        public bool LoginUsuario(string usuario, string password)
+        {
+            return repo.LoginUsuario(usuario, password);
+        }
     }
 }

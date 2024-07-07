@@ -97,6 +97,10 @@
       <Project>{5c5c2463-0448-46d0-9e1c-60dae1c0ac58}</Project>
       <Name>CRD.Dominio.Servicio</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CRD.Infraestructura.CrossCuting\CRD.Infraestructura.CrossCuting.csproj">
+      <Project>{d70d5a1a-b8a5-4fbc-ad39-f8aa5c8cb302}</Project>
+      <Name>CRD.Infraestructura.CrossCuting</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
@@ -118,6 +122,9 @@
       <DependentUpon>SRGIModel.edmx</DependentUpon>
       <LastGenOutput>SRGIModel.Context.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

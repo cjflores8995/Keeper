@@ -32,5 +32,10 @@ namespace CRD.Infraestructura.CrossCuting.Messages
         {
             return MessageBox.Show("Debes llenar todos los campos requeridos", "Error En Proceso", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+        public static DialogResult UsuarioOPasswordIncorrectos()
+        {
+            return MessageBox.Show("El usuario o password son incorrectos", "Error En Proceso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 }

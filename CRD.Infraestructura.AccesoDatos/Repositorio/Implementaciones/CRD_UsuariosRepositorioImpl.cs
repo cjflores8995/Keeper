@@ -1,5 +1,7 @@
 ﻿using CRD.Dominio.Modelo.Abstracciones;
 using CRD.Dominio.Modelo.Entidades;
+using CRD.Infraestructura.CrossCuting.Cache;
+using CRD.Infraestructura.CrossCuting.Messages;
 
 using System;
 using System.Collections.Generic;
@@ -41,6 +43,58 @@ namespace CRD.Infraestructura.AccesoDatos.Repositorio.Implementaciones
                     var result = db.CRD_Usuarios.FirstOrDefault(x => x.Id == id);
 
                     return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("No se puede devolver el resultado", ex);
+            }
+        }
+
+        public bool LoginUsuario(string usuario, string password)
+        {
+            try
+            {
+                using (var db = new SRGI_4Entities())
+                {
+                    CRD_Usuarios usuarioDb = db.CRD_Usuarios.FirstOrDefault(x => x.NombreUsuario.ToLower() == usuario.ToLower().Trim() && x.Activo == true);
+
+                    if (usuarioDb == null)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        string paswordHash = Funcionalidades.ConvertirStringEnSHA256(password);
+
+                        if (usuarioDb.PasswordHash.ToLower().Equals(paswordHash))
+                        {
+                            UsuarioLoginCache.Id = usuarioDb.Id;
+                            UsuarioLoginCache.Nombre = usuarioDb.Nombre;
+                            UsuarioLoginCache.Apellido = usuarioDb.Apellido;
+                            UsuarioLoginCache.NombreUsuario = usuarioDb.NombreUsuario;
+
+                            var rolesUsuario = usuarioDb.CRD_UsuarioRoles.ToList();
+
+                            if (rolesUsuario.Any())
+                            {
+                                foreach (var item in rolesUsuario)
+                                {
+                                    var rol = new UsuarioRoles();
+                                    rol.Id = item.UserId;
+                                    rol.Nombre = item.CRD_Roles.Name;
+
+                                    UsuarioLoginCache.UsuarioRoles.Add(rol);
+                                }
+                            }
+
+                            return true;
+                        } else
+                        {
+                            return false;
+                        }
+
+                    }
                 }
             }
             catch (Exception ex)

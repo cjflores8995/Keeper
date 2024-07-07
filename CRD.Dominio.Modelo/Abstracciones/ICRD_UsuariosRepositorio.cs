@@ -12,5 +12,6 @@ namespace CRD.Dominio.Modelo.Abstracciones
     {
         CRD_Usuarios ObtenerUsuarioPorEmail(string email);
         CRD_Usuarios ObtenerUsuarioPorId(int id);
+        bool LoginUsuario(string usuario, string password);
     }
 }
