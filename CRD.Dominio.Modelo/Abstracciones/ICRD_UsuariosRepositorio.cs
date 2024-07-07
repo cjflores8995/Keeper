@@ -19,5 +19,7 @@ namespace CRD.Dominio.Modelo.Abstracciones
         bool EliminadoLogico(int id);
 
         bool InsertarUsuario(CRD_Usuarios obj);
+
+        bool ActualizarUsuario(CRD_Usuarios obj);
     }
 }

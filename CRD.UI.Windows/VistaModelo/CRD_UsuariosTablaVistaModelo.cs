@@ -13,8 +13,8 @@ namespace CRD.UI.Windows.VistaModelo
         public string Apellido { get; set; }
         public string Email { get; set; }
         public string NombreUsuario { get; set; }
-        public string Cargo { get; set; }
-        public string Departamento { get; set; }
-        public string Ciudad { get; set; }
+        public int Cargo { get; set; }
+        public int Departamento { get; set; }
+        public int Ciudad { get; set; }
     }
 }

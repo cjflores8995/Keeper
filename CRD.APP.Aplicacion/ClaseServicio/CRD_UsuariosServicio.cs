@@ -26,7 +26,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
 
         public void Delete(int id)
         {
-            repo.Delete(id);
+            repo.EliminadoLogico(id);
         }
 
         public IEnumerable<CRD_Usuarios> GetAll()
@@ -64,6 +64,18 @@ namespace CRD.APP.Aplicacion.ClaseServicio
             try
             {
                 return repo.ObtenerElementosActivos();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error Servicio: ", ex);
+            }
+        }
+
+        public bool ActualizarUsuario(CRD_Usuarios entity)
+        {
+            try
+            {
+                return repo.ActualizarUsuario(entity);
             }
             catch (Exception ex)
             {

@@ -41,6 +41,22 @@ namespace CRD.UI.Windows.ControladoresApp
             }
         }
 
+        public bool Actualizar(CRD_UsuariosVistaModelo obj)
+        {
+            try
+            {
+                CRD_Usuarios entry = MapearVistaEnObjeto(obj, agregarId: true);
+
+                servicio.ActualizarUsuario(entry);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
+        }
+
         public List<CRD_UsuariosTablaVistaModelo> ListarTodo()
         {
             try
@@ -60,9 +76,9 @@ namespace CRD.UI.Windows.ControladoresApp
                             Apellido = item.Apellido,
                             NombreUsuario = item.NombreUsuario,
                             Email = item.Email,
-                            Cargo = item.CRD_Cargo.NombreCargo,
-                            Departamento = item.CRD_Departamento.NombreDepartamento,
-                            Ciudad = item.CRD_Ciudad.NombreCiudad
+                            Cargo = item.CRD_Cargo.IdCargo,
+                            Departamento = item.CRD_Departamento.IdDepartamento,
+                            Ciudad = item.CRD_Ciudad.IdCiudad
                         };
 
                         result.Add(entry);
@@ -92,7 +108,6 @@ namespace CRD.UI.Windows.ControladoresApp
             resultado.IdCargo = vistaModelo.IdCargo;
             resultado.IdDepartamento = vistaModelo.IdDepartamento;
             resultado.IdCiudad = vistaModelo.IdCiudad;
-            //resultado.Telefono = "0000000000";
 
             resultado.Activo = true;
 
@@ -102,6 +117,20 @@ namespace CRD.UI.Windows.ControladoresApp
             }
 
             return resultado;
+        }
+
+        public bool Eliminar(int idObj)
+        {
+            try
+            {
+                servicio.Delete(idObj);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
         }
     }
 }

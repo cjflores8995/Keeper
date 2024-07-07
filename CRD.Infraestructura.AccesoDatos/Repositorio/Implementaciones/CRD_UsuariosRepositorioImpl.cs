@@ -170,5 +170,39 @@ namespace CRD.Infraestructura.AccesoDatos.Repositorio.Implementaciones
                 throw new Exception("No se puede devolver el resultado", ex);
             }
         }
+
+        public bool ActualizarUsuario(CRD_Usuarios obj)
+        {
+            try
+            {
+                using (var db = new SRGI_4Entities())
+                {
+                    var usuario = db.CRD_Usuarios.FirstOrDefault(x => x.Id == obj.Id);
+
+                    if(usuario == null)
+                    {
+                        return false;
+
+                    }
+
+                    usuario.CRD_Cargo = db.CRD_Cargo.FirstOrDefault(x => x.IdCargo == obj.IdCargo);
+                    usuario.CRD_Ciudad = db.CRD_Ciudad.FirstOrDefault(x => x.IdCiudad == obj.IdCiudad);
+                    usuario.CRD_Departamento = db.CRD_Departamento.FirstOrDefault(x => x.IdDepartamento == obj.IdDepartamento);
+
+                    usuario.Nombre = obj.Nombre;
+                    usuario.Apellido = obj.Apellido;
+                    usuario.IdCargo = obj.IdCargo;
+                    usuario.IdDepartamento = obj.IdDepartamento;
+                    usuario.IdCiudad = obj.IdCiudad;
+                    usuario.Email = obj.Email;
+
+                    return db.SaveChanges() > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("No se puede devolver el resultado", ex);
+            }
+        }
     }
 }

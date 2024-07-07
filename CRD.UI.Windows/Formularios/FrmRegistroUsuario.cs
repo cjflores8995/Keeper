@@ -12,6 +12,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
 namespace CRD.UI.Windows.Formularios
 {
     public partial class FrmRegistroUsuario : Form
@@ -58,12 +60,14 @@ namespace CRD.UI.Windows.Formularios
                 if (resultado == DialogResult.Yes)
                 {
                     vistaModelo = CrearObjeto(true);
-                    bool result = true;// Actualizar(vistaModelo);
+                    bool result = Actualizar(vistaModelo);
 
                     if (result)
                     {
                         Funcionalidades.LimpiarCampos(this);
                         ListarRegistros();
+                        txtNombreUsuario.Enabled = true;
+                        txtPassword.Enabled = true;
                     }
                 }
                 else
@@ -79,6 +83,13 @@ namespace CRD.UI.Windows.Formularios
             var resultado = controlador.Insertar(vistaModelo);
             CustomMessages.RespuestaProcesoDb(resultado);
             Funcionalidades.LimpiarCampos(this);
+        }
+
+        private bool Actualizar(CRD_UsuariosVistaModelo vistaModelo)
+        {
+            var resultado = controlador.Actualizar(vistaModelo);
+            CustomMessages.RespuestaProcesoDb(resultado);
+            return resultado;
         }
 
         private bool ValidarCampos()
@@ -182,6 +193,98 @@ namespace CRD.UI.Windows.Formularios
             else
             {
                 InsertUpdate();
+            }
+        }
+
+        private void dgvLista_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow fila = dgvLista.Rows[e.RowIndex];
+
+                txtId.Text = fila.Cells["Id"].Value.ToString();
+                txtNombre.Text = fila.Cells["Nombre"].Value.ToString();
+                txtApellido.Text = fila.Cells["Apellido"].Value.ToString();
+                txtNombreUsuario.Text = fila.Cells["NombreUsuario"].Value.ToString();
+                txtEmail.Text = fila.Cells["Email"].Value.ToString();
+
+                foreach (var item in cbxCargo.Items)
+                {
+                    if ((int)((dynamic)item).Id == int.Parse(fila.Cells["Cargo"].Value.ToString()))
+                    {
+                        cbxCargo.SelectedItem = item;
+                        break;
+                    }
+                }
+
+                foreach (var item in cbxDepartamento.Items)
+                {
+                    if ((int)((dynamic)item).Id == int.Parse(fila.Cells["Departamento"].Value.ToString()))
+                    {
+                        cbxDepartamento.SelectedItem = item;
+                        break;
+                    }
+                }
+
+                foreach (var item in cbxCiudad.Items)
+                {
+                    if ((int)((dynamic)item).Id == int.Parse(fila.Cells["Ciudad"].Value.ToString()))
+                    {
+                        cbxCiudad.SelectedItem = item;
+                        break;
+                    }
+                }
+
+                fila.Cells[0].ReadOnly = true;
+                fila.Cells[1].ReadOnly = true;
+                fila.Cells[2].ReadOnly = true;
+                fila.Cells[3].ReadOnly = true;
+                fila.Cells[4].ReadOnly = true;
+                fila.Cells[5].ReadOnly = true;
+                fila.Cells[6].ReadOnly = true;
+                fila.Cells[7].ReadOnly = true;
+
+                txtNombreUsuario.Enabled = false;
+                txtPassword.Enabled = false;
+                txtPassword.Text = "Password";
+            }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            Funcionalidades.LimpiarCampos(this);
+            txtNombreUsuario.Enabled = false;
+            txtPassword.Enabled = false;
+            txtNombre.Focus();
+
+            cbxCargo.SelectedIndex = 0;
+            cbxDepartamento.SelectedIndex = 0;
+            cbxCiudad.SelectedIndex = 0;
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtId.Text))
+            {
+                CustomMessages.DebesSeleccionarRegistro();
+            }
+            else
+            {
+                var confirmacion = MessageBox.Show(CustomMessages.ConfirmacionEliminacion, "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (confirmacion == DialogResult.Yes)
+                {
+                    int id = int.Parse(txtId.Text);
+                    var resultado = controlador.Eliminar(id);
+                    CustomMessages.RespuestaProcesoDb(resultado);
+                    ListarRegistros();
+                    Funcionalidades.LimpiarCampos(this);
+                }
+                else
+                {
+
+                    Funcionalidades.LimpiarCampos(this);
+                }
             }
         }
     }
