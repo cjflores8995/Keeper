@@ -13,5 +13,11 @@ namespace CRD.Dominio.Modelo.Abstracciones
         CRD_Usuarios ObtenerUsuarioPorEmail(string email);
         CRD_Usuarios ObtenerUsuarioPorId(int id);
         bool LoginUsuario(string usuario, string password);
+
+        List<CRD_Usuarios> ObtenerElementosActivos();
+
+        bool EliminadoLogico(int id);
+
+        bool InsertarUsuario(CRD_Usuarios obj);
     }
 }

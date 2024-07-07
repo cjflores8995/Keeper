@@ -5,6 +5,7 @@ using CRD.Infraestructura.CrossCuting.Messages;
 
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -88,6 +89,9 @@ namespace CRD.Infraestructura.AccesoDatos.Repositorio.Implementaciones
                                 }
                             }
 
+                            usuarioDb.FechaUltimoAcceso = DateTime.Now;
+                            db.SaveChanges();
+
                             return true;
                         } else
                         {
@@ -95,6 +99,70 @@ namespace CRD.Infraestructura.AccesoDatos.Repositorio.Implementaciones
                         }
 
                     }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("No se puede devolver el resultado", ex);
+            }
+        }
+
+        public List<CRD_Usuarios> ObtenerElementosActivos()
+        {
+            try
+            {
+                using (var db = new SRGI_4Entities())
+                {
+
+                    return db.CRD_Usuarios.Include("CRD_Departamento").Include("CRD_Cargo").Include("CRD_Ciudad").Where(x => x.Activo == true).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("No se puede devolver el resultado", ex);
+            }
+        }
+
+        public bool EliminadoLogico(int id)
+        {
+            try
+            {
+                using (var db = new SRGI_4Entities())
+                {
+                    var elemento = db.CRD_Usuarios.FirstOrDefault(x => x.Id == id);
+
+                    if (elemento != null)
+                    {
+                        elemento.Activo = false;
+                        var result = db.SaveChanges();
+
+                        return result > 0;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("No se puede devolver el resultado", ex);
+            }
+        }
+
+        public bool InsertarUsuario(CRD_Usuarios obj)
+        {
+            try
+            {
+                using (var db = new SRGI_4Entities())
+                {
+                    obj.CRD_Cargo = db.CRD_Cargo.FirstOrDefault(x => x.IdCargo == obj.IdCargo);
+                    obj.CRD_Ciudad = db.CRD_Ciudad.FirstOrDefault(x => x.IdCiudad == obj.IdCiudad);
+                    obj.CRD_Departamento = db.CRD_Departamento.FirstOrDefault(x => x.IdDepartamento == obj.IdDepartamento);
+
+
+                    var usuario = db.CRD_Usuarios.Add(obj);
+                    return db.SaveChanges() > 0;
                 }
             }
             catch (Exception ex)

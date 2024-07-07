@@ -85,7 +85,6 @@ namespace CRD.UI.Windows.Formularios
             var resultado = controlador.Insertar(vistaModelo);
             CustomMessages.RespuestaProcesoDb(resultado);
             Funcionalidades.LimpiarCampos(this);
-
         }
 
         private bool Actualizar(CRD_CajasVistaModelo vistaModelo)

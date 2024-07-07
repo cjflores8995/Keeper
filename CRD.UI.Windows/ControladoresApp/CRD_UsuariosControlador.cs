@@ -1,4 +1,7 @@
 ﻿using CRD.APP.Aplicacion.ClaseServicio;
+using CRD.Dominio.Modelo.Entidades;
+using CRD.Infraestructura.CrossCuting.Messages;
+using CRD.UI.Windows.VistaModelo;
 
 using System;
 using System.Collections.Generic;
@@ -20,6 +23,85 @@ namespace CRD.UI.Windows.ControladoresApp
         public bool LoginUsuario(string usuario, string password)
         {
             return servicio.LoginUsuario(usuario, password);
+        }
+
+        public bool Insertar(CRD_UsuariosVistaModelo obj)
+        {
+            try
+            {
+                CRD_Usuarios entry = MapearVistaEnObjeto(obj);
+
+                servicio.Add(entry);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return false;
+            }
+        }
+
+        public List<CRD_UsuariosTablaVistaModelo> ListarTodo()
+        {
+            try
+            {
+                List<CRD_UsuariosTablaVistaModelo> result = new List<CRD_UsuariosTablaVistaModelo>();
+
+                var query = servicio.ObtenerElementosActivos();
+
+                if (query.Any())
+                {
+                    foreach (var item in query)
+                    {
+                        CRD_UsuariosTablaVistaModelo entry = new CRD_UsuariosTablaVistaModelo()
+                        {
+                            Id = item.Id,
+                            Nombre = item.Nombre,
+                            Apellido = item.Apellido,
+                            NombreUsuario = item.NombreUsuario,
+                            Email = item.Email,
+                            Cargo = item.CRD_Cargo.NombreCargo,
+                            Departamento = item.CRD_Departamento.NombreDepartamento,
+                            Ciudad = item.CRD_Ciudad.NombreCiudad
+                        };
+
+                        result.Add(entry);
+                    }
+                }
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+
+                return null;
+            }
+        }
+
+        private CRD_Usuarios MapearVistaEnObjeto(CRD_UsuariosVistaModelo vistaModelo, bool agregarId = false)
+        {
+            CRD_Usuarios resultado = new CRD_Usuarios();
+            resultado.Nombre = vistaModelo.Nombre;
+            resultado.Apellido = vistaModelo.Apellido;
+            resultado.FechaRegistro = DateTime.Now;
+            resultado.FechaUltimoAcceso = new DateTime(2999, 12, 12);
+            resultado.Email = vistaModelo.Email;
+            resultado.PasswordHash = Funcionalidades.ConvertirStringEnSHA256(vistaModelo.PasswordHash);
+            resultado.NombreUsuario = vistaModelo.NombreUsuario;
+            resultado.IdCargo = vistaModelo.IdCargo;
+            resultado.IdDepartamento = vistaModelo.IdDepartamento;
+            resultado.IdCiudad = vistaModelo.IdCiudad;
+            //resultado.Telefono = "0000000000";
+
+            resultado.Activo = true;
+
+            if (agregarId)
+            {
+                resultado.Id = vistaModelo.Id;
+            }
+
+            return resultado;
         }
     }
 }

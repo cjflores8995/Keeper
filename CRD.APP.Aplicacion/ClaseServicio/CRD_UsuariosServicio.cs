@@ -21,7 +21,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
 
         public void Add(CRD_Usuarios entity)
         {
-            repo.Add(entity);
+            repo.InsertarUsuario(entity);
         }
 
         public void Delete(int id)
@@ -57,6 +57,18 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         public bool LoginUsuario(string usuario, string password)
         {
             return repo.LoginUsuario(usuario, password);
+        }
+
+        public List<CRD_Usuarios> ObtenerElementosActivos()
+        {
+            try
+            {
+                return repo.ObtenerElementosActivos();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error Servicio: ", ex);
+            }
         }
     }
 }

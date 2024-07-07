@@ -24,7 +24,20 @@ namespace CRD.Infraestructura.AccesoDatos.Repositorio
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            throw new UnintentionalCodeFirstException();
+            modelBuilder.Entity<CRD_Usuarios>()
+                .HasRequired(u => u.CRD_Cargo)
+                .WithMany()
+                .HasForeignKey(u => u.IdCargo);
+
+            modelBuilder.Entity<CRD_Usuarios>()
+                .HasRequired(u => u.CRD_Departamento)
+                .WithMany()
+                .HasForeignKey(u => u.IdDepartamento);
+
+            modelBuilder.Entity<CRD_Usuarios>()
+                .HasRequired(u => u.CRD_Ciudad)
+                .WithMany()
+                .HasForeignKey(u => u.IdCiudad);
         }
     
         public virtual DbSet<CRD_Analistas> CRD_Analistas { get; set; }

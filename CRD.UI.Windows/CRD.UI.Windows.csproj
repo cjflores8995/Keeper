@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="ControladoresApp\CRD_AuditoriaBitacoraControlador.cs" />
     <Compile Include="ControladoresApp\CRD_CajasControlador.cs" />
+    <Compile Include="ControladoresApp\CRD_DepartamentoControlador.cs" />
     <Compile Include="ControladoresApp\CRD_CargoControlador.cs" />
     <Compile Include="ControladoresApp\CRD_CiudadControlador.cs" />
     <Compile Include="ControladoresApp\CRD_RolesControlador.cs" />
@@ -105,9 +106,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VistaModelo\CRD_AuditoriaBitacoraVistaModelo.cs" />
     <Compile Include="VistaModelo\CRD_CajasVistaModelo.cs" />
+    <Compile Include="VistaModelo\CRD_DepartamentoVistaModelo.cs" />
     <Compile Include="VistaModelo\CRD_CargoVistaModelo.cs" />
     <Compile Include="VistaModelo\CRD_CiudadVistaModelo.cs" />
     <Compile Include="VistaModelo\CRD_RolesVistaModelo.cs" />
+    <Compile Include="VistaModelo\CRD_UsuariosTablaVistaModelo.cs" />
     <Compile Include="VistaModelo\CRD_UsuariosVistaModelo.cs" />
     <EmbeddedResource Include="Formularios\FrmCRD_AuditoriaBitacora.resx">
       <DependentUpon>FrmCRD_AuditoriaBitacora.cs</DependentUpon>

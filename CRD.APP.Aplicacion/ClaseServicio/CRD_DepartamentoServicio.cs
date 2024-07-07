@@ -44,11 +44,11 @@ namespace CRD.APP.Aplicacion.ClaseServicio
 
         }
 
-        public IEnumerable<CRD_Departamento> GetAll()
+        public IEnumerable<CRD_Departamento> ObtenerElementosActivos()
         {
             try
             {
-                return repo.GetAll();
+                return repo.ObtenerElementosActivos();
             }
             catch (Exception ex)
             {

@@ -32,7 +32,11 @@ namespace CRD.Dominio.Modelo.Entidades
         public string Telefono { get; set; }
         public string NombreUsuario { get; set; }
         public bool Activo { get; set; }
-    
+
+        public int IdCargo { get; set; }
+        public int IdDepartamento { get; set; }
+        public int IdCiudad { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CRD_AuditoriaBitacora> CRD_AuditoriaBitacora { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

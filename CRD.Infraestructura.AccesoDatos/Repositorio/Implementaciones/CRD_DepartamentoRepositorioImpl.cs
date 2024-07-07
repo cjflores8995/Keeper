@@ -27,5 +27,20 @@ namespace CRD.Infraestructura.AccesoDatos.Repositorio.Implementaciones
                 throw new Exception("Error: No se pudo insertar registro,", ex);
             }
         }
+
+        public List<CRD_Departamento> ObtenerElementosActivos()
+        {
+            try
+            {
+                using (var db = new SRGI_4Entities())
+                {
+                    return db.CRD_Departamento.Where(x => x.Activo == true).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error: No se pudo insertar registro,", ex);
+            }
+        }
     }
 }
