@@ -74,20 +74,7 @@ namespace CRD.Infraestructura.AccesoDatos.Repositorio.Implementaciones
                             UsuarioLoginCache.Nombre = usuarioDb.Nombre;
                             UsuarioLoginCache.Apellido = usuarioDb.Apellido;
                             UsuarioLoginCache.NombreUsuario = usuarioDb.NombreUsuario;
-
-                            var rolesUsuario = usuarioDb.CRD_UsuarioRoles.ToList();
-
-                            if (rolesUsuario.Any())
-                            {
-                                foreach (var item in rolesUsuario)
-                                {
-                                    var rol = new UsuarioRoles();
-                                    rol.Id = item.UserId;
-                                    rol.Nombre = item.CRD_Roles.Name;
-
-                                    UsuarioLoginCache.UsuarioRoles.Add(rol);
-                                }
-                            }
+                            UsuarioLoginCache.IdCargo = usuarioDb.IdCargo;
 
                             usuarioDb.FechaUltimoAcceso = DateTime.Now;
                             db.SaveChanges();
@@ -129,7 +116,7 @@ namespace CRD.Infraestructura.AccesoDatos.Repositorio.Implementaciones
             {
                 using (var db = new SRGI_4Entities())
                 {
-                    var elemento = db.CRD_Usuarios.FirstOrDefault(x => x.Id == id);
+                    var elemento = db.CRD_Usuarios.FirstOrDefault(x => x.Id == id && x.CRD_Cargo.NombreCargo.ToLower() != "administrador");
 
                     if (elemento != null)
                     {

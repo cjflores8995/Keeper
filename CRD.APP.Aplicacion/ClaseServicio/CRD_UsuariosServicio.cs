@@ -24,9 +24,9 @@ namespace CRD.APP.Aplicacion.ClaseServicio
             repo.InsertarUsuario(entity);
         }
 
-        public void Delete(int id)
+        public bool Delete(int id)
         {
-            repo.EliminadoLogico(id);
+            return repo.EliminadoLogico(id);
         }
 
         public IEnumerable<CRD_Usuarios> GetAll()

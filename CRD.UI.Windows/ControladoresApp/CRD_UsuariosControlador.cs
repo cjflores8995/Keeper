@@ -123,8 +123,8 @@ namespace CRD.UI.Windows.ControladoresApp
         {
             try
             {
-                servicio.Delete(idObj);
-                return true;
+                var resultado = servicio.Delete(idObj);
+                return resultado;
             }
             catch (Exception ex)
             {

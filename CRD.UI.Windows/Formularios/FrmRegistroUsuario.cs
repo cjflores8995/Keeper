@@ -253,8 +253,8 @@ namespace CRD.UI.Windows.Formularios
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             Funcionalidades.LimpiarCampos(this);
-            txtNombreUsuario.Enabled = false;
-            txtPassword.Enabled = false;
+            txtNombreUsuario.Enabled = true;
+            txtPassword.Enabled = true;
             txtNombre.Focus();
 
             cbxCargo.SelectedIndex = 0;

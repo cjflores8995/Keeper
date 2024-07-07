@@ -13,6 +13,8 @@ namespace CRD.Infraestructura.CrossCuting.Cache
         public static string Apellido { get; set; }
         public static string Email { get; set; }
         public static string NombreUsuario { get; set; }
-        public static List<UsuarioRoles> UsuarioRoles { get; set; } = new List<UsuarioRoles>();
+        public static int IdCargo { get; set; }
+
+
     }
 }
