@@ -58,16 +58,5 @@ namespace CRD.Test.MSTest.UnitTest
             _service.Modify(entry);
         }
 
-        [TestMethod]
-        public void TestMethod1()
-        {
-            var tipoDocumento = _service.buscarPorNombre("documento");
-            Console.WriteLine(
-                tipoDocumento.IdTipoDocumento + "-" +
-                tipoDocumento.Nombre + "-" +
-                tipoDocumento.Descripcion + "-" +
-                tipoDocumento.Activo);
-        }
-
     }
 }

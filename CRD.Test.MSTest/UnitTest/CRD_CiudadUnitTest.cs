@@ -35,15 +35,6 @@ namespace CRD.Test.MSTest.UnitTest
         }
 
         [TestMethod]
-        public void GetAllTest()
-        {
-            var getAll = _service.GetAll();
-
-            foreach(var item in getAll)
-                Console.WriteLine($"{item.NombreCiudad}, {item.Descripcion}, {item.Activo}");
-        }
-
-        [TestMethod]
         public void GetByIdTest()
         {
             var item = _service.GetById(4);

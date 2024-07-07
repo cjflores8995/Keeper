@@ -58,16 +58,5 @@ namespace CRD.Test.MSTest.UnitTest
             _service.Modify(entry);
         }
 
-        [TestMethod]
-        public void TestMethod1()
-        {
-            var tipoDocumentoPago = _service.buscarPorNombre("Pergamino");
-            Console.WriteLine(
-                tipoDocumentoPago.IdTipoDocumentoPago + "-" +
-                tipoDocumentoPago.Nombre + "-" +
-                tipoDocumentoPago.Descripcion + "-" +
-                tipoDocumentoPago.Activo);
-        }
-
     }
 }

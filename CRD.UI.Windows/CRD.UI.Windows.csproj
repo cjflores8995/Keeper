@@ -59,7 +59,14 @@
     <Compile Include="ControladoresApp\CRD_CargoControlador.cs" />
     <Compile Include="ControladoresApp\CRD_CiudadControlador.cs" />
     <Compile Include="ControladoresApp\CRD_RolesControlador.cs" />
+    <Compile Include="ControladoresApp\CRD_TipoDocumentoPagosControlador.cs" />
+    <Compile Include="ControladoresApp\CRD_TipoDocumentosControlador.cs" />
     <Compile Include="ControladoresApp\CRD_UsuariosControlador.cs" />
+    <Compile Include="ControladoresApp\DepartamentoController.cs" />
+    <Compile Include="ControladoresApp\EmpresasController.cs" />
+    <Compile Include="ControladoresApp\EstadoTipoProcesosController.cs" />
+    <Compile Include="ControladoresApp\IvaController.cs" />
+    <Compile Include="ControladoresApp\ValijasController.cs" />
     <Compile Include="Formularios\FrmCRD_AuditoriaBitacora.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +91,42 @@
     <Compile Include="Formularios\FrmCRD_Ciudad.Designer.cs">
       <DependentUpon>FrmCRD_Ciudad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FrmCRD_TipoDocumentoPagos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmCRD_TipoDocumentoPagos.designer.cs">
+      <DependentUpon>FrmCRD_TipoDocumentoPagos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmCRD_TipoDocumentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmCRD_TipoDocumentos.designer.cs">
+      <DependentUpon>FrmCRD_TipoDocumentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmDepartamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmDepartamento.designer.cs">
+      <DependentUpon>FrmDepartamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmEmpresas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmEmpresas.designer.cs">
+      <DependentUpon>FrmEmpresas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmEstadoTipoProcesos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmEstadoTipoProcesos.designer.cs">
+      <DependentUpon>FrmEstadoTipoProcesos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmIva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmIva.designer.cs">
+      <DependentUpon>FrmIva.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +138,12 @@
     </Compile>
     <Compile Include="Formularios\FrmRegistroUsuario.Designer.cs">
       <DependentUpon>FrmRegistroUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmValijas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmValijas.designer.cs">
+      <DependentUpon>FrmValijas.cs</DependentUpon>
     </Compile>
     <Compile Include="MDIPrincipal.cs">
       <SubType>Form</SubType>
@@ -110,8 +159,15 @@
     <Compile Include="VistaModelo\CRD_CargoVistaModelo.cs" />
     <Compile Include="VistaModelo\CRD_CiudadVistaModelo.cs" />
     <Compile Include="VistaModelo\CRD_RolesVistaModelo.cs" />
+    <Compile Include="VistaModelo\CRD_TipoDocumentoPagosVistaModelo.cs" />
+    <Compile Include="VistaModelo\CRD_TipoDocumentosVistaModelo.cs" />
     <Compile Include="VistaModelo\CRD_UsuariosTablaVistaModelo.cs" />
     <Compile Include="VistaModelo\CRD_UsuariosVistaModelo.cs" />
+    <Compile Include="VistaModelo\DepartamentoVistaModelo.cs" />
+    <Compile Include="VistaModelo\EmpresasVistaModelo.cs" />
+    <Compile Include="VistaModelo\EstadoTipoProcesosVistaModelo.cs" />
+    <Compile Include="VistaModelo\IvaVistaModelo.cs" />
+    <Compile Include="VistaModelo\ValijasVistaModelo.cs" />
     <EmbeddedResource Include="Formularios\FrmCRD_AuditoriaBitacora.resx">
       <DependentUpon>FrmCRD_AuditoriaBitacora.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,11 +180,32 @@
     <EmbeddedResource Include="Formularios\FrmCRD_Ciudad.resx">
       <DependentUpon>FrmCRD_Ciudad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmCRD_TipoDocumentoPagos.resx">
+      <DependentUpon>FrmCRD_TipoDocumentoPagos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmCRD_TipoDocumentos.resx">
+      <DependentUpon>FrmCRD_TipoDocumentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmDepartamento.resx">
+      <DependentUpon>FrmDepartamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmEmpresas.resx">
+      <DependentUpon>FrmEmpresas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmEstadoTipoProcesos.resx">
+      <DependentUpon>FrmEstadoTipoProcesos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmIva.resx">
+      <DependentUpon>FrmIva.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmRegistroUsuario.resx">
       <DependentUpon>FrmRegistroUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmValijas.resx">
+      <DependentUpon>FrmValijas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MDIPrincipal.resx">
       <DependentUpon>MDIPrincipal.cs</DependentUpon>

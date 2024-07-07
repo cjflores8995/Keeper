@@ -15,6 +15,7 @@ namespace CRD.Dominio.Modelo.Entidades
     public partial class CRD_Valijas
     {
         public int IdValija { get; set; }
+        public int IdBitacora { get; set; }
         public System.DateTime Fecha { get; set; }
         public string Origen { get; set; }
         public string Remitente { get; set; }

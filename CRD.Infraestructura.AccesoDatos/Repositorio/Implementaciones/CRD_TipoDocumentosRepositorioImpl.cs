@@ -10,15 +10,58 @@ namespace CRD.Infraestructura.AccesoDatos.Repositorio.Implementaciones
 {
     public class CRD_TipoDocumentosRepositorioImpl : BaseRepositorioImpl<CRD_TipoDocumentos>, ICRD_TipoDocumentosRepositorio
     {
-        public CRD_TipoDocumentos buscarPorNombre(string nombre)
+        public bool EliminadoLogico(int id)
         {
             try
             {
-                using (var context = new SRGI_4Entities())
+                using (var db = new SRGI_4Entities())
                 {
-                    var resultado = from tipoDocumento in context.CRD_TipoDocumentos
-                                    where tipoDocumento.Nombre == nombre
-                                    select tipoDocumento;
+                    var elemento = db.CRD_TipoDocumentos.FirstOrDefault(x => x.IdTipoDocumento == id);
+
+                    if (elemento != null)
+                    {
+                        elemento.Activo = false;
+                        var result = db.SaveChanges();
+
+                        return result > 0;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("No se puede devolver el resultado", ex);
+            }
+        }
+
+        public List<CRD_TipoDocumentos> ObtenerElementosActivos()
+        {
+            try
+            {
+                using (var db = new SRGI_4Entities())
+                {
+
+                    return db.CRD_TipoDocumentos.Where(x => x.Activo == true).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("No se puede devolver el resultado", ex);
+            }
+        }
+
+        public CRD_TipoDocumentos ObtenerTipoDocumentoPorNombre(string nombreTipoDocumento)
+        {
+            try
+            {
+                using (var db = new SRGI_4Entities())
+                {
+                    var resultado = from obj in db.CRD_TipoDocumentos
+                                    where obj.Nombre == nombreTipoDocumento
+                                    select obj;
                     return resultado.Single();
                 }
             }

@@ -72,7 +72,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                repo.Delete(id);
+                repo.EliminadoLogico(id);
             }
             catch (Exception ex)
             {
@@ -80,15 +80,27 @@ namespace CRD.APP.Aplicacion.ClaseServicio
             }
         }
 
-        public CRD_TipoDocumentoPagos buscarPorNombre(string nombre)
+        public CRD_TipoDocumentoPagos ObtenerTipoDocumentoPagosPorNombre(string nombre)
         {
             try
             {
-                return repo.buscarPorNombre(nombre);
+                return repo.ObtenerTipoDocumentoPagosPorNombre(nombre);
             }
             catch (Exception ex)
             {
                 throw new Exception("No se puedo encontrar el registro", ex);
+            }
+        }
+
+        public List<CRD_TipoDocumentoPagos> ObtenerElementosActivos()
+        {
+            try
+            {
+                return repo.ObtenerElementosActivos();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("No se puedo encontrar el listado", ex);
             }
         }
     }
