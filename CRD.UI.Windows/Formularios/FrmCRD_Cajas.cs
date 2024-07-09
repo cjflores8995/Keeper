@@ -109,38 +109,6 @@ namespace CRD.UI.Windows.Formularios
 
         #endregion Private Methods
 
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            if (ValidarCampos())
-            {
-                CustomMessages.DebesLlenarCamposRequeridos();
-            }
-            else
-            {
-                InsertUpdate();
-            }
-        }
-
-        private void dgvLista_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow fila = dgvLista.Rows[e.RowIndex];
-
-                txtIdCajas.Text = fila.Cells[0].Value.ToString();
-                txtNombre.Text = fila.Cells[1].Value.ToString();
-                txtDescripcion.Text = fila.Cells[2].Value.ToString();
-                chkEstadoCajas.Checked = (bool)fila.Cells[3].Value;
-                chkActivo.Checked = (bool)fila.Cells[4].Value;
-
-                fila.Cells[0].ReadOnly = true;
-                fila.Cells[1].ReadOnly = true;
-                fila.Cells[2].ReadOnly = true;
-                fila.Cells[3].ReadOnly = true;
-                fila.Cells[4].ReadOnly = true;
-            }
-        }
-
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtIdCajas.Text))
@@ -164,6 +132,38 @@ namespace CRD.UI.Windows.Formularios
 
                     Funcionalidades.LimpiarCampos(this);
                 }
+            }
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (ValidarCampos())
+            {
+                CustomMessages.DebesLlenarCamposRequeridos();
+            }
+            else
+            {
+                InsertUpdate();
+            }
+        }
+
+        private void dgvLista_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow fila = dgvLista.Rows[e.RowIndex];
+
+                txtIdCajas.Text = fila.Cells[0].Value.ToString();
+                txtNombre.Text = fila.Cells[1].Value.ToString();
+                txtDescripcion.Text = fila.Cells[2].Value.ToString();
+                chkEstadoCajas.Checked = (bool)fila.Cells[3].Value;
+                chkActivo.Checked = (bool)fila.Cells[4].Value;
+
+                fila.Cells[0].ReadOnly = true;
+                fila.Cells[1].ReadOnly = true;
+                fila.Cells[2].ReadOnly = true;
+                fila.Cells[3].ReadOnly = true;
+                fila.Cells[4].ReadOnly = true;
             }
         }
     }

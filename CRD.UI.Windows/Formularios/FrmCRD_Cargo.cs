@@ -74,17 +74,6 @@ namespace CRD.UI.Windows.Formularios
             return resultado;
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            if (ValidarCampos())
-            {
-                CustomMessages.DebesLlenarCamposRequeridos();
-            }
-            else
-            {
-                InsertUpdate();
-            }
-        }
 
         private bool ValidarCampos()
         {
@@ -95,24 +84,6 @@ namespace CRD.UI.Windows.Formularios
             else
             {
                 return false;
-            }
-        }
-
-        private void dgvLista_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow fila = dgvLista.Rows[e.RowIndex];
-
-                txtIdCargo.Text = fila.Cells[0].Value.ToString();
-                txtNombre.Text = fila.Cells[1].Value.ToString();
-                txtDescripcion.Text = fila.Cells[2].Value.ToString();
-                chkActivo.Checked = (bool)fila.Cells[3].Value;
-
-                fila.Cells[0].ReadOnly = true;
-                fila.Cells[1].ReadOnly = true;
-                fila.Cells[2].ReadOnly = true;
-                fila.Cells[3].ReadOnly = true;
             }
         }
         
@@ -133,7 +104,20 @@ namespace CRD.UI.Windows.Formularios
 
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+
+        private void btnGuardar_Click_1(object sender, EventArgs e)
+        {
+            if (ValidarCampos())
+            {
+                CustomMessages.DebesLlenarCamposRequeridos();
+            }
+            else
+            {
+                InsertUpdate();
+            }
+        }
+
+        private void btnEliminar_Click_1(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtIdCargo.Text))
             {
@@ -156,6 +140,24 @@ namespace CRD.UI.Windows.Formularios
 
                     Funcionalidades.LimpiarCampos(this);
                 }
+            }
+        }
+
+        private void dgvLista_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow fila = dgvLista.Rows[e.RowIndex];
+
+                txtIdCargo.Text = fila.Cells[0].Value.ToString();
+                txtNombre.Text = fila.Cells[1].Value.ToString();
+                txtDescripcion.Text = fila.Cells[2].Value.ToString();
+                chkActivo.Checked = (bool)fila.Cells[3].Value;
+
+                fila.Cells[0].ReadOnly = true;
+                fila.Cells[1].ReadOnly = true;
+                fila.Cells[2].ReadOnly = true;
+                fila.Cells[3].ReadOnly = true;
             }
         }
     }

@@ -18,7 +18,7 @@ namespace CRD.UI.Windows
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmEmpresas());
+            Application.Run(new FrmRegistroUsuario());
         }
     }
 }

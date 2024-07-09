@@ -184,7 +184,9 @@ namespace CRD.UI.Windows.Formularios
 
         #endregion Private Methods
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+ 
+
+        private void btnGuardar_Click_1(object sender, EventArgs e)
         {
             if (ValidarCampos())
             {
@@ -196,7 +198,45 @@ namespace CRD.UI.Windows.Formularios
             }
         }
 
-        private void dgvLista_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void btnEliminar_Click_1(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtId.Text))
+            {
+                CustomMessages.DebesSeleccionarRegistro();
+            }
+            else
+            {
+                var confirmacion = MessageBox.Show(CustomMessages.ConfirmacionEliminacion, "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (confirmacion == DialogResult.Yes)
+                {
+                    int id = int.Parse(txtId.Text);
+                    var resultado = controlador.Eliminar(id);
+                    CustomMessages.RespuestaProcesoDb(resultado);
+                    ListarRegistros();
+                    Funcionalidades.LimpiarCampos(this);
+                }
+                else
+                {
+
+                    Funcionalidades.LimpiarCampos(this);
+                }
+            }
+        }
+
+        private void btnLimpiar_Click_1(object sender, EventArgs e)
+        {
+            Funcionalidades.LimpiarCampos(this);
+            txtNombreUsuario.Enabled = true;
+            txtPassword.Enabled = true;
+            txtNombre.Focus();
+
+            cbxCargo.SelectedIndex = 0;
+            cbxDepartamento.SelectedIndex = 0;
+            cbxCiudad.SelectedIndex = 0;
+        }
+
+        private void dgvLista_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
@@ -247,44 +287,6 @@ namespace CRD.UI.Windows.Formularios
                 txtNombreUsuario.Enabled = false;
                 txtPassword.Enabled = false;
                 txtPassword.Text = "Password";
-            }
-        }
-
-        private void btnLimpiar_Click(object sender, EventArgs e)
-        {
-            Funcionalidades.LimpiarCampos(this);
-            txtNombreUsuario.Enabled = true;
-            txtPassword.Enabled = true;
-            txtNombre.Focus();
-
-            cbxCargo.SelectedIndex = 0;
-            cbxDepartamento.SelectedIndex = 0;
-            cbxCiudad.SelectedIndex = 0;
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtId.Text))
-            {
-                CustomMessages.DebesSeleccionarRegistro();
-            }
-            else
-            {
-                var confirmacion = MessageBox.Show(CustomMessages.ConfirmacionEliminacion, "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-                if (confirmacion == DialogResult.Yes)
-                {
-                    int id = int.Parse(txtId.Text);
-                    var resultado = controlador.Eliminar(id);
-                    CustomMessages.RespuestaProcesoDb(resultado);
-                    ListarRegistros();
-                    Funcionalidades.LimpiarCampos(this);
-                }
-                else
-                {
-
-                    Funcionalidades.LimpiarCampos(this);
-                }
             }
         }
     }

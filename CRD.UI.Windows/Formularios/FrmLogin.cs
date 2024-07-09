@@ -28,7 +28,17 @@ namespace CRD.UI.Windows.Formularios
             vistaModelo = new CRD_UsuariosVistaModelo();
         }
 
-        private void btnAcceder_Click(object sender, EventArgs e)
+        private void Logout(object sender, FormClosedEventArgs e)
+        {
+            txtUsuario.Clear();
+            txtPassword.Clear();
+            
+            lblError.Visible = false;
+            this.Show();
+            txtUsuario.Focus();
+        }
+
+        private void btnAcceder_Click_1(object sender, EventArgs e)
         {
             lblError.Visible = false;
             lblError.Text = string.Empty;
@@ -41,7 +51,7 @@ namespace CRD.UI.Windows.Formularios
 
                     if (validLogin)
                     {
-                       
+
 
                         MDIPrincipal main = new MDIPrincipal();
                         main.Show();
@@ -68,16 +78,6 @@ namespace CRD.UI.Windows.Formularios
                 lblError.Text = "Ingresa nombre de usuario";
                 lblError.Visible = true;
             }
-        }
-
-        private void Logout(object sender, FormClosedEventArgs e)
-        {
-            txtUsuario.Clear();
-            txtPassword.Clear();
-            
-            lblError.Visible = false;
-            this.Show();
-            txtUsuario.Focus();
         }
     }
 }

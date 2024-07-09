@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.chkEstadoCajas = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -37,65 +39,91 @@
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtIdCajas = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.dgvLista = new System.Windows.Forms.DataGridView();
-            this.chkEstadoCajas = new System.Windows.Forms.CheckBox();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // panel1
             // 
-            this.groupBox1.Controls.Add(this.chkEstadoCajas);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.btnGuardar);
-            this.groupBox1.Controls.Add(this.chkActivo);
-            this.groupBox1.Controls.Add(this.txtDescripcion);
-            this.groupBox1.Controls.Add(this.txtIdCajas);
-            this.groupBox1.Controls.Add(this.txtNombre);
-            this.groupBox1.Location = new System.Drawing.Point(11, 15);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(245, 278);
-            this.groupBox1.TabIndex = 11;
-            this.groupBox1.TabStop = false;
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Location = new System.Drawing.Point(180, 28);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(746, 760);
+            this.panel1.TabIndex = 13;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel2.Controls.Add(this.chkEstadoCajas);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.btnGuardar);
+            this.panel2.Controls.Add(this.chkActivo);
+            this.panel2.Controls.Add(this.txtDescripcion);
+            this.panel2.Controls.Add(this.txtIdCajas);
+            this.panel2.Controls.Add(this.txtNombre);
+            this.panel2.Controls.Add(this.btnEliminar);
+            this.panel2.Controls.Add(this.dgvLista);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Location = new System.Drawing.Point(38, 27);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(675, 709);
+            this.panel2.TabIndex = 14;
+            // 
+            // chkEstadoCajas
+            // 
+            this.chkEstadoCajas.AutoSize = true;
+            this.chkEstadoCajas.Checked = true;
+            this.chkEstadoCajas.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkEstadoCajas.Location = new System.Drawing.Point(129, 229);
+            this.chkEstadoCajas.Name = "chkEstadoCajas";
+            this.chkEstadoCajas.Size = new System.Drawing.Size(114, 22);
+            this.chkEstadoCajas.TabIndex = 55;
+            this.chkEstadoCajas.Text = "Estado Caja";
+            this.chkEstadoCajas.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 24);
+            this.label1.Location = new System.Drawing.Point(122, 92);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(16, 13);
-            this.label1.TabIndex = 0;
+            this.label1.Size = new System.Drawing.Size(20, 18);
+            this.label1.TabIndex = 47;
             this.label1.Text = "Id";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 62);
+            this.label2.Location = new System.Drawing.Point(122, 130);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
-            this.label2.TabIndex = 1;
+            this.label2.Size = new System.Drawing.Size(64, 18);
+            this.label2.TabIndex = 48;
             this.label2.Text = "Nombre";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 92);
+            this.label3.Location = new System.Drawing.Point(122, 160);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 13);
-            this.label3.TabIndex = 2;
+            this.label3.Size = new System.Drawing.Size(92, 18);
+            this.label3.TabIndex = 50;
             this.label3.Text = "Descripcion";
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(20, 236);
+            this.btnGuardar.Location = new System.Drawing.Point(271, 302);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(207, 23);
-            this.btnGuardar.TabIndex = 4;
+            this.btnGuardar.Size = new System.Drawing.Size(358, 33);
+            this.btnGuardar.TabIndex = 53;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -105,53 +133,42 @@
             this.chkActivo.AutoSize = true;
             this.chkActivo.Checked = true;
             this.chkActivo.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkActivo.Location = new System.Drawing.Point(171, 130);
+            this.chkActivo.Location = new System.Drawing.Point(129, 257);
             this.chkActivo.Name = "chkActivo";
-            this.chkActivo.Size = new System.Drawing.Size(56, 17);
-            this.chkActivo.TabIndex = 3;
+            this.chkActivo.Size = new System.Drawing.Size(70, 22);
+            this.chkActivo.TabIndex = 52;
             this.chkActivo.Text = "Activo";
             this.chkActivo.UseVisualStyleBackColor = true;
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(81, 92);
+            this.txtDescripcion.Location = new System.Drawing.Point(224, 158);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(146, 20);
-            this.txtDescripcion.TabIndex = 2;
+            this.txtDescripcion.Size = new System.Drawing.Size(405, 26);
+            this.txtDescripcion.TabIndex = 51;
             // 
             // txtIdCajas
             // 
             this.txtIdCajas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIdCajas.Enabled = false;
-            this.txtIdCajas.Location = new System.Drawing.Point(81, 21);
+            this.txtIdCajas.Location = new System.Drawing.Point(224, 87);
             this.txtIdCajas.Name = "txtIdCajas";
-            this.txtIdCajas.Size = new System.Drawing.Size(146, 20);
-            this.txtIdCajas.TabIndex = 10;
+            this.txtIdCajas.Size = new System.Drawing.Size(405, 26);
+            this.txtIdCajas.TabIndex = 54;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(81, 55);
+            this.txtNombre.Location = new System.Drawing.Point(224, 122);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(146, 20);
-            this.txtNombre.TabIndex = 1;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.btnEliminar);
-            this.groupBox2.Controls.Add(this.dgvLista);
-            this.groupBox2.Location = new System.Drawing.Point(271, 20);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(470, 273);
-            this.groupBox2.TabIndex = 12;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Cajas";
+            this.txtNombre.Size = new System.Drawing.Size(405, 26);
+            this.txtNombre.TabIndex = 49;
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(292, 231);
+            this.btnEliminar.Location = new System.Drawing.Point(245, 672);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(163, 23);
-            this.btnEliminar.TabIndex = 12;
+            this.btnEliminar.Size = new System.Drawing.Size(427, 33);
+            this.btnEliminar.TabIndex = 46;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -159,36 +176,36 @@
             // dgvLista
             // 
             this.dgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLista.Location = new System.Drawing.Point(6, 19);
+            this.dgvLista.Location = new System.Drawing.Point(-8, 410);
             this.dgvLista.Name = "dgvLista";
-            this.dgvLista.Size = new System.Drawing.Size(449, 192);
-            this.dgvLista.TabIndex = 9;
-            this.dgvLista.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLista_CellDoubleClick);
+            this.dgvLista.Size = new System.Drawing.Size(691, 256);
+            this.dgvLista.TabIndex = 45;
+            this.dgvLista.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLista_CellDoubleClick_1);
             // 
-            // chkEstadoCajas
+            // label4
             // 
-            this.chkEstadoCajas.AutoSize = true;
-            this.chkEstadoCajas.Checked = true;
-            this.chkEstadoCajas.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkEstadoCajas.Location = new System.Drawing.Point(24, 130);
-            this.chkEstadoCajas.Name = "chkEstadoCajas";
-            this.chkEstadoCajas.Size = new System.Drawing.Size(83, 17);
-            this.chkEstadoCajas.TabIndex = 11;
-            this.chkEstadoCajas.Text = "Estado Caja";
-            this.chkEstadoCajas.UseVisualStyleBackColor = true;
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(290, 4);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(93, 29);
+            this.label4.TabIndex = 44;
+            this.label4.Text = "CAJAS";
             // 
             // FrmCRD_Cajas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(753, 309);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.groupBox2);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(1117, 813);
+            this.Controls.Add(this.panel1);
             this.Name = "FrmCRD_Cajas";
             this.Text = "FrmCRD_Cajas";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
             this.ResumeLayout(false);
 
@@ -196,7 +213,9 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.CheckBox chkEstadoCajas;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -205,9 +224,8 @@
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.TextBox txtIdCajas;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.DataGridView dgvLista;
-        private System.Windows.Forms.CheckBox chkEstadoCajas;
+        private System.Windows.Forms.Label label4;
     }
 }
