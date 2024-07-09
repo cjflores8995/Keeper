@@ -10,21 +10,19 @@ namespace CRD.Infraestructura.AccesoDatos.Repositorio.Implementaciones
 {
     public class CRD_OrdenesRespositorioImpl : BaseRepositorioImpl<CRD_Ordenes>, ICRD_OrdenesRepositorio
     {
-        public List<CRD_Ordenes> buscarPorNumeroOrden(string numeroOrden)
+        public List<CRD_Ordenes> ObtenerOrdenesPorNumeroOrden(string numeroOrden)
         {
             try
             {
-                using (var context = new SRGI_4Entities())
+                using (var db = new SRGI_4Entities())
                 {
-                    var resultado = from ordenes in context.CRD_Ordenes
-                                    where ordenes.NumeroOrden == numeroOrden
-                                    select ordenes;
-                    return resultado.ToList();
+                    return db.CRD_Ordenes.Where(x => x.NumeroOrden.Contains(numeroOrden)).ToList();
+
                 }
             }
             catch (Exception ex)
             {
-                throw new Exception("No se pudo encontrar la lista de ordenes", ex);
+                throw new Exception("No se puede devolver el resultado", ex);
             }
         }
     }

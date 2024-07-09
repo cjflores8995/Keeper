@@ -9,6 +9,6 @@ namespace CRD.Dominio.Modelo.Abstracciones
 {
     public interface ICRD_OrdenesRepositorio : IBaseRepositorio<CRD_Ordenes>
     {
-        List<CRD_Ordenes> buscarPorNumeroOrden(string numeroOrden);
+        List<CRD_Ordenes> ObtenerOrdenesPorNumeroOrden(string numeroOrden);
     }
 }

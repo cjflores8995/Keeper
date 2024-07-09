@@ -9,8 +9,8 @@ namespace CRD.Dominio.Modelo.Abstracciones
 {
     public interface ICRD_ProveedoresRepositorio : IBaseRepositorio<CRD_Proveedores>
     {
-        List<CRD_Proveedores> buscarPorRUC(string rucCedula);
-        CRD_Proveedores buscarPorCodProveedor(string codProveerdor);
-        List<CRD_Proveedores> buscarPorRazonSocial(string razonSocial);
+        List<CRD_Proveedores> ObtenerProveedoresPorRUC(string rucCedula);
+        List<CRD_Proveedores> ObtenerProveedoresPorCodProveedor(string codProveerdor);
+        List<CRD_Proveedores> ObtenerProveedoresPorRazonSocial(string razonSocial);
     }
 }

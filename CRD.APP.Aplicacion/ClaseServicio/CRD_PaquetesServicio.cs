@@ -22,7 +22,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                repo.Add(entry);
+                repo.InsertarPaquete(entry);
             }
             catch (Exception ex)
             {
@@ -35,7 +35,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                repo.Modify(entry);
+                repo.ActualizarPaquete(entry);
             }
             catch (Exception ex)
             {
@@ -72,12 +72,73 @@ namespace CRD.APP.Aplicacion.ClaseServicio
         {
             try
             {
-                repo.Delete(id);
+                repo.EliminadoLogico(id);
             }
             catch (Exception ex)
             {
                 throw new Exception("Error Servicio: ", ex);
             }
         }
+
+        public CRD_Paquetes ObtnerPaquetesPorNombre(string nombre)
+        {
+            try
+            {
+                return repo.ObtenerPaquetesPorNombre(nombre);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("No se puedo encontrar el registro", ex);
+            }
+        }
+
+        public List<CRD_Paquetes> ObtenerElementosActivos()
+        {
+            try
+            {
+                return repo.ObtenerElementosActivos();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("No se puedo encontrar el listado", ex);
+            }
+        }
+
+        public List<CRD_Paquetes> ObtenerPaquetesPorIdCaja(int id)
+        {
+            try
+            {
+                return repo.ObtenerPaquetesPorIdCaja(id);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("No se puedo encontrar el listado", ex);
+            }
+        }
+
+        public bool InsertarUsuario(CRD_Paquetes entity)
+        {
+            try
+            {
+                return repo.InsertarPaquete(entity);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error Servicio: ", ex);
+            }
+        }
+
+        public bool ActualizarPaquete(CRD_Paquetes entity)
+        {
+            try
+            {
+                return repo.ActualizarPaquete(entity);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error Servicio: ", ex);
+            }
+        }
+
     }
 }

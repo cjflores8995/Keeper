@@ -58,6 +58,13 @@
     <Compile Include="ControladoresApp\CRD_DepartamentoControlador.cs" />
     <Compile Include="ControladoresApp\CRD_CargoControlador.cs" />
     <Compile Include="ControladoresApp\CRD_CiudadControlador.cs" />
+    <Compile Include="ControladoresApp\CRD_OrdenesControlador.cs" />
+    <Compile Include="ControladoresApp\CRD_OrdenesVistaModelo.cs" />
+    <Compile Include="ControladoresApp\CRD_PaquetesControlador.cs" />
+    <Compile Include="ControladoresApp\CRD_PaquetesVistaModelo.cs" />
+    <Compile Include="ControladoresApp\CRD_ProveedoresControlador.cs" />
+    <Compile Include="ControladoresApp\CRD_ProveedoresTablaVistaModelo.cs" />
+    <Compile Include="ControladoresApp\CRD_ProveedoresVistaModelo.cs" />
     <Compile Include="ControladoresApp\CRD_RolesControlador.cs" />
     <Compile Include="ControladoresApp\CRD_TipoDocumentoPagosControlador.cs" />
     <Compile Include="ControladoresApp\CRD_TipoDocumentosControlador.cs" />
@@ -90,6 +97,24 @@
     </Compile>
     <Compile Include="Formularios\FrmCRD_Ciudad.Designer.cs">
       <DependentUpon>FrmCRD_Ciudad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmCRD_Ordenes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmCRD_Ordenes.designer.cs">
+      <DependentUpon>FrmCRD_Ordenes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmCRD_Paquetes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmCRD_Paquetes.designer.cs">
+      <DependentUpon>FrmCRD_Paquetes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmCRD_Proveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmCRD_Proveedores.designer.cs">
+      <DependentUpon>FrmCRD_Proveedores.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FrmCRD_TipoDocumentoPagos.cs">
       <SubType>Form</SubType>
@@ -158,6 +183,7 @@
     <Compile Include="VistaModelo\CRD_DepartamentoVistaModelo.cs" />
     <Compile Include="VistaModelo\CRD_CargoVistaModelo.cs" />
     <Compile Include="VistaModelo\CRD_CiudadVistaModelo.cs" />
+    <Compile Include="VistaModelo\CRD_OrdenesTablaVistaModelo.cs" />
     <Compile Include="VistaModelo\CRD_RolesVistaModelo.cs" />
     <Compile Include="VistaModelo\CRD_TipoDocumentoPagosVistaModelo.cs" />
     <Compile Include="VistaModelo\CRD_TipoDocumentosVistaModelo.cs" />
@@ -179,6 +205,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmCRD_Ciudad.resx">
       <DependentUpon>FrmCRD_Ciudad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmCRD_Ordenes.resx">
+      <DependentUpon>FrmCRD_Ordenes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmCRD_Paquetes.resx">
+      <DependentUpon>FrmCRD_Paquetes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmCRD_Proveedores.resx">
+      <DependentUpon>FrmCRD_Proveedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmCRD_TipoDocumentoPagos.resx">
       <DependentUpon>FrmCRD_TipoDocumentoPagos.cs</DependentUpon>

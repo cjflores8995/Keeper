@@ -80,11 +80,11 @@ namespace CRD.APP.Aplicacion.ClaseServicio
             }
         }
 
-        public CRD_Proveedores buscarPorCodProveedor(String codProveedor)
+        public List<CRD_Proveedores> ObtenerProveedoresPorCodProveedor(String codProveedor)
         {
             try
             {
-                return repo.buscarPorCodProveedor(codProveedor);
+                return repo.ObtenerProveedoresPorCodProveedor(codProveedor);
             }
             catch (Exception ex)
             {
@@ -92,11 +92,11 @@ namespace CRD.APP.Aplicacion.ClaseServicio
             }
         }
 
-        public List<CRD_Proveedores> buscarPorRUC(string rucCedula)
+        public List<CRD_Proveedores> ObtenerProveedoresPorRUC(string rucCedula)
         {
             try
             {
-                return repo.buscarPorRUC(rucCedula);
+                return repo.ObtenerProveedoresPorRUC(rucCedula);
             }
             catch (Exception ex)
             {
@@ -104,11 +104,11 @@ namespace CRD.APP.Aplicacion.ClaseServicio
             }
         }
 
-        public List<CRD_Proveedores> buscarPorRazonSocial(string razonSocial)
+        public List<CRD_Proveedores> ObtenerProveedoresPorRazonSocial(string razonSocial)
         {
             try
             {
-                return repo.buscarPorRazonSocial(razonSocial);
+                return repo.ObtenerProveedoresPorRazonSocial(razonSocial);
             }
             catch (Exception ex)
             {

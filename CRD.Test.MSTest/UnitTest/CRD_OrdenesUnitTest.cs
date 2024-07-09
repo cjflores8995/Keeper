@@ -228,7 +228,7 @@ namespace CRD.Test.MSTest.UnitTest
         [TestMethod]
         public void TestMethod1()
         {
-            var datosBase = _service.buscarPorNumeroOrden("ORD001");
+            var datosBase = _service.ObtenerOrdenesPorNumeroOrden("ORD001");
 
             foreach (var datos in datosBase)
             {

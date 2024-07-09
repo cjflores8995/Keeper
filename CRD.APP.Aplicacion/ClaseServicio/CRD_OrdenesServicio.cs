@@ -80,11 +80,11 @@ namespace CRD.APP.Aplicacion.ClaseServicio
             }
         }
 
-        public List<CRD_Ordenes> buscarPorNumeroOrden(string numeroOrden)
+        public List<CRD_Ordenes> ObtenerOrdenesPorNumeroOrden(string numeroOrden)
         {
             try
             {
-                return repo.buscarPorNumeroOrden(numeroOrden);
+                return repo.ObtenerOrdenesPorNumeroOrden(numeroOrden);
             }
             catch (Exception ex)
             {

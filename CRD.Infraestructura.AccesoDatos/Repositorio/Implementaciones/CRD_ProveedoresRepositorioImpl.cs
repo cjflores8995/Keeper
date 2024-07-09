@@ -10,34 +10,13 @@ namespace CRD.Infraestructura.AccesoDatos.Repositorio.Implementaciones
 {
     public class CRD_ProveedoresRepositorioImpl : BaseRepositorioImpl<CRD_Proveedores>, ICRD_ProveedoresRepositorio
     {
-        public CRD_Proveedores buscarPorCodProveedor(string codProveerdor)
+        public List<CRD_Proveedores> ObtenerProveedoresPorCodProveedor(string codProveerdor)
         {
             try
             {
-                using (var context = new SRGI_4Entities())
+                using (var db = new SRGI_4Entities())
                 {
-                    var resultado = from proveedor in context.CRD_Proveedores
-                                    where proveedor.CodProveedor == codProveerdor
-                                    select proveedor;
-                    return resultado.Single();
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("No se pudo encontrar registro", ex);
-            }
-        }
-
-        public List<CRD_Proveedores> buscarPorRazonSocial(string razonSocial)
-        {
-            try
-            {
-                using (var context = new SRGI_4Entities())
-                {
-                    var resultado = from proveedor in context.CRD_Proveedores
-                                    where proveedor.RazonSocial == razonSocial
-                                    select proveedor;
-                    return resultado.ToList();
+                    return db.CRD_Proveedores.Where(x => x.CodProveedor.Contains(codProveerdor)).ToList();
                 }
             }
             catch (Exception ex)
@@ -46,16 +25,29 @@ namespace CRD.Infraestructura.AccesoDatos.Repositorio.Implementaciones
             }
         }
 
-        public List<CRD_Proveedores> buscarPorRUC(string rucCedula)
+        public List<CRD_Proveedores> ObtenerProveedoresPorRazonSocial(string razonSocial)
         {
             try
             {
-                using (var context = new SRGI_4Entities())
+                using (var db = new SRGI_4Entities())
                 {
-                    var resultado = from proveedor in context.CRD_Proveedores
-                                    where proveedor.RucCedula == rucCedula
-                                    select proveedor;
-                    return resultado.ToList();
+                    return db.CRD_Proveedores.Where(x => x.RazonSocial.Contains(razonSocial)).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("No se pudo encontrar la lista", ex);
+            }
+
+        }
+
+        public List<CRD_Proveedores> ObtenerProveedoresPorRUC(string rucCedula)
+        {
+            try
+            {
+                using (var db = new SRGI_4Entities())
+                {
+                    return db.CRD_Proveedores.Where(x => x.RucCedula.Contains(rucCedula)).ToList();
                 }
             }
             catch (Exception ex)

@@ -38,6 +38,11 @@ namespace CRD.Infraestructura.AccesoDatos.Repositorio
                 .HasRequired(u => u.CRD_Ciudad)
                 .WithMany()
                 .HasForeignKey(u => u.IdCiudad);
+
+            modelBuilder.Entity<CRD_Paquetes>()
+                .HasRequired(p => p.CRD_Cajas)
+                .WithMany()
+                .HasForeignKey(p => p.IdCaja);
         }
     
         public virtual DbSet<CRD_Analistas> CRD_Analistas { get; set; }

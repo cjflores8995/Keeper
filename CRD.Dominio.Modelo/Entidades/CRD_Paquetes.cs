@@ -21,6 +21,7 @@ namespace CRD.Dominio.Modelo.Entidades
         }
     
         public int IdPaquete { get; set; }
+        public int IdCaja { get; set; }
         public string NombrePaquete { get; set; }
         public string Descripcion { get; set; }
         public Nullable<bool> EstatusPaquete { get; set; }

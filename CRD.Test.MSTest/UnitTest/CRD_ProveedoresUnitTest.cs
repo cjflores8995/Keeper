@@ -50,8 +50,11 @@ namespace CRD.Test.MSTest.UnitTest
         [TestMethod]
         public void TestMethod1()
         {
-            var proveedor = _service.buscarPorCodProveedor("P001");
-            Console.WriteLine(
+            var proveedores = _service.ObtenerProveedoresPorCodProveedor ("P001");
+
+            foreach(var proveedor in proveedores)
+            {
+                Console.WriteLine(
                 proveedor.CodigoCompania + "-" +
                 proveedor.CodigoSistema + "-" +
                 proveedor.CodigoServicio + "-" +
@@ -70,13 +73,14 @@ namespace CRD.Test.MSTest.UnitTest
                 proveedor.CodPais + "-" +
                 proveedor.Direccion1
                 );
+            }
         }
 
         [TestMethod]
         public void buscarPorRUCTest()
         {
 
-            var proveedores = _service.buscarPorRUC("0999999999001");
+            var proveedores = _service.ObtenerProveedoresPorRUC("0999999999001");
             foreach (var proveedor in proveedores)
             {
                 Console.WriteLine(
@@ -108,7 +112,7 @@ namespace CRD.Test.MSTest.UnitTest
             [TestMethod]
             public void TestMethod1()
             {
-                var proveedores = _service.buscarPorRazonSocial("Proveedor Ejemplo 1");
+                var proveedores = _service.ObtenerProveedoresPorRazonSocial("Proveedor Ejemplo 1");
                 foreach (var proveedor in proveedores)
                 {
                     Console.WriteLine(
