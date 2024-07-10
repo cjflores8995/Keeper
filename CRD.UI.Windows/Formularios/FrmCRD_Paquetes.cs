@@ -18,7 +18,18 @@ namespace CRD.UI.Windows.Formularios
         CRD_PaquetesControlador controlador;
         CRD_CajasControlador cajasControlador;
         CRD_PaquetesVistaModelo vistaModelo;
-        
+
+
+        private static FrmCRD_Paquetes instancia = null;
+        public static FrmCRD_Paquetes VentanaUnica()
+        {
+            if (instancia == null)
+            {
+                instancia = new FrmCRD_Paquetes();
+                return instancia;
+            }
+            return instancia;
+        }
 
         public FrmCRD_Paquetes()
         {
@@ -30,6 +41,12 @@ namespace CRD.UI.Windows.Formularios
 
             ListarRegistros();
             CargarCajas();
+            this.FormClosed += new FormClosedEventHandler(FrmCRD_FormClosed);
+        }
+
+        private void FrmCRD_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            instancia = null;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)

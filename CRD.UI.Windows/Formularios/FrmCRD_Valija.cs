@@ -17,6 +17,18 @@ namespace CRD.UI.Windows.Formularios
     {
         private CRD_ValijasControlador controlador;
         private CRD_ValijasVistaModelo vistaModelo;
+
+        private static FrmValijas instancia = null;
+        public static FrmValijas VentanaUnica()
+        {
+            if (instancia == null)
+            {
+                instancia = new FrmValijas();
+                return instancia;
+            }
+            return instancia;
+        }
+
         public FrmValijas()
         {
             InitializeComponent();
@@ -24,6 +36,12 @@ namespace CRD.UI.Windows.Formularios
             vistaModelo = new CRD_ValijasVistaModelo();
             ListarRegistros();
             this.StartPosition = FormStartPosition.CenterParent;
+            this.FormClosed += new FormClosedEventHandler(FrmCRD_FormClosed);
+        }
+
+        private void FrmCRD_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            instancia = null;
         }
         private bool ValidarCampos()
         {

@@ -17,10 +17,27 @@ namespace CRD.UI.Windows.Formularios
         private CRD_OrdenesControlador controlador;
         private CRD_OrdenesVistaModelo vistaModelo;
 
+        private static FrmCRD_Ordenes instancia = null;
+        public static FrmCRD_Ordenes VentanaUnica()
+        {
+            if (instancia == null)
+            {
+                instancia = new FrmCRD_Ordenes();
+                return instancia;
+            }
+            return instancia;
+        }
+
         public FrmCRD_Ordenes()
         {
             InitializeComponent();
             controlador = new CRD_OrdenesControlador();
+            this.FormClosed += new FormClosedEventHandler(FrmCRD_FormClosed);
+        }
+
+        private void FrmCRD_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            instancia = null;
         }
 
         private void btnBuscador_Click(object sender, EventArgs e)

@@ -12,6 +12,18 @@ namespace CRD.UI.Windows.Formularios
         private CRD_CajasControlador controlador;
         private CRD_CajasVistaModelo vistaModelo;
 
+        private static FrmCRD_Cajas instancia = null;
+
+        public static FrmCRD_Cajas VentanaUnica()
+        {
+            if (instancia == null)
+            {
+                instancia = new FrmCRD_Cajas();
+                return instancia;
+            }
+            return instancia;
+        }
+
         public FrmCRD_Cajas()
         {
             InitializeComponent();
@@ -20,6 +32,12 @@ namespace CRD.UI.Windows.Formularios
             ListarRegistros();
 
             this.StartPosition = FormStartPosition.CenterParent;
+            this.FormClosed += new FormClosedEventHandler(FrmCRD_FormClosed);
+        }
+
+        private void FrmCRD_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            instancia = null;
         }
 
         private void InsertUpdate()

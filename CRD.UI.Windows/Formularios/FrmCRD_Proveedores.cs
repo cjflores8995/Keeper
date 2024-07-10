@@ -17,12 +17,29 @@ namespace CRD.UI.Windows.Formularios
         private CRD_ProveedoresControlador controlador;
         private CRD_ProveedoresVistaModelo vistaModelo;
 
+        private static FrmCRD_Proveedores instancia = null;
+        public static FrmCRD_Proveedores VentanaUnica()
+        {
+            if (instancia == null)
+            {
+                instancia = new FrmCRD_Proveedores();
+                return instancia;
+            }
+            return instancia;
+        }
+
         public FrmCRD_Proveedores()
         {
             InitializeComponent();
             controlador = new CRD_ProveedoresControlador();
             vistaModelo = new CRD_ProveedoresVistaModelo();
             ListarRegistros();
+            this.FormClosed += new FormClosedEventHandler(FrmCRD_FormClosed);
+        }
+
+        private void FrmCRD_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            instancia = null;
         }
 
         private void btnBuscador_Click(object sender, EventArgs e)

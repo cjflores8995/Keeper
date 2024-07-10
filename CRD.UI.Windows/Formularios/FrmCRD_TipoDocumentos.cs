@@ -17,6 +17,18 @@ namespace CRD.UI.Windows.Formularios
     {
         private CRD_TipoDocumentosControlador controlador;
         private CRD_TipoDocumentosVistaModelo vistaModelo;
+
+        private static FrmCRD_TipoDocumentos instancia = null;
+        public static FrmCRD_TipoDocumentos VentanaUnica()
+        {
+            if (instancia == null)
+            {
+                instancia = new FrmCRD_TipoDocumentos();
+                return instancia;
+            }
+            return instancia;
+        }
+
         public FrmCRD_TipoDocumentos()
         {
             InitializeComponent();
@@ -24,6 +36,12 @@ namespace CRD.UI.Windows.Formularios
             controlador = new CRD_TipoDocumentosControlador();
             vistaModelo = new CRD_TipoDocumentosVistaModelo();
             ListarRegistros();
+            this.FormClosed += new FormClosedEventHandler(FrmCRD_FormClosed);
+        }
+
+        private void FrmCRD_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            instancia = null;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)

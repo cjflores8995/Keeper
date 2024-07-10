@@ -19,6 +19,18 @@ namespace CRD.UI.Windows.Formularios
         private CRD_CiudadControlador controlador;
         private CRD_CiudadVistaModelo vistaModelo;
 
+        private static FrmCRD_Ciudad instancia = null;
+
+        public static FrmCRD_Ciudad VentanaUnica()
+        {
+            if (instancia == null)
+            {
+                instancia = new FrmCRD_Ciudad();
+                return instancia;
+            }
+            return instancia;
+        }
+
         public FrmCRD_Ciudad()
         {
             InitializeComponent();
@@ -27,6 +39,12 @@ namespace CRD.UI.Windows.Formularios
             ListarRegistros();
 
             this.StartPosition = FormStartPosition.CenterParent;
+            this.FormClosed += new FormClosedEventHandler(FrmCRD_FormClosed);
+        }
+
+        private void FrmCRD_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            instancia = null;
         }
 
         #region Private Methods

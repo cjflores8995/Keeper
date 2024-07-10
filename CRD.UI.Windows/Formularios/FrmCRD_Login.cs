@@ -21,11 +21,29 @@ namespace CRD.UI.Windows.Formularios
         private CRD_UsuariosControlador controlador;
         private CRD_UsuariosVistaModelo vistaModelo;
 
+
+        private static FrmCRD_Login instancia = null;
+        public static FrmCRD_Login VentanaUnica()
+        {
+            if (instancia == null)
+            {
+                instancia = new FrmCRD_Login();
+                return instancia;
+            }
+            return instancia;
+        }
+
         public FrmCRD_Login()
         {
             InitializeComponent();
             controlador = new CRD_UsuariosControlador();
             vistaModelo = new CRD_UsuariosVistaModelo();
+            this.FormClosed += new FormClosedEventHandler(FrmCRD_FormClosed);
+        }
+
+        private void FrmCRD_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            instancia = null;
         }
 
         private void Logout(object sender, FormClosedEventArgs e)

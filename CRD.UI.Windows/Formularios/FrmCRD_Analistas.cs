@@ -20,6 +20,18 @@ namespace CRD.UI.Windows.Formularios
         private CRD_AnalistasVistaModelo analista_VM;
         private CRD_EstadoTipoProcesosControlador estadoTipo_SC;
         private CRD_EstadoTipoProcesosVistaModelo estadoTipo_VM;
+
+        private static FrmCRD_Analistas instancia = null;
+        public static FrmCRD_Analistas VentanaUnica()
+        {
+            if (instancia == null)
+            {
+                instancia = new FrmCRD_Analistas();
+                return instancia;
+            }
+            return instancia;
+        }
+
         public FrmCRD_Analistas()
         {
             InitializeComponent();
@@ -29,6 +41,12 @@ namespace CRD.UI.Windows.Formularios
             estadoTipo_VM = new CRD_EstadoTipoProcesosVistaModelo();
             listarAnalista();
             leerestadoTipoProceso();
+            this.FormClosed += new FormClosedEventHandler(FrmCRD_FormClosed);
+        }
+
+        private void FrmCRD_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            instancia = null;
         }
 
         public void listarAnalista() {
@@ -161,8 +179,7 @@ namespace CRD.UI.Windows.Formularios
             cmbEstadoProceso_Analistas.DataSource = estadoTipo_SC.ListarTodo();
             cmbEstadoProceso_Analistas.DisplayMember = "Nombre";
             cmbEstadoProceso_Analistas.ValueMember = "IdEstadoTipoProceso";
-             txtIdEstadoTipoProceso.Text = cmbEstadoProceso_Analistas.SelectedValue.ToString();
-                    }
+        }
 
         private void cmbEstadoProceso_Analistas_SelectedIndexChanged(object sender, EventArgs e)
         {

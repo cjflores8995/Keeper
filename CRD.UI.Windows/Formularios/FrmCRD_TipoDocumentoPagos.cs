@@ -18,12 +18,29 @@ namespace CRD.UI.Windows.Formularios
         private CRD_TipoDocumentoPagosControlador controlador;
         private CRD_TipoDocumentoPagosVistaModelo vistaModelo;
 
+        private static FrmCRD_TipoDocumentoPagos instancia = null;
+        public static FrmCRD_TipoDocumentoPagos VentanaUnica()
+        {
+            if (instancia == null)
+            {
+                instancia = new FrmCRD_TipoDocumentoPagos();
+                return instancia;
+            }
+            return instancia;
+        }
+
         public FrmCRD_TipoDocumentoPagos()
         {
             InitializeComponent();
             controlador = new CRD_TipoDocumentoPagosControlador();
             vistaModelo = new CRD_TipoDocumentoPagosVistaModelo();
             ListarRegistros();
+            this.FormClosed += new FormClosedEventHandler(FrmCRD_FormClosed);
+        }
+
+        private void FrmCRD_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            instancia = null;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)

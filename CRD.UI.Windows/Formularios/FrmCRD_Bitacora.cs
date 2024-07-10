@@ -30,6 +30,17 @@ namespace CRD.UI.Windows.Formularios
         private CRD_AnalistasControlador analistas_SC;
         private CRD_AnalistasVistaModelo analistas_VM;
 
+        private static FrmCRD_Bitacora instancia = null;
+
+        public static FrmCRD_Bitacora VentanaUnica()
+        {
+            if (instancia == null)
+            {
+                instancia = new FrmCRD_Bitacora();
+                return instancia;
+            }
+            return instancia;
+        }
 
         public FrmCRD_Bitacora()
         {
@@ -59,6 +70,12 @@ namespace CRD.UI.Windows.Formularios
             leerAnalistas();
             limpiarbitacora();
             listarDatos();
+            this.FormClosed += new FormClosedEventHandler(FrmCRD_FormClosed);
+        }
+
+        private void FrmCRD_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            instancia = null;
         }
 
 
