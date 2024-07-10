@@ -43,7 +43,17 @@ namespace CRD.APP.Aplicacion.ClaseServicio
             }
 
         }
-
+        public IEnumerable<CRD_EstadoTipoProcesos> ObtenerElementosActivos()
+        {
+            try
+            {
+                return repo.ObtenerElementosActivos();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error Servicio: ", ex);
+            }
+        }
         public IEnumerable<CRD_EstadoTipoProcesos> GetAll()
         {
             try

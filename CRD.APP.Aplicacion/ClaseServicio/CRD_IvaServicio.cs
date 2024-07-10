@@ -79,5 +79,16 @@ namespace CRD.APP.Aplicacion.ClaseServicio
                 throw new Exception("Error Servicio: ", ex);
             }
         }
+        public IEnumerable<CRD_Iva> ObtenerElementosActivos()
+        {
+            try
+            {
+                return repo.ObtenerElementosActivos();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error Servicio: ", ex);
+            }
+        }
     }
 }

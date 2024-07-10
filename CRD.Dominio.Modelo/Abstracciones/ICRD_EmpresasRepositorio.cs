@@ -1,4 +1,5 @@
 ﻿using CRD.Dominio.Modelo.Entidades;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,6 @@ namespace CRD.Dominio.Modelo.Abstracciones
     {
         CRD_Empresas buscarPorCodigoEmpresa(string codemp);
         CRD_Empresas buscarPorNombre(string nom);
+        List<CRD_Empresas> ObtenerElementosActivos();
     }
 }

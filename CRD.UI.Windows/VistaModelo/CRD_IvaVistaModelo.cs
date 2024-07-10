@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace CRD.UI.Windows.VistaModelo
 {
-    public class IvaVistaModelo
+    public class CRD_IvaVistaModelo
     {
         public int IdIva { get; set; }
         public int ValorIva { get; set; }
-        public Nullable<bool> Activo { get; set; }
+        public bool Activo { get; set; }
     }
 }

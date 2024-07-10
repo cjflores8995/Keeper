@@ -44,6 +44,17 @@ namespace CRD.APP.Aplicacion.ClaseServicio
 
         }
 
+        public IEnumerable<CRD_Empresas> ObtenerElementosActivos()
+        {
+            try
+            {
+                return repo.ObtenerElementosActivos();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error Servicio: ", ex);
+            }
+        }
         public IEnumerable<CRD_Empresas> GetAll()
         {
             try

@@ -8,22 +8,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CRD.UI.Windows.ControladoresApp
+namespace CRD.UI.Windows.ControladorAplicacion
 {
-    public class CRD_DepartamentoControlador
+    public class CRD_ValijasControlador
     {
-        private readonly CRD_DepartamentoServicio servicio;
+        private readonly CRD_ValijasServicio servicio;
 
-        public CRD_DepartamentoControlador()
+        public CRD_ValijasControlador()
         {
-            servicio = new CRD_DepartamentoServicio();
+            servicio = new CRD_ValijasServicio();
         }
 
-        public bool Insertar(CRD_DepartamentoVistaModelo obj)
+        public bool Insertar(CRD_ValijasVistaModelo obj)
         {
             try
             {
-                CRD_Departamento entry = MapearVistaEnObjeto(obj);
+                CRD_Valijas entry = MapearVistaEnObjeto(obj);
 
                 servicio.Add(entry);
                 return true;
@@ -35,13 +35,11 @@ namespace CRD.UI.Windows.ControladoresApp
             }
         }
 
-
-
-        public bool Actualizar(CRD_DepartamentoVistaModelo obj)
+        public bool Actualizar(CRD_ValijasVistaModelo obj)
         {
             try
             {
-                CRD_Departamento entry = MapearVistaEnObjeto(obj, agregarId: true);
+                CRD_Valijas entry = MapearVistaEnObjeto(obj, agregarId: true);
 
                 servicio.Modify(entry);
                 return true;
@@ -67,11 +65,11 @@ namespace CRD.UI.Windows.ControladoresApp
             }
         }
 
-        public List<CRD_DepartamentoVistaModelo> ListarTodo()
+        public List<CRD_ValijasVistaModelo> ListarTodo()
         {
             try
             {
-                List<CRD_DepartamentoVistaModelo> result = new List<CRD_DepartamentoVistaModelo>();
+                List<CRD_ValijasVistaModelo> result = new List<CRD_ValijasVistaModelo>();
 
                 var query = servicio.ObtenerElementosActivos();
 
@@ -79,11 +77,15 @@ namespace CRD.UI.Windows.ControladoresApp
                 {
                     foreach (var item in query)
                     {
-                        CRD_DepartamentoVistaModelo entry = new CRD_DepartamentoVistaModelo()
+                        CRD_ValijasVistaModelo entry = new CRD_ValijasVistaModelo()
                         {
-                            IdDepartamento = item.IdDepartamento,
-                            NombreDepartamento = item.NombreDepartamento,
-                            Descripcion = item.Descripcion,
+                            IdValija = item.IdValija,
+                            IdBitacora = item.IdBitacora,
+                            Fecha = item.Fecha,
+                            Origen = item.Origen,
+                            Remitente = item.Remitente,
+                            Centro = item.Centro,
+                            OBSV = item.OBSV,
                             Activo = item.Activo
                         };
 
@@ -101,17 +103,21 @@ namespace CRD.UI.Windows.ControladoresApp
             }
         }
 
-        private CRD_Departamento MapearVistaEnObjeto(CRD_DepartamentoVistaModelo vistaModelo, bool agregarId = false)
+        private CRD_Valijas MapearVistaEnObjeto(CRD_ValijasVistaModelo vistaModelo, bool agregarId = false)
         {
-            CRD_Departamento entry = new CRD_Departamento();
+            CRD_Valijas entry = new CRD_Valijas();
 
-            entry.NombreDepartamento = vistaModelo.NombreDepartamento;
-            entry.Descripcion = vistaModelo.Descripcion;
+            entry.IdBitacora = vistaModelo.IdBitacora;
+            entry.Fecha = vistaModelo.Fecha;
+            entry.Origen = vistaModelo.Origen;
+            entry.Remitente = vistaModelo.Remitente;
+            entry.Centro = vistaModelo.Centro;
+            entry.OBSV = vistaModelo.OBSV;
             entry.Activo = vistaModelo.Activo;
 
             if (agregarId)
             {
-                entry.IdDepartamento = vistaModelo.IdDepartamento;
+                entry.IdValija = vistaModelo.IdValija;
             }
 
             return entry;

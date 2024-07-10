@@ -8,22 +8,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CRD.UI.Windows.ControladoresApp
+namespace CRD.UI.Windows.ControladorAplicacion
 {
-    public class CRD_DepartamentoControlador
+    public class CRD_IvaControlador
     {
-        private readonly CRD_DepartamentoServicio servicio;
+        private readonly CRD_IvaServicio servicio;
 
-        public CRD_DepartamentoControlador()
+        public CRD_IvaControlador()
         {
-            servicio = new CRD_DepartamentoServicio();
+            servicio = new CRD_IvaServicio();
         }
 
-        public bool Insertar(CRD_DepartamentoVistaModelo obj)
+        public bool Insertar(CRD_IvaVistaModelo obj)
         {
             try
             {
-                CRD_Departamento entry = MapearVistaEnObjeto(obj);
+                CRD_Iva entry = MapearVistaEnObjeto(obj);
 
                 servicio.Add(entry);
                 return true;
@@ -35,13 +35,11 @@ namespace CRD.UI.Windows.ControladoresApp
             }
         }
 
-
-
-        public bool Actualizar(CRD_DepartamentoVistaModelo obj)
+        public bool Actualizar(CRD_IvaVistaModelo obj)
         {
             try
             {
-                CRD_Departamento entry = MapearVistaEnObjeto(obj, agregarId: true);
+                CRD_Iva entry = MapearVistaEnObjeto(obj, agregarId: true);
 
                 servicio.Modify(entry);
                 return true;
@@ -67,11 +65,11 @@ namespace CRD.UI.Windows.ControladoresApp
             }
         }
 
-        public List<CRD_DepartamentoVistaModelo> ListarTodo()
+        public List<CRD_IvaVistaModelo> ListarTodo()
         {
             try
             {
-                List<CRD_DepartamentoVistaModelo> result = new List<CRD_DepartamentoVistaModelo>();
+                List<CRD_IvaVistaModelo> result = new List<CRD_IvaVistaModelo>();
 
                 var query = servicio.ObtenerElementosActivos();
 
@@ -79,11 +77,10 @@ namespace CRD.UI.Windows.ControladoresApp
                 {
                     foreach (var item in query)
                     {
-                        CRD_DepartamentoVistaModelo entry = new CRD_DepartamentoVistaModelo()
+                        CRD_IvaVistaModelo entry = new CRD_IvaVistaModelo()
                         {
-                            IdDepartamento = item.IdDepartamento,
-                            NombreDepartamento = item.NombreDepartamento,
-                            Descripcion = item.Descripcion,
+                            IdIva = item.IdIva,
+                            ValorIva = item.ValorIva,
                             Activo = item.Activo
                         };
 
@@ -101,17 +98,16 @@ namespace CRD.UI.Windows.ControladoresApp
             }
         }
 
-        private CRD_Departamento MapearVistaEnObjeto(CRD_DepartamentoVistaModelo vistaModelo, bool agregarId = false)
+        private CRD_Iva MapearVistaEnObjeto(CRD_IvaVistaModelo vistaModelo, bool agregarId = false)
         {
-            CRD_Departamento entry = new CRD_Departamento();
+            CRD_Iva entry = new CRD_Iva();
 
-            entry.NombreDepartamento = vistaModelo.NombreDepartamento;
-            entry.Descripcion = vistaModelo.Descripcion;
+            entry.ValorIva = vistaModelo.ValorIva;
             entry.Activo = vistaModelo.Activo;
 
             if (agregarId)
             {
-                entry.IdDepartamento = vistaModelo.IdDepartamento;
+                entry.IdIva = vistaModelo.IdIva;
             }
 
             return entry;

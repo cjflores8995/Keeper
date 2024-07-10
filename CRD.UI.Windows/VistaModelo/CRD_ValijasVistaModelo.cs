@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CRD.UI.Windows.VistaModelo
 {
-    public class ValijasVistaModelo
+    public class CRD_ValijasVistaModelo
     {
         public int IdValija { get; set; }
         public int IdBitacora { get; set; }
@@ -15,6 +15,6 @@ namespace CRD.UI.Windows.VistaModelo
         public string Remitente { get; set; }
         public string Centro { get; set; }
         public string OBSV { get; set; }
-        public Nullable<bool> Activo { get; set; }
+        public bool Activo { get; set; }
     }
 }

@@ -16,14 +16,14 @@ namespace CRD.UI.Windows.ControladorAplicacion
         {
             servicio = new CRD_DepartamentoServicio();
         }
-        public bool InsertarDepartamento(DepartamentoVistaModelo nuevoDepartamentoVistaModelo)
+        public bool InsertarDepartamento(CRD_DepartamentoVistaModelo nuevoDepartamentoVistaModelo)
         {
             CRD_Departamento nuevoDepartamento = new CRD_Departamento();
             try
             {
                 nuevoDepartamento.NombreDepartamento = nuevoDepartamentoVistaModelo.NombreDepartamento;
                 nuevoDepartamento.Descripcion = nuevoDepartamentoVistaModelo.Descripcion;
-                nuevoDepartamento.Activo = nuevoDepartamentoVistaModelo.Activo ?? true;
+                nuevoDepartamento.Activo = nuevoDepartamentoVistaModelo.Activo;
                 servicio.Add(nuevoDepartamento);
                 return true;
             }
@@ -47,14 +47,14 @@ namespace CRD.UI.Windows.ControladorAplicacion
                 return false;
             }
         }
-        public bool ActualizarDepartamento(DepartamentoVistaModelo nuevoDepartamentoVistaModelo)
+        public bool ActualizarDepartamento(CRD_DepartamentoVistaModelo nuevoDepartamentoVistaModelo)
         {
             CRD_Departamento nuevoDepartamento = new CRD_Departamento(); //objeto de la BD
             try
             {
                 nuevoDepartamento.NombreDepartamento = nuevoDepartamentoVistaModelo.NombreDepartamento;
                 nuevoDepartamento.Descripcion = nuevoDepartamentoVistaModelo.Descripcion;
-                nuevoDepartamento.Activo = nuevoDepartamentoVistaModelo.Activo ?? true;
+                nuevoDepartamento.Activo = nuevoDepartamentoVistaModelo.Activo;
                 nuevoDepartamento.IdDepartamento = nuevoDepartamentoVistaModelo.IdDepartamento;
                 servicio.Modify(nuevoDepartamento);
                 return true;
@@ -65,13 +65,13 @@ namespace CRD.UI.Windows.ControladorAplicacion
                 return false;
             }
         }
-        public IEnumerable<DepartamentoVistaModelo> ListarDepartamento()
+        public IEnumerable<CRD_DepartamentoVistaModelo> ListarDepartamento()
         {
             var listaDepartamento = servicio.ObtenerElementosActivos();
-            List<DepartamentoVistaModelo> listaVistaModelo = new List<DepartamentoVistaModelo>();
+            List<CRD_DepartamentoVistaModelo> listaVistaModelo = new List<CRD_DepartamentoVistaModelo>();
             foreach (var item in listaDepartamento)
             {
-                listaVistaModelo.Add(new DepartamentoVistaModelo
+                listaVistaModelo.Add(new CRD_DepartamentoVistaModelo
                 {
                     IdDepartamento = item.IdDepartamento,
                     NombreDepartamento = item.NombreDepartamento,
