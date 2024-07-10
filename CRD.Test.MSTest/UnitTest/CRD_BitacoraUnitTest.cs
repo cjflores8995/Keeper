@@ -35,23 +35,23 @@ namespace CRD.Test.MSTest.UnitTest
             entry.ValorTotal = 1500.75m;
             entry.TipoOrden = "TIPO1";
 
-            _service.Add(entry);
+            _service.AddBitacora(entry);
         }
 
         [TestMethod]
         public void UpdateTest()
         {
-            var entry = _service.GetById(24);
+            var entry = _service.GetByIdBitacora(24);
 
             entry.CRD_Usuarios.Id = 1;
 
-            _service.Modify(entry);
+            _service.ModifyBitacora(entry);
         }
 
         [TestMethod]
         public void GetAllTest()
         {
-            var getAll = _service.GetAll();
+            var getAll = _service.ListarTodo();
 
             foreach(var item in getAll)
                 Console.WriteLine($"{item.CRD_Ordenes.ID}");
@@ -60,14 +60,14 @@ namespace CRD.Test.MSTest.UnitTest
         [TestMethod]
         public void GetByIdTest()
         {
-            var item = _service.GetById(24);
+            var item = _service.GetByIdBitacora(24);
             Console.WriteLine($"{item.CRD_Ordenes.ID}, {item.CRD_Proveedores.CodProveedor}");
         }
 
         [TestMethod]
         public void PruebaBusquedaFactura()
         {
-            var Base_Bitacora = _service.buscarPorFactura("001001000000001");
+            var Base_Bitacora = _service.buscarPorFacturaBitacora("001001000000001");
 
             foreach (var bitacora in Base_Bitacora)
             {

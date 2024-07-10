@@ -64,7 +64,7 @@ namespace CRD.UI.Windows.Formularios
 
         private void leerestadoTipoProceso()
         {
-            cmbEstadoTipos.DataSource = estadoTipoProceso_SC.ListarEstadoTipoProcesos();
+            cmbEstadoTipos.DataSource = estadoTipoProceso_SC.ListarTodo();
             cmbEstadoTipos.DisplayMember = "Nombre";
             cmbEstadoTipos.ValueMember = "IdEstadoTipoProceso";
         }
@@ -83,7 +83,7 @@ namespace CRD.UI.Windows.Formularios
 
         private void leerEmpresas()
         {
-            cmbEmpresas.DataSource = empresas_SC.ListarEmpresas();
+            cmbEmpresas.DataSource = empresas_SC.ListarTodo();
             cmbEmpresas.DisplayMember = "Nombre";
             cmbEmpresas.ValueMember = "CodigoEmpresa";
             

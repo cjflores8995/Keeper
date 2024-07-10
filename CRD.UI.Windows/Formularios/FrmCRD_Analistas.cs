@@ -158,7 +158,7 @@ namespace CRD.UI.Windows.Formularios
       
         private void leerestadoTipoProceso()
         {
-            cmbEstadoProceso_Analistas.DataSource = estadoTipo_SC.ListarEstadoTipoProcesos();
+            cmbEstadoProceso_Analistas.DataSource = estadoTipo_SC.ListarTodo();
             cmbEstadoProceso_Analistas.DisplayMember = "Nombre";
             cmbEstadoProceso_Analistas.ValueMember = "IdEstadoTipoProceso";
              txtIdEstadoTipoProceso.Text = cmbEstadoProceso_Analistas.SelectedValue.ToString();
