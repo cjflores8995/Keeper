@@ -16,12 +16,12 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace CRD.UI.Windows.Formularios
 {
-    public partial class FrmLogin : Form
+    public partial class FrmCRD_Login : Form
     {
         private CRD_UsuariosControlador controlador;
         private CRD_UsuariosVistaModelo vistaModelo;
 
-        public FrmLogin()
+        public FrmCRD_Login()
         {
             InitializeComponent();
             controlador = new CRD_UsuariosControlador();

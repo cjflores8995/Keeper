@@ -29,15 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dgvLista = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnBuscador = new System.Windows.Forms.Button();
-            this.txtBuscador = new System.Windows.Forms.TextBox();
-            this.labNombre = new System.Windows.Forms.Label();
-            this.rbtnCodProveedor = new System.Windows.Forms.RadioButton();
-            this.rbtnRazonSocial = new System.Windows.Forms.RadioButton();
-            this.rbtnRucCedula = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtCiudad = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
@@ -51,12 +42,21 @@
             this.txtEstado2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtCodCondicionesPago = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.txtRucCedula = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbtnRucCedula = new System.Windows.Forms.RadioButton();
+            this.rbtnRazonSocial = new System.Windows.Forms.RadioButton();
+            this.rbtnCodProveedor = new System.Windows.Forms.RadioButton();
+            this.btnBuscador = new System.Windows.Forms.Button();
+            this.txtBuscador = new System.Windows.Forms.TextBox();
+            this.labNombre = new System.Windows.Forms.Label();
+            this.dgvLista = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -73,113 +73,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(827, 620);
             this.panel1.TabIndex = 2;
-            // 
-            // dgvLista
-            // 
-            this.dgvLista.AllowUserToAddRows = false;
-            this.dgvLista.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvLista.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvLista.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLista.Location = new System.Drawing.Point(55, 436);
-            this.dgvLista.Name = "dgvLista";
-            this.dgvLista.Size = new System.Drawing.Size(724, 161);
-            this.dgvLista.TabIndex = 3;
-            this.dgvLista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLista_CellContentClick);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(41, 9);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(738, 40);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Gestión de Proveedores";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.rbtnRucCedula);
-            this.groupBox1.Controls.Add(this.rbtnRazonSocial);
-            this.groupBox1.Controls.Add(this.rbtnCodProveedor);
-            this.groupBox1.Controls.Add(this.btnBuscador);
-            this.groupBox1.Controls.Add(this.txtBuscador);
-            this.groupBox1.Controls.Add(this.labNombre);
-            this.groupBox1.Location = new System.Drawing.Point(45, 52);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(755, 135);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            // 
-            // btnBuscador
-            // 
-            this.btnBuscador.Location = new System.Drawing.Point(438, 52);
-            this.btnBuscador.Name = "btnBuscador";
-            this.btnBuscador.Size = new System.Drawing.Size(86, 26);
-            this.btnBuscador.TabIndex = 4;
-            this.btnBuscador.Text = "Buscar";
-            this.btnBuscador.UseVisualStyleBackColor = true;
-            this.btnBuscador.Click += new System.EventHandler(this.btnBuscador_Click);
-            // 
-            // txtBuscador
-            // 
-            this.txtBuscador.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.txtBuscador.Location = new System.Drawing.Point(25, 52);
-            this.txtBuscador.MaxLength = 50;
-            this.txtBuscador.Name = "txtBuscador";
-            this.txtBuscador.Size = new System.Drawing.Size(369, 26);
-            this.txtBuscador.TabIndex = 3;
-            this.txtBuscador.TextChanged += new System.EventHandler(this.txtBuscador_TextChanged);
-            // 
-            // labNombre
-            // 
-            this.labNombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.labNombre.AutoSize = true;
-            this.labNombre.Location = new System.Drawing.Point(21, 29);
-            this.labNombre.Name = "labNombre";
-            this.labNombre.Size = new System.Drawing.Size(70, 20);
-            this.labNombre.TabIndex = 2;
-            this.labNombre.Text = "Buscador:";
-            // 
-            // rbtnCodProveedor
-            // 
-            this.rbtnCodProveedor.AutoSize = true;
-            this.rbtnCodProveedor.Checked = true;
-            this.rbtnCodProveedor.Location = new System.Drawing.Point(25, 85);
-            this.rbtnCodProveedor.Name = "rbtnCodProveedor";
-            this.rbtnCodProveedor.Size = new System.Drawing.Size(69, 24);
-            this.rbtnCodProveedor.TabIndex = 5;
-            this.rbtnCodProveedor.TabStop = true;
-            this.rbtnCodProveedor.Text = "Partner";
-            this.rbtnCodProveedor.UseVisualStyleBackColor = true;
-            // 
-            // rbtnRazonSocial
-            // 
-            this.rbtnRazonSocial.AutoSize = true;
-            this.rbtnRazonSocial.Location = new System.Drawing.Point(184, 84);
-            this.rbtnRazonSocial.Name = "rbtnRazonSocial";
-            this.rbtnRazonSocial.Size = new System.Drawing.Size(110, 24);
-            this.rbtnRazonSocial.TabIndex = 6;
-            this.rbtnRazonSocial.Text = "Razón Social:";
-            this.rbtnRazonSocial.UseVisualStyleBackColor = true;
-            // 
-            // rbtnRucCedula
-            // 
-            this.rbtnRucCedula.AutoSize = true;
-            this.rbtnRucCedula.Location = new System.Drawing.Point(109, 84);
-            this.rbtnRucCedula.Name = "rbtnRucCedula";
-            this.rbtnRucCedula.Size = new System.Drawing.Size(54, 24);
-            this.rbtnRucCedula.TabIndex = 7;
-            this.rbtnRucCedula.Text = "RUC";
-            this.rbtnRucCedula.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -311,6 +204,13 @@
             this.txtCodCondicionesPago.Size = new System.Drawing.Size(189, 26);
             this.txtCodCondicionesPago.TabIndex = 17;
             // 
+            // txtRucCedula
+            // 
+            this.txtRucCedula.Location = new System.Drawing.Point(25, 45);
+            this.txtRucCedula.Name = "txtRucCedula";
+            this.txtRucCedula.Size = new System.Drawing.Size(189, 26);
+            this.txtRucCedula.TabIndex = 14;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -320,12 +220,112 @@
             this.label2.TabIndex = 11;
             this.label2.Text = "RUC:";
             // 
-            // txtRucCedula
+            // groupBox1
             // 
-            this.txtRucCedula.Location = new System.Drawing.Point(25, 45);
-            this.txtRucCedula.Name = "txtRucCedula";
-            this.txtRucCedula.Size = new System.Drawing.Size(189, 26);
-            this.txtRucCedula.TabIndex = 14;
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.rbtnRucCedula);
+            this.groupBox1.Controls.Add(this.rbtnRazonSocial);
+            this.groupBox1.Controls.Add(this.rbtnCodProveedor);
+            this.groupBox1.Controls.Add(this.btnBuscador);
+            this.groupBox1.Controls.Add(this.txtBuscador);
+            this.groupBox1.Controls.Add(this.labNombre);
+            this.groupBox1.Location = new System.Drawing.Point(45, 52);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(755, 135);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            // 
+            // rbtnRucCedula
+            // 
+            this.rbtnRucCedula.AutoSize = true;
+            this.rbtnRucCedula.Location = new System.Drawing.Point(109, 84);
+            this.rbtnRucCedula.Name = "rbtnRucCedula";
+            this.rbtnRucCedula.Size = new System.Drawing.Size(54, 24);
+            this.rbtnRucCedula.TabIndex = 7;
+            this.rbtnRucCedula.Text = "RUC";
+            this.rbtnRucCedula.UseVisualStyleBackColor = true;
+            // 
+            // rbtnRazonSocial
+            // 
+            this.rbtnRazonSocial.AutoSize = true;
+            this.rbtnRazonSocial.Location = new System.Drawing.Point(184, 84);
+            this.rbtnRazonSocial.Name = "rbtnRazonSocial";
+            this.rbtnRazonSocial.Size = new System.Drawing.Size(110, 24);
+            this.rbtnRazonSocial.TabIndex = 6;
+            this.rbtnRazonSocial.Text = "Razón Social:";
+            this.rbtnRazonSocial.UseVisualStyleBackColor = true;
+            // 
+            // rbtnCodProveedor
+            // 
+            this.rbtnCodProveedor.AutoSize = true;
+            this.rbtnCodProveedor.Checked = true;
+            this.rbtnCodProveedor.Location = new System.Drawing.Point(25, 85);
+            this.rbtnCodProveedor.Name = "rbtnCodProveedor";
+            this.rbtnCodProveedor.Size = new System.Drawing.Size(69, 24);
+            this.rbtnCodProveedor.TabIndex = 5;
+            this.rbtnCodProveedor.TabStop = true;
+            this.rbtnCodProveedor.Text = "Partner";
+            this.rbtnCodProveedor.UseVisualStyleBackColor = true;
+            // 
+            // btnBuscador
+            // 
+            this.btnBuscador.Location = new System.Drawing.Point(438, 52);
+            this.btnBuscador.Name = "btnBuscador";
+            this.btnBuscador.Size = new System.Drawing.Size(86, 26);
+            this.btnBuscador.TabIndex = 4;
+            this.btnBuscador.Text = "Buscar";
+            this.btnBuscador.UseVisualStyleBackColor = true;
+            this.btnBuscador.Click += new System.EventHandler(this.btnBuscador_Click);
+            // 
+            // txtBuscador
+            // 
+            this.txtBuscador.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtBuscador.Location = new System.Drawing.Point(25, 52);
+            this.txtBuscador.MaxLength = 50;
+            this.txtBuscador.Name = "txtBuscador";
+            this.txtBuscador.Size = new System.Drawing.Size(369, 26);
+            this.txtBuscador.TabIndex = 3;
+            this.txtBuscador.TextChanged += new System.EventHandler(this.txtBuscador_TextChanged);
+            // 
+            // labNombre
+            // 
+            this.labNombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.labNombre.AutoSize = true;
+            this.labNombre.Location = new System.Drawing.Point(21, 29);
+            this.labNombre.Name = "labNombre";
+            this.labNombre.Size = new System.Drawing.Size(70, 20);
+            this.labNombre.TabIndex = 2;
+            this.labNombre.Text = "Buscador:";
+            // 
+            // dgvLista
+            // 
+            this.dgvLista.AllowUserToAddRows = false;
+            this.dgvLista.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvLista.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvLista.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLista.Location = new System.Drawing.Point(55, 436);
+            this.dgvLista.Name = "dgvLista";
+            this.dgvLista.Size = new System.Drawing.Size(724, 161);
+            this.dgvLista.TabIndex = 3;
+            this.dgvLista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLista_CellContentClick);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(41, 9);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(738, 40);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Gestión de Proveedores";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FrmCRD_Proveedores
             // 
@@ -337,12 +337,13 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmCRD_Proveedores";
             this.Text = "FrmCRD_Proveedores";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
             this.ResumeLayout(false);
 
         }

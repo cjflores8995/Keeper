@@ -1,6 +1,6 @@
 ﻿namespace CRD.UI.Windows.Formularios
 {
-    partial class FrmRegistroUsuario
+    partial class FrmCRD_RegistroUsuario
     {
         /// <summary>
         /// Required designer variable.

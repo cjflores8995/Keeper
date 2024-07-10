@@ -239,6 +239,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmCRD_Paquetes";
             this.Text = "FrmCRD_Paquetes";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
             this.groupBox1.ResumeLayout(false);

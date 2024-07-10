@@ -16,7 +16,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CRD.UI.Windows.Formularios
 {
-    public partial class FrmRegistroUsuario : Form
+    public partial class FrmCRD_RegistroUsuario : Form
     {
         CRD_UsuariosControlador controlador;
         CRD_CargoControlador cargoControlador;
@@ -24,7 +24,7 @@ namespace CRD.UI.Windows.Formularios
         CRD_CiudadControlador ciudadControlador;
         CRD_UsuariosVistaModelo vistaModelo;
 
-        public FrmRegistroUsuario()
+        public FrmCRD_RegistroUsuario()
         {
             InitializeComponent();
             controlador = new CRD_UsuariosControlador();

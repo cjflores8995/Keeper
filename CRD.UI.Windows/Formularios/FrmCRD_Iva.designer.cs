@@ -83,9 +83,9 @@
             this.groupBox4.Controls.Add(this.label6);
             this.groupBox4.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.groupBox4.Location = new System.Drawing.Point(34, 167);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox4.Size = new System.Drawing.Size(564, 165);
             this.groupBox4.TabIndex = 6;
             this.groupBox4.TabStop = false;
@@ -105,7 +105,7 @@
             this.txtIdIva.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtIdIva.Location = new System.Drawing.Point(26, 37);
-            this.txtIdIva.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtIdIva.Margin = new System.Windows.Forms.Padding(2);
             this.txtIdIva.Name = "txtIdIva";
             this.txtIdIva.ReadOnly = true;
             this.txtIdIva.Size = new System.Drawing.Size(140, 26);
@@ -114,7 +114,7 @@
             // Eliminar
             // 
             this.Eliminar.Location = new System.Drawing.Point(447, 77);
-            this.Eliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Eliminar.Margin = new System.Windows.Forms.Padding(2);
             this.Eliminar.Name = "Eliminar";
             this.Eliminar.Size = new System.Drawing.Size(64, 35);
             this.Eliminar.TabIndex = 33;
@@ -125,7 +125,7 @@
             // btnGuardar
             // 
             this.btnGuardar.Location = new System.Drawing.Point(447, 32);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(64, 34);
             this.btnGuardar.TabIndex = 32;
@@ -136,7 +136,7 @@
             // btnLimpiar
             // 
             this.btnLimpiar.Location = new System.Drawing.Point(274, 127);
-            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(2);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(64, 33);
             this.btnLimpiar.TabIndex = 31;
@@ -167,7 +167,7 @@
             // txtValor
             // 
             this.txtValor.Location = new System.Drawing.Point(28, 88);
-            this.txtValor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtValor.Margin = new System.Windows.Forms.Padding(2);
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(143, 26);
             this.txtValor.TabIndex = 23;
@@ -194,9 +194,9 @@
             this.groupBox5.Controls.Add(this.labNombre);
             this.groupBox5.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.groupBox5.Location = new System.Drawing.Point(34, 42);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox5.Size = new System.Drawing.Size(564, 110);
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
@@ -205,7 +205,7 @@
             // 
             this.rbtnRazonSocial.AutoSize = true;
             this.rbtnRazonSocial.Location = new System.Drawing.Point(138, 68);
-            this.rbtnRazonSocial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbtnRazonSocial.Margin = new System.Windows.Forms.Padding(2);
             this.rbtnRazonSocial.Name = "rbtnRazonSocial";
             this.rbtnRazonSocial.Size = new System.Drawing.Size(75, 24);
             this.rbtnRazonSocial.TabIndex = 6;
@@ -217,7 +217,7 @@
             this.rbtnCodProveedor.AutoSize = true;
             this.rbtnCodProveedor.Checked = true;
             this.rbtnCodProveedor.Location = new System.Drawing.Point(19, 69);
-            this.rbtnCodProveedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbtnCodProveedor.Margin = new System.Windows.Forms.Padding(2);
             this.rbtnCodProveedor.Name = "rbtnCodProveedor";
             this.rbtnCodProveedor.Size = new System.Drawing.Size(129, 24);
             this.rbtnCodProveedor.TabIndex = 5;
@@ -228,7 +228,7 @@
             // btnBuscador
             // 
             this.btnBuscador.Location = new System.Drawing.Point(328, 42);
-            this.btnBuscador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscador.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscador.Name = "btnBuscador";
             this.btnBuscador.Size = new System.Drawing.Size(64, 31);
             this.btnBuscador.TabIndex = 4;
@@ -240,7 +240,7 @@
             this.txtBuscador.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.txtBuscador.Location = new System.Drawing.Point(19, 42);
-            this.txtBuscador.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBuscador.Margin = new System.Windows.Forms.Padding(2);
             this.txtBuscador.MaxLength = 50;
             this.txtBuscador.Name = "txtBuscador";
             this.txtBuscador.Size = new System.Drawing.Size(278, 26);
@@ -267,7 +267,7 @@
             this.dgvLista.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLista.Location = new System.Drawing.Point(41, 354);
-            this.dgvLista.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvLista.Margin = new System.Windows.Forms.Padding(2);
             this.dgvLista.Name = "dgvLista";
             this.dgvLista.RowHeadersWidth = 51;
             this.dgvLista.Size = new System.Drawing.Size(541, 131);
@@ -292,9 +292,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(729, 531);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmCRD_Iva";
             this.Text = "FrmIva";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();

@@ -53,7 +53,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ControladoresApp\CRD_AnalistasControlador.cs" />
     <Compile Include="ControladoresApp\CRD_AuditoriaBitacoraControlador.cs" />
+    <Compile Include="ControladoresApp\CRD_BitacoraControlador.cs" />
     <Compile Include="ControladoresApp\CRD_CajasControlador.cs" />
     <Compile Include="ControladoresApp\CRD_DepartamentoControlador.cs" />
     <Compile Include="ControladoresApp\CRD_CargoControlador.cs" />
@@ -74,11 +76,23 @@
     <Compile Include="ControladoresApp\CRD_EstadoTipoProcesosControlador.cs" />
     <Compile Include="ControladoresApp\CRD_IvaControlador.cs" />
     <Compile Include="ControladoresApp\CRD_ValijasControlador.cs" />
+    <Compile Include="Formularios\FrmCRD_Analistas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmCRD_Analistas.designer.cs">
+      <DependentUpon>FrmCRD_Analistas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FrmCRD_AuditoriaBitacora.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\FrmCRD_AuditoriaBitacora.Designer.cs">
       <DependentUpon>FrmCRD_AuditoriaBitacora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FrmCRD_Bitacora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FrmCRD_Bitacora.designer.cs">
+      <DependentUpon>FrmCRD_Bitacora.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FrmCRD_Cajas.cs">
       <SubType>Form</SubType>
@@ -158,17 +172,17 @@
     <Compile Include="Formularios\FrmCRD_Valija.designer.cs">
       <DependentUpon>FrmCRD_Valija.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmLogin.cs">
+    <Compile Include="Formularios\FrmCRD_Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmLogin.Designer.cs">
-      <DependentUpon>FrmLogin.cs</DependentUpon>
+    <Compile Include="Formularios\FrmCRD_Login.Designer.cs">
+      <DependentUpon>FrmCRD_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FrmRegistroUsuario.cs">
+    <Compile Include="Formularios\FrmCRD_RegistroUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FrmRegistroUsuario.Designer.cs">
-      <DependentUpon>FrmRegistroUsuario.cs</DependentUpon>
+    <Compile Include="Formularios\FrmCRD_RegistroUsuario.Designer.cs">
+      <DependentUpon>FrmCRD_RegistroUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="MDIPrincipal.cs">
       <SubType>Form</SubType>
@@ -178,7 +192,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VistaModelo\CRD_AnalistasVistaModelo.cs" />
     <Compile Include="VistaModelo\CRD_AuditoriaBitacoraVistaModelo.cs" />
+    <Compile Include="VistaModelo\CRD_BitacoraVistaModelo.cs" />
     <Compile Include="VistaModelo\CRD_CajasVistaModelo.cs" />
     <Compile Include="VistaModelo\CRD_DepartamentoVistaModelo.cs" />
     <Compile Include="VistaModelo\CRD_CargoVistaModelo.cs" />
@@ -193,8 +209,14 @@
     <Compile Include="VistaModelo\CRD_EstadoTipoProcesosVistaModelo.cs" />
     <Compile Include="VistaModelo\CRD_IvaVistaModelo.cs" />
     <Compile Include="VistaModelo\CRD_ValijasVistaModelo.cs" />
+    <EmbeddedResource Include="Formularios\FrmCRD_Analistas.resx">
+      <DependentUpon>FrmCRD_Analistas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmCRD_AuditoriaBitacora.resx">
       <DependentUpon>FrmCRD_AuditoriaBitacora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FrmCRD_Bitacora.resx">
+      <DependentUpon>FrmCRD_Bitacora.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FrmCRD_Cajas.resx">
       <DependentUpon>FrmCRD_Cajas.cs</DependentUpon>
@@ -235,11 +257,11 @@
     <EmbeddedResource Include="Formularios\FrmCRD_Valija.resx">
       <DependentUpon>FrmCRD_Valija.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmLogin.resx">
-      <DependentUpon>FrmLogin.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\FrmCRD_Login.resx">
+      <DependentUpon>FrmCRD_Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FrmRegistroUsuario.resx">
-      <DependentUpon>FrmRegistroUsuario.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\FrmCRD_RegistroUsuario.resx">
+      <DependentUpon>FrmCRD_RegistroUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MDIPrincipal.resx">
       <DependentUpon>MDIPrincipal.cs</DependentUpon>
