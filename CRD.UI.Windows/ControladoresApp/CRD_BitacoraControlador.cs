@@ -48,5 +48,27 @@ namespace CRD.UI.Windows.ControladoresApp
             }
 
         }
+
+        public IEnumerable<CRD_BitacoraVistaModelo> ListarBitacora()
+        {
+            var listabitacora = bitacora_SC.ListarTodo();
+            List<CRD_BitacoraVistaModelo> listabitacoraVistaModelo = new List<CRD_BitacoraVistaModelo>();
+            foreach (var item in listabitacora)
+            {
+                listabitacoraVistaModelo.Add(new CRD_BitacoraVistaModelo
+                {
+                    IdBitacora = item.IdBitacora,
+                    NumeroDocumentoPago = item.NumeroDocumentoPago,
+                    EstadoBienesRecibidos = item.EstadoBienesRecibidos,
+                    FechaEmisionDocumento = item.FechaEmisionDocumento,
+                    FechaRecepcionDocumento = item.FechaRecepcionDocumento,
+                    IvaDocumento = item.IvaDocumento,
+                    Observaciones = item.Observaciones,
+                    ValorTotal = item.ValorTotal,
+                    TipoOrden = item.TipoOrden,
+                });
+            }
+            return listabitacoraVistaModelo;
+        }
     }
 }

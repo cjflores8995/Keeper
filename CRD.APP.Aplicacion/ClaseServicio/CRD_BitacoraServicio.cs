@@ -18,7 +18,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
             repo = new CRD_BitacoraRepositorioImpl();
         }
 
-        public void Add(CRD_Bitacora entry)
+        public void AddBitacora(CRD_Bitacora entry)
         {
             try
             {
@@ -31,7 +31,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
 
         }
 
-        public void Modify(CRD_Bitacora entry)
+        public void ModifyBitacora(CRD_Bitacora entry)
         {
             try
             {
@@ -44,7 +44,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
 
         }
 
-        public IEnumerable<CRD_Bitacora> GetAll()
+        public IEnumerable<CRD_Bitacora> ListarTodo()
         {
             try
             {
@@ -56,7 +56,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
             }
         }
 
-        public CRD_Bitacora GetById(int id)
+        public CRD_Bitacora GetByIdBitacora(int id)
         {
             try
             {
@@ -68,7 +68,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
             }
         }
 
-        public void Delete(int id)
+        public void DeleteBitacora(int id)
         {
             try
             {
@@ -80,7 +80,7 @@ namespace CRD.APP.Aplicacion.ClaseServicio
             }
         }
 
-        public List<CRD_Bitacora> buscarPorFactura(string Factura)
+        public List<CRD_Bitacora> buscarPorFacturaBitacora(string Factura)
         {
             try
             {
